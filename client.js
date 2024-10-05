@@ -111,7 +111,8 @@ function negotiate() {
             body: JSON.stringify({
                 sdp: offer.sdp,
                 type: offer.type,
-                displaying:true
+                video_transform: document.getElementById('video-transform').value,
+                displaying: document.getElementById('mode').value=="livestream" ? true : false  
             }),
             headers: {
                 'Content-Type': 'application/json'

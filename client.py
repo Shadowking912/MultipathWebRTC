@@ -140,7 +140,6 @@ async def offer(request):
         )
     
     else:
-       
         offer = RTCSessionDescription(sdp=params["sdp"], type=params["type"])
 
         pc = RTCPeerConnection()
@@ -213,7 +212,6 @@ async def offer(request):
             ),
         )
 
-        
         # Allow all origins here
         response.headers["Access-Control-Allow-Origin"] = "*"
         # Allow all methods
@@ -272,8 +270,6 @@ if __name__ == "__main__":
     app.router.add_get("/client", index)
     app.router.add_get("/client.js", javascript)
     app.router.add_post("/offer", offer)
-    app.router.add_get("/offer", offer)
-    
     app.router.add_options("/offer", handle_options)
     web.run_app(
         app, access_log=None, host=args.host, port=args.port, ssl_context=ssl_context
