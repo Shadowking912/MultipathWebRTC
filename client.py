@@ -5,7 +5,7 @@ import logging
 import os
 import ssl
 import uuid
-
+import socket
 import cv2
 from aiohttp import web
 from av import VideoFrame
@@ -14,12 +14,18 @@ from aiortc import MediaStreamTrack, RTCPeerConnection, RTCSessionDescription
 from aiortc.contrib.media import MediaBlackhole, MediaPlayer, MediaRecorder, MediaRelay
 from copy import copy
 import time
+import sys
 ROOT = os.path.dirname(__file__)
 
 logger = logging.getLogger("pc")
 pcs = set()
 relay = MediaRelay()
 
+hostname = socket.gethostname()
+IPAddr = socket.gethostbyname(hostname)
+
+portnumber = None
+print("Your Computer IP Address is:" + IPAddr)
 
 class VideoTransformTrack(MediaStreamTrack):
     """
@@ -92,9 +98,10 @@ class VideoTransformTrack(MediaStreamTrack):
 
 
 async def index(request):
+    global IPAddr
     content = open(os.path.join(ROOT, "client.html"), "r").read()
+    content = content.replace("{{IPAddress}}", IPAddr+":"+str(portnumber))
     return web.Response(content_type="text/html", text=content)
-
 
 async def javascript(request):
     content = open(os.path.join(ROOT, "client.js"), "r").read()
@@ -121,24 +128,31 @@ async def offer(request):
                 pcs.discard(pc)
 
         print(get_req_response)
-        pc.addTrack(get_req_response)
+        if get_req_response!=None:
+            pc.addTrack(get_req_response)
         
         await pc.setRemoteDescription(offer)
 
         answer = await pc.createAnswer()
         await pc.setLocalDescription(answer)
+        
+       
 
-        return web.Response(
+        response = web.Response(
             content_type="application/json",
-            # text=json.dumps(
-            #     {"sdp": pc.localDescription.sdp, "type": pc.localDescription.type}
-            # ),
             text=json.dumps(
                 {"sdp": pc.localDescription.sdp, "type": pc.localDescription.type}
             ),
-
         )
-    
+         # Allow all origins here
+        response.headers["Access-Control-Allow-Origin"] = "*"
+        # Allow all methods
+        response.headers["Access-Control-Allow-Methods"] = "*"
+        # Allow all headers
+        response.headers["Access-Control-Allow-Headers"] = "*"
+
+        return response
+   
     else:
         offer = RTCSessionDescription(sdp=params["sdp"], type=params["type"])
 
@@ -152,7 +166,6 @@ async def offer(request):
         log_info("Created for %s", request.remote)
 
         # prepare local media
-        player = MediaPlayer(os.path.join(ROOT, "demo-instruct.wav"))
         if args.record_to:
             recorder = MediaRecorder(args.record_to)
         else:
@@ -177,8 +190,9 @@ async def offer(request):
             global get_req_response
             log_info("Track %s received", track.kind)
             if track.kind == "audio":
-                pc.addTrack(player.audio)
-                recorder.addTrack(track)
+                pass
+                # # pc.addTrack(player.audio)
+                # # recorder.addTrack(track)
 
             elif track.kind == "video":
                 video=VideoTransformTrack(
@@ -211,7 +225,6 @@ async def offer(request):
                 {"sdp": pc.localDescription.sdp, "type": pc.localDescription.type}
             ),
         )
-
         # Allow all origins here
         response.headers["Access-Control-Allow-Origin"] = "*"
         # Allow all methods
@@ -239,6 +252,7 @@ async def handle_options(request):
     return response
 
 if __name__ == "__main__":
+   
     parser = argparse.ArgumentParser(
         description="WebRTC audio / video / data-channels demo"
     )
@@ -264,15 +278,16 @@ if __name__ == "__main__":
         ssl_context.load_cert_chain(args.cert_file, args.key_file)
     else:
         ssl_context = None
-
+    portnumber = args.port
     app = web.Application()
     app.on_shutdown.append(on_shutdown)
+    # Add arguments to the api endpoint
+
     app.router.add_get("/client", index)
     app.router.add_get("/client.js", javascript)
     app.router.add_post("/offer", offer)
-    app.router.add_options("/offer", handle_options)
+    app.router.add_options("/offer",handle_options)
     web.run_app(
         app, access_log=None, host=args.host, port=args.port, ssl_context=ssl_context
-        
     )
-
+ 

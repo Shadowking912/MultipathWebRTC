@@ -26,9 +26,26 @@
         max-width: 1280px;
     }
     </style>
+    <!-- <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyClAnCdnCoEHccBAqpUHPkMzMsJ5znxZo0",
+          authDomain: "webrtc-92b58.firebaseapp.com",
+          projectId: "webrtc-92b58",
+          storageBucket: "webrtc-92b58.appspot.com",
+          messagingSenderId: "891151932879",
+          appId: "1:891151932879:web:5cb8101185cafea62c46ba"
+        };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+    </script> -->
 </head>
-<body>
-
+<body>   
 <h2>Options</h2>
 <div class="option">
     <input id="use-datachannel" checked="checked" type="checkbox"/>
@@ -39,19 +56,24 @@
         <option value='{"ordered": false, "maxPacketLifetime": 500}'>Unordered, 500ms lifetime</option>
     </select>
 </div>
-<div class="option">
-    <input id="use-audio" checked="checked" type="checkbox"/>
+
+<!-- Removed audio option completely -->
+
+<!-- <div class="option"> -->
+    <!-- <input id="use-audio" checked="checked" type="checkbox"/>
     <label for="use-audio">Use audio</label>
     <select id="audio-input">
         <option value="" selected>Default device</option>
-    </select>
-    <select id="audio-codec">
+    </select> -->
+    <!-- <select id="audio-codec">
         <option value="default" selected>Default codecs</option>
         <option value="opus/48000/2">Opus</option>
         <option value="PCMU/8000">PCMU</option>
         <option value="PCMA/8000">PCMA</option>
-    </select>
-</div>
+    </select> -->
+<!-- </div> -->
+
+
 <div class="option">
     <input id="use-video" type="checkbox"/>
     <label for="use-video">Use video</label>

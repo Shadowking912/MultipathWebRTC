@@ -25,6 +25,9 @@
     #media {
         max-width: 1280px;
     }
+    #AudioOption{
+        display:None;
+    }
     </style>
 </head>
 <body>
@@ -39,8 +42,11 @@
         <option value='{"ordered": false, "maxPacketLifetime": 500}'>Unordered, 500ms lifetime</option>
     </select>
 </div>
-<div class="option">
-    <input id="use-audio" checked="checked" type="checkbox"/>
+
+<!-- Audio Option removed  -->
+<div class="option" id="AudioOption">
+    <input id="use-audio" type="checkbox">
+    <!-- <input id="use-audio" checked="checked" type="checkbox"/> -->
     <label for="use-audio">Use audio</label>
     <select id="audio-input">
         <option value="" selected>Default device</option>
@@ -52,6 +58,7 @@
         <option value="PCMA/8000">PCMA</option>
     </select>
 </div>
+
 <div class="option">
     <input id="use-video" type="checkbox"/>
     <label for="use-video">Use video</label>
@@ -77,8 +84,8 @@
         <option value="H264/90000">H264</option>
     </select>
     <select id="mode">
-        <option value="livestream" selected>Live Stream</option>
-        <option value="Web Cam">Web Cam</option>
+        <option value="webcam" selected>Web Cam</option>
+        <option value="livestream" >Live Stream</option>
     </select>
 
 </div>
@@ -86,9 +93,13 @@
     <input id="use-stun" type="checkbox"/>
     <label for="use-stun">Use STUN server</label>
 </div>
-
+<div>
+    <p >Your IP Address is : <span id="IPAddress">{{IPAddress}}</span></p>
+</div> 
 <button id="start" onclick="start()">Start</button>
-<button id="stop" style="display: none" onclick="stop()">Stop</button>
+<div>
+    <input type="text" id="remoteip" style="display:none" placeholder="Enter the IP Address to call">
+</div>
 
 <h2>State</h2>
 <p>
@@ -111,14 +122,26 @@
 <h2>Data channel</h2>
 <pre id="data-channel" style="height: 200px;"></pre>
 
-<h2>SDP</h2>
+
+
+
+
+<!-- SDP Remove  -->
+<!-- <h2 id="">SDP</h2>
 
 <h3>Offer</h3>
 <pre id="offer-sdp"></pre>
 
 <h3>Answer</h3>
-<pre id="answer-sdp"></pre>
+<pre id="answer-sdp"></pre> -->
+<!-- SDP Removed -->
+
+
 
 <script src="client.js"></script>
+<script>
+    const ipAddress = document.getElementById('IPAddress').textContent;
+    console.log("IP Address : ",ipAddress);
+</script>
 </body>
 </html>

@@ -3,7 +3,21 @@ var dataChannelLog = document.getElementById('data-channel'),
     iceConnectionLog = document.getElementById('ice-connection-state'),
     iceGatheringLog = document.getElementById('ice-gathering-state'),
     signalingLog = document.getElementById('signaling-state');
+    livestream = document.getElementById('mode');
+    ipaddr = null;
 
+
+livestream.addEventListener('change', function(){
+    if (this.value=="livestream") {
+        document.getElementById('remoteip').style.display = 'inline-block';
+    } else {
+        document.getElementById('remoteip').style.display = 'none';
+    }
+});
+// if(livestream.value=="livestream")
+// {
+//     document.getElementById('remoteip').style.display = 'inline-block';
+// }
 // peer connection
 var pc = null;
 
@@ -74,7 +88,7 @@ function enumerateInputDevices() {
     });
 }
 
-function negotiate() {
+function negotiate(){
     return pc.createOffer().then((offer) => {
         return pc.setLocalDescription(offer);
     }).then(() => {
@@ -106,31 +120,66 @@ function negotiate() {
             offer.sdp = sdpFilterCodec('video', codec, offer.sdp);
         }
 
-        document.getElementById('offer-sdp').textContent = offer.sdp;
-        return fetch('/offer', {
-            body: JSON.stringify({
-                sdp: offer.sdp,
-                type: offer.type,
-                video_transform: document.getElementById('video-transform').value,
-                displaying: document.getElementById('mode').value=="livestream" ? true : false  
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            method: 'POST'
-        });
-    }).then((response) => {
-        return response.json();
-    }).then((answer) => {
-        document.getElementById('answer-sdp').textContent = answer.sdp;
-        return pc.setRemoteDescription(answer);
-    }).catch((e) => {
-        alert(e);
+        // document.getElementById('offer-sdp').textContent = offer.sdp;
+        console.log(document.getElementById('mode').value)
+        if(document.getElementById('mode').value=="livestream")
+        {
+            console.log("here")
+            return fetch(`http://${ipaddr}/offer`, {
+                body: JSON.stringify({
+                    sdp: offer.sdp,
+                    type: offer.type,
+                    video_transform: document.getElementById('video-transform').value,
+                    displaying: true,
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST'
+            }).then((response) => {
+                return response.json();
+            }).then((answer) => {
+                // document.getElementById('answer-sdp').textContent = answer.sdp;
+                return pc.setRemoteDescription(answer);
+            }).catch((e) => {
+                alert(e);
+            });
+
+        }
+        else
+        {
+            console.log("webcam")
+            return fetch(`/offer`, {
+                body: JSON.stringify({
+                    sdp: offer.sdp,
+                    type: offer.type,
+                    video_transform: document.getElementById('video-transform').value,
+                    displaying:false
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST'
+            }).then((response) => {
+                return response.json();
+            }).then((answer) => {
+                // document.getElementById('answer-sdp').textContent = answer.sdp;
+                return pc.setRemoteDescription(answer);
+            }).catch((e) => {
+                alert(e);
+            });
+        }
     });
 }
-
 function start() {
-    document.getElementById('start').style.display = 'none';
+    // document.getElementById('start').style.display = 'none';
+    // alert("start");
+    document.getElementById('start').innerHTML="Stop";
+    document.getElementById('start').setAttribute("onClick","stop()");
+    if(document.getElementById('mode').value=="livestream")
+    {
+        ipaddr = document.getElementById('remoteip').value;
+    }
 
     pc = createPeerConnection();
 
@@ -225,11 +274,14 @@ function start() {
         negotiate();
     }
 
-    document.getElementById('stop').style.display = 'inline-block';
+    // document.getElementById('stop').style.display = 'inline-block';
 }
 
 function stop() {
-    document.getElementById('stop').style.display = 'none';
+    // document.getElementById('stop').style.display = 'none';
+    console.log("stop");
+    document.getElementById('start').innerHTML="Start";
+    document.getElementById('start').setAttribute("onClick","start()");
 
     // close data channel
     if (dc) {
@@ -254,6 +306,8 @@ function stop() {
     setTimeout(() => {
         pc.close();
     }, 500);
+    
+
 }
 
 function sdpFilterCodec(kind, codec, realSdp) {
