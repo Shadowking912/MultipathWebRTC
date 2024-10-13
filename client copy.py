@@ -108,7 +108,7 @@ async def javascript(request):
     return web.Response(content_type="application/javascript", text=content)
 
 get_req_response=None
-pcs = set()
+pcs = set() # dictionary to store sdp,offer with pc
 
 async def offer(request):
     global get_req_response
@@ -119,28 +119,38 @@ async def offer(request):
         
         offer = RTCSessionDescription(sdp=params["sdp"], type=params["type"])
         # Setup  multiple RTC sessions
-        pc = RTCPeerConnection()
-        # pc2 = RTCPeerConnection()
-
-        pcs.add(pc)
-    # pcs.add(pc2)
-
-        # for pc in pcs:
-        @pc.on("connectionstatechange")
-        async def on_connectionstatechange():
-            print("Connection state is %s" % pc.connectionState)
-            if pc.connectionState == "failed":
-                await pc.close()
-                pcs.discard(pc)
-
-        print(get_req_response)
-        if get_req_response!=None:
-            pc.addTrack(get_req_response)
+        tasks=[]
+        # offers=[]
+        for i in range(params['num_connections']):
         
-        await pc.setRemoteDescription(offer)
+            pc = RTCPeerConnection()
+            pcs.add(pc)
+
+            @pc.on("connectionstatechange")
+            async def on_connectionstatechange():
+                print("Connection state is %s" % pc.connectionState)
+                if pc.connectionState == "failed":
+                    await pc.close()
+                    pcs.discard(pc)
+
+            print(get_req_response)
+            if get_req_response!=None:
+                pc.addTrack(get_req_response)
+            
+            tasks.append(asyncio.create_task(pc.setRemoteDescription(offer))) 
+              
+
+            
+        
+        # results=await pc.setRemoteDescription(offer)
+        results = asyncio.gather(*tasks)
+        tasks=[]
+        # asyncio.gather(task_one(), task_two())  
 
         answer = await pc.createAnswer()
         await pc.setLocalDescription(answer)
+
+            # pc
 
         response = web.Response(
             content_type="application/json",

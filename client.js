@@ -5,13 +5,16 @@ var dataChannelLog = document.getElementById('data-channel'),
     signalingLog = document.getElementById('signaling-state');
     livestream = document.getElementById('mode');
     ipaddr = null;
+    num_connections=null;
 
 
 livestream.addEventListener('change', function(){
     if (this.value=="livestream") {
         document.getElementById('remoteip').style.display = 'inline-block';
+        document.getElementById('numconnections').style.display='inline-block';
     } else {
         document.getElementById('remoteip').style.display = 'none';
+        document.getElementById('numconnections').style.display='none';
     }
 });
 // if(livestream.value=="livestream")
@@ -124,13 +127,14 @@ function negotiate(){
         console.log(document.getElementById('mode').value)
         if(document.getElementById('mode').value=="livestream")
         {
-            console.log("here")
+            console.log(`${ipaddr}`);
             return fetch(`http://${ipaddr}/offer`, {
                 body: JSON.stringify({
                     sdp: offer.sdp,
                     type: offer.type,
                     video_transform: document.getElementById('video-transform').value,
-                    displaying: true,
+                    livestream: true,
+                    num_connections:num_connections
                 }),
                 headers: {
                     'Content-Type': 'application/json'
@@ -154,7 +158,8 @@ function negotiate(){
                     sdp: offer.sdp,
                     type: offer.type,
                     video_transform: document.getElementById('video-transform').value,
-                    displaying:false
+                    livestream:false,
+                    num_connections:num_connections
                 }),
                 headers: {
                     'Content-Type': 'application/json'
@@ -179,8 +184,10 @@ function start() {
     if(document.getElementById('mode').value=="livestream")
     {
         ipaddr = document.getElementById('remoteip').value;
-    }
+        num_connections = document.getElementById('numconnections').value;
 
+    }
+    
     pc = createPeerConnection();
 
     var time_start = null;
