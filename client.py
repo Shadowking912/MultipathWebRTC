@@ -104,21 +104,24 @@ async def index(request):
     return web.Response(content_type="text/html", text=content)
 
 async def javascript(request):
-    content = open(os.path.join(ROOT, "client.js"), "r").read()
+    content = open(os.path.join(ROOT, "client2.js"), "r").read()
     return web.Response(content_type="application/javascript", text=content)
 
 get_req_response=None
-pcs = set()
-
+pcs = set() # dictionary to store sdp,offer with pc
+i=0
+d={}
 async def offer(request):
-    global get_req_response
-
+    global get_req_response,i,d
     params = await request.json()
-
+    
     if params["livestream"]==True:#send stream from server to client
-        
+     
         offer = RTCSessionDescription(sdp=params["sdp"], type=params["type"])
         # Setup  multiple RTC sessions
+        if params["sdp"] not in d:
+            d[params["sdp"]]=i
+            i+=1
         pc = RTCPeerConnection()
         # pc2 = RTCPeerConnection()
 
@@ -134,9 +137,16 @@ async def offer(request):
                 pcs.discard(pc)
 
         print(get_req_response)
+        if d[params["sdp"]]==1:
+            video=VideoTransformTrack(
+                relay.subscribe(get_req_response), transform='cartoon'
+            )
+            get_req_response=video
+
         if get_req_response!=None:
             pc.addTrack(get_req_response)
         
+        print("offer from client")
         await pc.setRemoteDescription(offer)
 
         answer = await pc.createAnswer()
@@ -155,6 +165,7 @@ async def offer(request):
         # Allow all headers
         response.headers["Access-Control-Allow-Headers"] = "*"
         return response
+
     
     else:
         offer = RTCSessionDescription(sdp=params["sdp"], type=params["type"])
@@ -238,6 +249,20 @@ async def offer(request):
 
         return response
 
+answers=[]
+async def preprocessframe(request):
+    global answers
+    params = await request.json()
+    print(params)
+    answers.append(params["answer"])
+  
+    # Allow all origins here
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    # Allow all methods
+    response.headers["Access-Control-Allow-Methods"] = "*"
+    # Allow all headers
+    response.headers["Access-Control-Allow-Headers"] = "*"
+    return response
 
 async def on_shutdown(app):
     # close peer connections
@@ -288,9 +313,10 @@ if __name__ == "__main__":
     # Add arguments to the api endpoint
 
     app.router.add_get("/client", index)
-    app.router.add_get("/client.js", javascript)
+    app.router.add_get("/client2.js", javascript)
     app.router.add_post("/offer", offer)
     app.router.add_options("/offer",handle_options)
+    app.router.add_options("/preprocessframe",handle_options)
     web.run_app(
         app, access_log=None, host=args.host, port=args.port, ssl_context=ssl_context
     )

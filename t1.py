@@ -18,7 +18,7 @@ async def main():
     tasks.append(asyncio.create_task(task_two()))
 
     results=await asyncio.gather(*tasks)
-    print(results)
+    print(result)
     # await asyncio.gather(task_one(), task_two())  # Run both tasks concurrently
 
 # Run the async function

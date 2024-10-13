@@ -28,6 +28,22 @@
     #AudioOption{
         display:None;
     }
+    #container{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        border: 2px solid green;
+    }
+    #inner0{
+        border: 2px solid black;
+        width:50%;
+        /* display:inline-block; */
+    }
+    #inner1{
+        border: 2px solid black;
+        width:50%;
+        /* display:inline-block; */
+    }
     </style>
 </head>
 <body>
@@ -60,7 +76,7 @@
 </div>
 
 <div class="option">
-    <input id="use-video" type="checkbox"/>
+    <input id="use-video" type="checkbox" selected/>
     <label for="use-video">Use video</label>
     <select id="video-input">
         <option value="" selected>Default device</option>
@@ -98,8 +114,8 @@
 </div> 
 <button id="start" onclick="start()">Start</button>
 <div>
-    <input type="text" id="remoteip" style="display:none" placeholder="Enter the IP Address to call">
-    <input type="number" id="numconnections" style="display:none" placeholder="Enter the number of connections" required>
+    <input type="text" id="remoteip" style="display:none" placeholder="Enter the IP Address to call" value="127.0.0.1:8080">
+    <input type="number" id="numconnections" style="display:none" placeholder="Enter the number of connections" value="2" required>
 </div>
 
 <h2>State</h2>
@@ -112,8 +128,7 @@
 <p>
     Signaling state: <span id="signaling-state"></span>
 </p>
-
-<div id="media" style="display: none">
+<!-- <div id="media" style="display: none">
     <h2>Media</h2>
 
     <audio id="audio" autoplay="true"></audio>
@@ -121,11 +136,30 @@
 </div>
 
 <h2>Data channel</h2>
-<pre id="data-channel" style="height: 200px;"></pre>
+<pre id="data-channel" style="height: 200px;"></pre> -->
 
 
+<div id="container">
+    <div id="inner0">
+        <div id="media0" style="display: none">
+            <h2>Media</h2>
+            <audio id="audio0" autoplay="true"></audio>
+            <video id="video0" autoplay="true" playsinline="true"></video>
+        </div>
+        <h2>Data channel</h2>
+        <pre id="data-channel1" style="height: 200px;"></pre>
+    </div>
+    <div id="inner1">
+        <div id="media1" style="display: none">
+            <h2>Media</h2>
+            <audio id="audio1" autoplay="true"></audio>
+            <video id="video1" autoplay="true" playsinline="true"></video>
+        </div>
+        <h2>Data channel</h2>
+        <pre id="data-channel2" style="height: 200px;"></pre>
+    </div>
 
-
+</div>
 
 <!-- SDP Remove  -->
 <!-- <h2 id="">SDP</h2>
@@ -139,7 +173,7 @@
 
 
 
-<script src="client.js"></script>
+<script src="client2.js"></script>
 <script>
     const ipAddress = document.getElementById('IPAddress').textContent;
     console.log("IP Address : ",ipAddress);
