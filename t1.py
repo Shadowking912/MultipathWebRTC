@@ -1,25 +1,24 @@
-import asyncio
+import traceback
+import inspect
 
-async def task_one():
-    print("Task One: Starting")
-    await asyncio.sleep(2)  # Non-blocking sleep for 2 seconds
-    print("Task One: Done")
-    return 1
+def func1():
+    print("In func1:")
+    print_stack_trace()
 
-async def task_two():
-    print("Task Two: Starting")
-    await asyncio.sleep(1)  # Non-blocking sleep for 1 second
-    print("Task Two: Done")
-    return 2
-tasks = []
-async def main():
-    # for i in range(2):
-    tasks.append(asyncio.create_task(task_one()))
-    tasks.append(asyncio.create_task(task_two()))
+def func2():
+    print("In func2:")
+    print_stack_trace()
+    func1()
 
-    results=await asyncio.gather(*tasks)
-    print(result)
-    # await asyncio.gather(task_one(), task_two())  # Run both tasks concurrently
+def func3():
+    print("In func3:")
+    print_stack_trace()
+    func2()
 
-# Run the async function
-asyncio.run(main())
+def print_stack_trace():
+    # This will print the stack trace of the current function call
+    stack = inspect.stack()
+    traceback.print_stack(f=stack[1][0])
+
+# Call the top-level function
+func3()

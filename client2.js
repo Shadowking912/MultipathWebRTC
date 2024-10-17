@@ -57,8 +57,9 @@ function createPeerConnection(conn_id) {
 
     // connect audio / video
     pc.addEventListener('track', (evt) => {
-        if (evt.track.kind == 'video')
+        if (evt.track.kind == 'video'){
             document.getElementById(`video${conn_id}`).srcObject = evt.streams[0];
+        }
         else
             document.getElementById(`audio${conn_id}`).srcObject = evt.streams[0];
     });
@@ -144,21 +145,7 @@ function negotiate(pc){
             }).then((response) => {
                 return response.json();
             }).then((answer) => {
-                return fetch(`/preprocessframe`, {
-                    body: JSON.stringify({
-                        answer:answer
-                    }),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    method: 'POST'
-                })
-            //     }).then((response) => {
-            //         return response.json()
-            //     }).then((answer) => {
-            //     // document.getElementById('answer-sdp').textContent = answer.sdp;
-            //     return pc.setRemoteDescription(answer);
-            // })
+                return pc.setRemoteDescription(answer);
             }).catch((e) => {
                 alert(e);
             });
@@ -182,6 +169,7 @@ function negotiate(pc){
             }).then((response) => {
                 return response.json();
             }).then((answer) => {
+                console.log("Answer : ",answer);
                 // document.getElementById('answer-sdp').textContent = answer.sdp;
                 return pc.setRemoteDescription(answer);
             }).catch((e) => {
@@ -197,6 +185,7 @@ function start() {
     document.getElementById('start').setAttribute("onClick","stop()");
     let dataChannelLog=[]
     dataChannelLog.push(document.getElementById('data-channel1'));
+    
     if (document.getElementById('mode').value=="livestream") {
         // let dataChannelLog=[]
         ipaddr = document.getElementById('remoteip').value;
@@ -282,10 +271,8 @@ function start() {
                 videoConstraints.width = parseInt(dimensions[0], 0);
                 videoConstraints.height = parseInt(dimensions[1], 0);
             }
-
             constraints.video = Object.keys(videoConstraints).length ? videoConstraints : true;
         }
-
         // Acquire media and start negociation.
         tasks=[]
         for(let i=0;i<num_connections;i++)
@@ -295,17 +282,18 @@ function start() {
                     document.getElementById(`media${i}`).style.display = 'block';
                     // document.getElementById('media2').style.display = 'block';
                 }
+                // return negotiate(pcs[i]);
                 navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+                    console.log("Stream : ",stream);
                     stream.getTracks().forEach((track) => {
+                        console.log(track)
                         pcs[i].addTrack(track, stream);
                     });
-                    // tasks.append(negotiate());
                     return negotiate(pcs[i]);
                 
                 }, (err) => {
                     alert('Could not acquire media: ' + err);
                 });
-                // const results = await Promise
 
             } else {
                 negotiate(pcs[i]);
