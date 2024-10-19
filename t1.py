@@ -1,24 +1,30 @@
-import traceback
-import inspect
+import asyncio
+from aiortc import RTCPeerConnection
 
-def func1():
-    print("In func1:")
-    print_stack_trace()
+async def get_data_channel_stats():
+    # Create a new RTCPeerConnection
+    pc = RTCPeerConnection()
+    
+    # Create a data channel
+    data_channel = pc.createDataChannel("my-data-channel")
+    
+    # Wait for the data channel to be open (optional)
+    @data_channel.on("open")
+    async def on_open():
+        print("Data channel is open!")
+       
+        # Get the stats report from the RTCPeerConnection
+        stats = await pc.getStats()
+        print(stats)
+        # Iterate through the stats to find the data channel stats
+        for report in stats.values():
+            # if report.type == "data-channel":
+                print("Data Channel Stats:")
+                print(report)
+    
+    # Close the connection after some time (optional)
+    await asyncio.sleep(10)
+    await pc.close()
 
-def func2():
-    print("In func2:")
-    print_stack_trace()
-    func1()
-
-def func3():
-    print("In func3:")
-    print_stack_trace()
-    func2()
-
-def print_stack_trace():
-    # This will print the stack trace of the current function call
-    stack = inspect.stack()
-    traceback.print_stack(f=stack[1][0])
-
-# Call the top-level function
-func3()
+# Run the async function
+asyncio.run(get_data_channel_stats())

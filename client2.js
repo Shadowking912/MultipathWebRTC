@@ -12,6 +12,8 @@ var iceConnectionLog = document.getElementById('ice-connection-state'),
 livestream.addEventListener('change', function(){
     if (this.value=="livestream") {
         document.getElementById('remoteip').style.display = 'inline-block';
+        document.getElementById('remotelabel').style.display='inline-block';
+        document.getElementById('numconslabel').style.display='inline-block';
         document.getElementById('numconnections').style.display='inline-block';
     } else {
         document.getElementById('remoteip').style.display = 'none';
@@ -33,9 +35,9 @@ function createPeerConnection(conn_id) {
         sdpSemantics: 'unified-plan'
     };
 
-    if (document.getElementById('use-stun').checked) {
-        config.iceServers = [{ urls: ['stun:stun.l.google.com:19302'] }];
-    }
+    // if (document.getElementById('use-stun').checked) {
+    //     config.iceServers = [{ urls: ['stun:stun.l.google.com:19302'] }];
+    // }
 
     pc = new RTCPeerConnection(config);
 

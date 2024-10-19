@@ -1,4 +1,3 @@
-import relays
 import argparse
 import asyncio
 import json
@@ -33,9 +32,7 @@ portnumber = None
 print("Your Computer IP Address is:" + IPAddr)
 clients={}
 
-# relay = relays.MediaRelay_modified(id=0)
 relay=MediaRelay()
-# relay_modified=relays.MediaRelay_modified(id=1)
 relay_modified=MediaRelay()
 
 class VideoTransformTrackchild(MediaStreamTrack):
@@ -65,7 +62,7 @@ class VideoTransformTrack(MediaStreamTrack):
         self.rid=rid
 
     async def recv(self,id=None):
-        
+
         frame = await self.track.recv()
         if id!=None:
             print("id",id," frameidx",self.frameidx)
@@ -97,14 +94,7 @@ class VideoTransformTrack(MediaStreamTrack):
             img_color = cv2.pyrUp(cv2.pyrUp(img_color))
             # prepare edges
             img_edges = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-            img_edges = cv2.adaptiveThreshold(
-                cv2.medianBlur(img_edges, 7),
-                255,
-                cv2.ADAPTIVE_THRESH_MEAN_C,
-                cv2.THRESH_BINARY,
-                9,
-                2,
-            )
+            img_edges = cv2.adaptiveThreshold(cv2.medianBlur(img_edges, 7),255,cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY,9,2,)
             img_edges = cv2.cvtColor(img_edges, cv2.COLOR_GRAY2RGB)
             # combine color and edges
             img = cv2.bitwise_and(img_color, img_edges)
@@ -130,12 +120,12 @@ class VideoTransformTrack(MediaStreamTrack):
             rows, cols, _ = img.shape
             M = cv2.getRotationMatrix2D((cols / 2, rows / 2), frame.time * 45, 1)
             img = cv2.warpAffine(img, M, (cols, rows))
-
             # rebuild a VideoFrame, preserving timing information
             new_frame = VideoFrame.from_ndarray(img, format="bgr24")
             new_frame.pts = frame.pts
             new_frame.time_base = frame.time_base
             return new_frame
+        
         elif transform == "empty":
             img = frame.to_ndarray(format="bgr24")
             img.fill(np.uint8(0))
@@ -143,6 +133,7 @@ class VideoTransformTrack(MediaStreamTrack):
             new_frame.pts = frame.pts
             new_frame.time_base = frame.time_base
             return new_frame
+        
         else:
             return frame
 
@@ -172,7 +163,6 @@ async def offer(request):
      
         offer = RTCSessionDescription(sdp=params["sdp"], type=params["type"])
         # Setup  multiple RTC sessions
-
         pc = RTCPeerConnection()
         pcs.add(pc)
 
@@ -288,7 +278,6 @@ async def offer(request):
         response.headers["Access-Control-Allow-Methods"] = "*"
         # Allow all headers
         response.headers["Access-Control-Allow-Headers"] = "*"
-
         return response
 
 async def on_shutdown(app):

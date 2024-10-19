@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebRTC demo</title>
     <style>
+    body{
+        background-color:#f5f5f5;
+    }
     button {
         padding: 8px 16px;
     }
@@ -13,7 +16,9 @@
         overflow-x: hidden;
         overflow-y: auto;
     }
-
+    body{
+        /* background-color: aqua; */
+    }
     video {
         width: 100%;
     }
@@ -35,88 +40,229 @@
         border: 2px solid green;
     }
     #inner0{
-        border: 2px solid black;
+        /* border: 2px solid black; */
         width:50%;
         /* display:inline-block; */
     }
     #inner1{
-        border: 2px solid black;
+        /* border: 2px solid black; */
         width:50%;
         /* display:inline-block; */
+    }
+ 
+    #video-stuff{
+        /* border: 2px solid red; */
+        display:flex;
+        /* width:50%; */
+        font-size:1.2vw;
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: center; */
+        /* justify-content: space-evenly; */
+    }
+    .parameter-options{
+        /* border: 2px solid green; */
+        display: flex;
+        flex-direction: column;
+        font-size: 1vw;
+        
+        /* display:flex; */
+        /* flex-direction: column; */
+    }
+    .parameter-options select{
+        margin: 0.8em;
+        font-size:1vw;
+    }
+    #checkbox_video{
+        /* border: 2px solid blue; */
+    }
+    #checkbox_data{
+        /* border: 2px solid blueviolet; */
+    }
+    #IntroBox{
+        /* border: 2px solid green; */
+        display:flex;
+        width:100%;
+        justify-content: space-around;
+        align-items: center
+    }
+    #IntroBox h1{
+        text-align:center;
+    }   
+    #Navigation{
+        list-style: none;
+        display:flex;
+        /* border: 2px solid black; */
+        justify-content: space-between;
+        
+    }
+    #Navigation li{
+        /* border: 2px solid red; */
+        padding:1.2em;
+        
+    }
+    #Navigation li a{
+        font-size:1vw;
+        color: #003366;
+        text-decoration: none;
+    }
+    #Navigation li a:hover{
+        text-decoration: underline;
+        color:#ff8c42;
+    }
+    #ip-box{
+        font-size:1.2vw;
+    }
+    #main-stuff{
+        /* border: 2px solid black; */
+        display:flex;
+        justify-content: space-between;
+        width:38%;
+        margin: auto;
+        background-color: white;
+        padding:1.2em;
+    }
+    #data-stuff{
+        /* border: 2px solid violet; */
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        font-size:1.2vw;
+        background-color: #f5f5f5;
+        padding:0.8em;
+    }
+    #video-stuff{
+        /* border: 2px solid red; */
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        font-size:1.2vw;
+        background-color: #f5f5f5;
+        padding:0.8em;
+
+    }
+    #data-options{
+        /* border: 2px solid yellow; */
+        display:flex;
+        flex-direction: column;
+        font-size:1.5vw;
+    }
+    #start{
+        margin:auto;
+        padding-left:1.2em;
+        padding-right:1.2em;
+        font-size:1vw;
+        background-color: #28a745;
+        border-radius: 0.2em;
+        color:white;
+        cursor:pointer;
+    }
+    #start:hover{
+        background-color: #218838;
+        text-decoration: underline;
     }
     </style>
 </head>
 <body>
-
-<h2>Options</h2>
-<div class="option">
-    <input id="use-datachannel" checked="checked" type="checkbox"/>
-    <label for="use-datachannel">Use datachannel</label>
-    <select id="datachannel-parameters">
-        <option value='{"ordered": true}'>Ordered, reliable</option>
-        <option value='{"ordered": false, "maxRetransmits": 0}'>Unordered, no retransmissions</option>
-        <option value='{"ordered": false, "maxPacketLifetime": 500}'>Unordered, 500ms lifetime</option>
-    </select>
+<div id="IntroBox">
+    <h1>The WebRTC Project</h1> 
+    <div id="ip-box">
+        <p >Your IP Address is : <span id="IPAddress">{{IPAddress}}</span></p>
+    </div> 
+    <div id="Navbar">
+        <ul id="Navigation">
+            <li><a href="#video-stuff">Channel Options</a></li>
+            <li><a href="#">Video Options</a></li>
+            <li><a href="#container">Video Preview</a></li>
+        </ul>
+    </div>
 </div>
+<hr>
+<!-- <h2>Options</h2> -->
+<div id="main-stuff">
+    <div id="data-stuff">
+        <div class="option">
+            <div id="checkbox_data">
+                <input id="use-datachannel" checked="checked" type="checkbox"/>
+                <label for="use-datachannel">Use datachannel</label>
+            </div>
+            <div id="data-options" class="parameter-options">
+                <select id="datachannel-parameters">
+                    <option value='{"ordered": true}'>Ordered, reliable</option>
+                    <option value='{"ordered": false, "maxRetransmits": 0}'>Unordered, no retransmissions</option>
+                    <option value='{"ordered": false, "maxPacketLifetime": 500}'>Unordered, 500ms lifetime</option>
+                </select>
+            </div>
+        </div>
+    </div>
 
-<!-- Audio Option removed  -->
-<div class="option" id="AudioOption">
-    <input id="use-audio" type="checkbox">
-    <!-- <input id="use-audio" checked="checked" type="checkbox"/> -->
-    <label for="use-audio">Use audio</label>
-    <select id="audio-input">
-        <option value="" selected>Default device</option>
-    </select>
-    <select id="audio-codec">
-        <option value="default" selected>Default codecs</option>
-        <option value="opus/48000/2">Opus</option>
-        <option value="PCMU/8000">PCMU</option>
-        <option value="PCMA/8000">PCMA</option>
-    </select>
+    <!-- Audio Option removed  -->
+    <div id="audio-stuff"> 
+        <div class="option" id="AudioOption">
+            <input id="use-audio" type="checkbox">
+            <!-- <input id="use-audio" checked="checked" type="checkbox"/> -->
+            <label for="use-audio">Use audio</label>
+            <select id="audio-input">
+                <option value="" selected>Default device</option>
+            </select>
+            <select id="audio-codec">
+                <option value="default" selected>Default codecs</option>
+                <option value="opus/48000/2">Opus</option>
+                <option value="PCMU/8000">PCMU</option>
+                <option value="PCMA/8000">PCMA</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="video-stuff">
+        <div class="option">
+            <div id="checkbox_video">
+                <input id="use-video" type="checkbox"/>
+                <label for="use-video">Use video</label>
+            </div>
+            <div id="video-options" class="parameter-options">
+                <select id="video-input" selected>
+                    <option value="" selected>Default device</option>
+                </select>
+                <select id="video-resolution">
+                    <option value="" selected>Default resolution</option>
+                    <option value="320x240">320x240</option>
+                    <option value="640x480">640x480</option>
+                    <option value="960x540">960x540</option>
+                    <option value="1280x720">1280x720</option>
+                </select>
+                <select id="video-transform">
+                    <option value="none" selected>No transform</option>
+                    <option value="edges">Edge detection</option>
+                    <option value="cartoon">Cartoon effect</option>
+                    <option value="rotate">Rotate</option>
+                </select>
+                <select id="video-codec">
+                    <option value="default" selected>Default codecs</option>
+                    <option value="VP8/90000">VP8</option>
+                    <option value="H264/90000">H264</option>
+                </select>
+                <select id="mode">
+                    <option value="webcam" selected>Web Cam</option>
+                    <option value="livestream" >Live Stream</option>
+                </select>
+                <div>
+                    <label for="remoteip" id="remotelabel" style="display:none">Remote IP Address</label>
+                    <input type="text" id="remoteip" style="display:none" placeholder="Enter the IP Address to call" value="127.0.0.1:8080">
+                    <label for="numconnections" id="numconslabel" style="display:none">Number of Connections</label>
+                    <input type="number" id="numconnections" style="display:none" placeholder="Enter the number of connections" value="2" required>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-<div class="option">
-    <input id="use-video" type="checkbox"/>
-    <label for="use-video">Use video</label>
-    <select id="video-input" selected>
-        <option value="" selected>Default device</option>
-    </select>
-    <select id="video-resolution">
-        <option value="" selected>Default resolution</option>
-        <option value="320x240">320x240</option>
-        <option value="640x480">640x480</option>
-        <option value="960x540">960x540</option>
-        <option value="1280x720">1280x720</option>
-    </select>
-    <select id="video-transform">
-        <option value="none" selected>No transform</option>
-        <option value="edges">Edge detection</option>
-        <option value="cartoon">Cartoon effect</option>
-        <option value="rotate">Rotate</option>
-    </select>
-    <select id="video-codec">
-        <option value="default" selected>Default codecs</option>
-        <option value="VP8/90000">VP8</option>
-        <option value="H264/90000">H264</option>
-    </select>
-    <select id="mode">
-        <option value="webcam" selected>Web Cam</option>
-        <option value="livestream" >Live Stream</option>
-    </select>
-
-</div>
-<div class="option">
+<button id="start" onclick="start()">Start</button>
+<!-- <div class="option">
     <input id="use-stun" type="checkbox"/>
     <label for="use-stun">Use STUN server</label>
-</div>
-<div>
-    <p >Your IP Address is : <span id="IPAddress">{{IPAddress}}</span></p>
-</div> 
-<button id="start" onclick="start()">Start</button>
-<div>
-    <input type="text" id="remoteip" style="display:none" placeholder="Enter the IP Address to call" value="127.0.0.1:8080">
-    <input type="number" id="numconnections" style="display:none" placeholder="Enter the number of connections" value="2" required>
-</div>
+</div> -->
+
+
 
 <h2>State</h2>
 <p>
