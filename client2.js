@@ -17,7 +17,9 @@ livestream.addEventListener('change', function(){
         document.getElementById('numconnections').style.display='inline-block';
     } else {
         document.getElementById('remoteip').style.display = 'none';
+        document.getElementById('remotelabel').style.display='none';
         document.getElementById('numconnections').style.display='none';
+        document.getElementById('numconslabel').style.display='none';
     }
 });
 // if(livestream.value=="livestream")
@@ -155,6 +157,7 @@ function negotiate(pc){
         }
         else
         {
+            console.log("video-transform : ",document.getElementById('video-transform').value);
             console.log("webcam")
             return fetch(`/offer`, {
                 body: JSON.stringify({
@@ -180,32 +183,216 @@ function negotiate(pc){
         }
     });
 }
+function display_media_boxes()
+{
+    let num_connections = document.getElementById('numconnections').value;
+    for(let i=0;i<num_connections;i++)
+    {
+        let inner = document.createElement('div');
+        inner.id = `inner${i}`;
+        inner.style.border='2px solid black';
+        inner.style.width='100%';
+        inner.style.height='60vh';
+        inner.style.display='flex';
+        inner.style.flexDirection='row';
+        inner.style.justifyContent='space-around';
+
+    
+        let media = document.createElement('div');
+        media.id = `media${i}`;
+        media.style.display = 'none';
+        // media.style.border ='2px solid violet';
+        media.style.flex=1;
+        media.style.height='100%';
+        let h2 = document.createElement('h2');
+        h2.innerHTML = 'Media';
+        h2.style.fontSize = '2em';
+        media.appendChild(h2);
+        let audio = document.createElement('audio');
+        audio.id = `audio${i}`;
+        audio.setAttribute('autoplay',true);
+        media.appendChild(audio);
+        let video = document.createElement('video');
+        video.id = `video${i}`;
+        video.setAttribute('autoplay',true);
+        video.setAttribute('playsinline',true);
+        video.style.display = 'block';
+        video.style.margin = 'auto';
+        video.style.width = '80%';
+        video.style.height = '80%';
+        video.style.borderRadius = '2em';
+        media.appendChild(video);
+        inner.appendChild(media);
+        let divData = document.createElement('div');
+        let h2_1 = document.createElement('h2');
+        h2_1.innerHTML = 'Data channel';
+        h2_1.style.fontSize = '2em';
+        // inner.appendChild(h2_1);
+        divData.appendChild(h2_1);
+        let pre = document.createElement('pre');
+        pre.id = `data-channel${i+1}`;
+        pre.style.height='80%';
+        pre.style.overflowY = 'scroll';
+        pre.style.fontSize= '1.5em';
+        pre.style.border = '1px solid black';
+        pre.style.width='80%';
+        pre.style.margin='auto';
+        pre.style.borderRadius = '1.2em';
+        pre.style.textAlign = 'left';
+        // pre.style.backgroundColor = 'white';
+        divData.style.flex=1;
+        divData.appendChild(pre);
+        divData.maxHeight='100%';
+        // divData.style.padding='2em';   
+        // divData.style.border='2px solid black'
+        // divData.width='80vw';
+        inner.appendChild(divData);
+        document.getElementById('container').appendChild(inner);
+    }
+    const event = new Event('elements_created');
+    document.dispatchEvent(event);
+}
 function start() {
     // document.getElementById('start').style.display = 'none';
     // alert("start");
     document.getElementById('start').innerHTML="Stop";
     document.getElementById('start').setAttribute("onClick","stop()");
-    let dataChannelLog=[]
-    dataChannelLog.push(document.getElementById('data-channel1'));
-    
-    if (document.getElementById('mode').value=="livestream") {
-        // let dataChannelLog=[]
-        ipaddr = document.getElementById('remoteip').value;
-        num_connections = document.getElementById('numconnections').value;
-        console.log("Num Connections"+num_connections);
-        for(let i=2;i<=num_connections;i++)
-        {
-            console.log("push");
-            dataChannelLog.push(document.getElementById(`data-channel${i}`));
-        }
+  
+
+    document.addEventListener('elements_created',function()
+    {
+        let dataChannelLog=[]
+        dataChannelLog.push(document.getElementById('data-channel1'));
+        // console.log("Data Channel Log : ",dataChannelLog);
+        inner = document.getElementById('inner0');
+        console.log("Inner : ",inner);  
         
-      
-        let pcs=[]
-        for(let i=0;i<num_connections;i++)
-        {   
-            pc=createPeerConnection(i);
-            pcs.push(pc);
+        if (document.getElementById('mode').value=="livestream") 
+        {
+            // let dataChannelLog=[]
+            ipaddr = document.getElementById('remoteip').value;
+            num_connections = document.getElementById('numconnections').value;
+            // display_media_boxes(num_connections);
+            console.log("Num Connections"+num_connections);
+            for(let i=2;i<=num_connections;i++)
+            {
+                console.log("push");
+                dataChannelLog.push(document.getElementById(`data-channel${i}`));
+            }
+            
+            
+            let pcs=[]
+            for(let i=0;i<num_connections;i++)
+            {   
+                pc=createPeerConnection(i);
+                pcs.push(pc);
+                var time_start = null;
+                const current_stamp = () => {
+                    if (time_start === null) {
+                        time_start = new Date().getTime();
+                        return 0;
+                    } else {
+                        return new Date().getTime() - time_start;
+                    }
+                };
+                    if (document.getElementById('use-datachannel').checked) {
+                    var parameters = JSON.parse(document.getElementById('datachannel-parameters').value);
+        
+                    dc = pc.createDataChannel('chat', parameters);
+                    dc.addEventListener('close', () => {
+                        clearInterval(dcInterval);
+                        dataChannelLog[i].textContent += '- close\n';
+                    });
+                    dc.addEventListener('open', () => {
+                        dataChannelLog[i].textContent += '- open\n';
+                        dcInterval = setInterval(() => {
+                            var message = 'ping ' + current_stamp();
+                            dataChannelLog[i].textContent += '> ' + message + '\n';
+                            dc.send(message);
+                        }, 1000);
+                    });
+                    dc.addEventListener('message', (evt) => {
+                        dataChannelLog[i].textContent += '< ' + evt.data + '\n';
+
+                        if (evt.data.substring(0, 4) === 'pong') {
+                            var elapsed_ms = current_stamp() - parseInt(evt.data.substring(5), 10);
+                            dataChannelLog[i].textContent += ' RTT ' + elapsed_ms + ' ms\n';
+                        }
+                    });
+                }
+                
+            }
+
+            // Build media constraints.
+            const constraints = {
+                audio: false,
+                video: false
+            };
+
+            if (document.getElementById('use-audio').checked) {
+                const audioConstraints = {};
+
+                const device = document.getElementById('audio-input').value;
+                if (device) {
+                    audioConstraints.deviceId = { exact: device };
+                }
+
+                constraints.audio = Object.keys(audioConstraints).length ? audioConstraints : true;
+            }
+
+            if (document.getElementById('use-video').checked) {
+                const videoConstraints = {};
+
+                const device = document.getElementById('video-input').value;
+                if (device) {
+                    videoConstraints.deviceId = { exact: device };
+                }
+
+                const resolution = document.getElementById('video-resolution').value;
+                if (resolution) {
+                    const dimensions = resolution.split('x');
+                    videoConstraints.width = parseInt(dimensions[0], 0);
+                    videoConstraints.height = parseInt(dimensions[1], 0);
+                }
+                constraints.video = Object.keys(videoConstraints).length ? videoConstraints : true;
+            }
+            // Acquire media and start negociation.
+            tasks=[]
+            for(let i=0;i<num_connections;i++)
+            {
+                if (constraints.audio || constraints.video) {
+                    if (constraints.video) {
+                        // console.log('Media : ',document.getElementById(`inner${i}`));
+                        document.getElementById(`media${i}`).style.display = 'block';
+                        // document.getElementById('media2').style.display = 'block';
+                    }
+                    // return negotiate(pcs[i]);
+                    navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+                        console.log("Stream : ",stream);
+                        stream.getTracks().forEach((track) => {
+                            console.log(track)
+                            pcs[i].addTrack(track, stream);
+                        });
+                        return negotiate(pcs[i]);
+                    
+                    }, (err) => {
+                        alert('Could not acquire media: ' + err);
+                    });
+
+                } else {
+                    negotiate(pcs[i]);
+                }
+            }
+        }
+        else
+        {
+            // display_media_boxes(1);
+            console.log("Here");
+            let conn_id=0;
+            pc = createPeerConnection(conn_id);
+
             var time_start = null;
+
             const current_stamp = () => {
                 if (time_start === null) {
                     time_start = new Date().getTime();
@@ -214,190 +401,90 @@ function start() {
                     return new Date().getTime() - time_start;
                 }
             };
-                if (document.getElementById('use-datachannel').checked) {
+
+            if (document.getElementById('use-datachannel').checked) {
                 var parameters = JSON.parse(document.getElementById('datachannel-parameters').value);
-    
+
                 dc = pc.createDataChannel('chat', parameters);
                 dc.addEventListener('close', () => {
                     clearInterval(dcInterval);
-                    dataChannelLog[i].textContent += '- close\n';
+                    dataChannelLog[0].textContent += '- close\n';
                 });
                 dc.addEventListener('open', () => {
-                    dataChannelLog[i].textContent += '- open\n';
+                    dataChannelLog[0].textContent += '- open\n';
                     dcInterval = setInterval(() => {
                         var message = 'ping ' + current_stamp();
-                        dataChannelLog[i].textContent += '> ' + message + '\n';
+                        dataChannelLog[0].textContent += '> ' + message + '\n';
                         dc.send(message);
                     }, 1000);
                 });
                 dc.addEventListener('message', (evt) => {
-                    dataChannelLog[i].textContent += '< ' + evt.data + '\n';
+                    dataChannelLog[0].textContent += '< ' + evt.data + '\n';
 
                     if (evt.data.substring(0, 4) === 'pong') {
                         var elapsed_ms = current_stamp() - parseInt(evt.data.substring(5), 10);
-                        dataChannelLog[i].textContent += ' RTT ' + elapsed_ms + ' ms\n';
+                        dataChannelLog[0].textContent += ' RTT ' + elapsed_ms + ' ms\n';
                     }
                 });
             }
+
+            // Build media constraints.
+
+            const constraints = {
+                audio: false,
+                video: false
+            };
+
+            if (document.getElementById('use-audio').checked) {
+                const audioConstraints = {};
+
+                const device = document.getElementById('audio-input').value;
+                if (device) {
+                    audioConstraints.deviceId = { exact: device };
+                }
+
+                constraints.audio = Object.keys(audioConstraints).length ? audioConstraints : true;
+            }
+
+            if (document.getElementById('use-video').checked) {
+                const videoConstraints = {};
+
+                const device = document.getElementById('video-input').value;
+                if (device) {
+                    videoConstraints.deviceId = { exact: device };
+                }
+
+                const resolution = document.getElementById('video-resolution').value;
+                if (resolution) {
+                    const dimensions = resolution.split('x');
+                    videoConstraints.width = parseInt(dimensions[0], 0);
+                    videoConstraints.height = parseInt(dimensions[1], 0);
+                }
+
+                constraints.video = Object.keys(videoConstraints).length ? videoConstraints : true;
+            }
+
+            // Acquire media and start negociation.
             
-        }
-
-        // Build media constraints.
-        const constraints = {
-            audio: false,
-            video: false
-        };
-
-        if (document.getElementById('use-audio').checked) {
-            const audioConstraints = {};
-
-            const device = document.getElementById('audio-input').value;
-            if (device) {
-                audioConstraints.deviceId = { exact: device };
-            }
-
-            constraints.audio = Object.keys(audioConstraints).length ? audioConstraints : true;
-        }
-
-        if (document.getElementById('use-video').checked) {
-            const videoConstraints = {};
-
-            const device = document.getElementById('video-input').value;
-            if (device) {
-                videoConstraints.deviceId = { exact: device };
-            }
-
-            const resolution = document.getElementById('video-resolution').value;
-            if (resolution) {
-                const dimensions = resolution.split('x');
-                videoConstraints.width = parseInt(dimensions[0], 0);
-                videoConstraints.height = parseInt(dimensions[1], 0);
-            }
-            constraints.video = Object.keys(videoConstraints).length ? videoConstraints : true;
-        }
-        // Acquire media and start negociation.
-        tasks=[]
-        for(let i=0;i<num_connections;i++)
-        {
             if (constraints.audio || constraints.video) {
                 if (constraints.video) {
-                    document.getElementById(`media${i}`).style.display = 'block';
-                    // document.getElementById('media2').style.display = 'block';
+                    console.log('Media : ',document.getElementById(`media${conn_id}`));
+                    document.getElementById(`media${conn_id}`).style.display = 'block';
                 }
-                // return negotiate(pcs[i]);
                 navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
-                    console.log("Stream : ",stream);
                     stream.getTracks().forEach((track) => {
-                        console.log(track)
-                        pcs[i].addTrack(track, stream);
+                        pc.addTrack(track, stream);
                     });
-                    return negotiate(pcs[i]);
-                
+                    return negotiate(pc);
                 }, (err) => {
                     alert('Could not acquire media: ' + err);
                 });
-
             } else {
-                negotiate(pcs[i]);
+                negotiate(pc);
             }
         }
-    }
-    else{
-        console.log("Here");
-        let conn_id=1;
-        pc = createPeerConnection(conn_id);
-
-        var time_start = null;
-
-        const current_stamp = () => {
-            if (time_start === null) {
-                time_start = new Date().getTime();
-                return 0;
-            } else {
-                return new Date().getTime() - time_start;
-            }
-        };
-
-        if (document.getElementById('use-datachannel').checked) {
-            var parameters = JSON.parse(document.getElementById('datachannel-parameters').value);
-
-            dc = pc.createDataChannel('chat', parameters);
-            dc.addEventListener('close', () => {
-                clearInterval(dcInterval);
-                dataChannelLog[0].textContent += '- close\n';
-            });
-            dc.addEventListener('open', () => {
-                dataChannelLog[0].textContent += '- open\n';
-                dcInterval = setInterval(() => {
-                    var message = 'ping ' + current_stamp();
-                    dataChannelLog[0].textContent += '> ' + message + '\n';
-                    dc.send(message);
-                }, 1000);
-            });
-            dc.addEventListener('message', (evt) => {
-                dataChannelLog[0].textContent += '< ' + evt.data + '\n';
-
-                if (evt.data.substring(0, 4) === 'pong') {
-                    var elapsed_ms = current_stamp() - parseInt(evt.data.substring(5), 10);
-                    dataChannelLog[0].textContent += ' RTT ' + elapsed_ms + ' ms\n';
-                }
-            });
-        }
-
-        // Build media constraints.
-
-        const constraints = {
-            audio: false,
-            video: false
-        };
-
-        if (document.getElementById('use-audio').checked) {
-            const audioConstraints = {};
-
-            const device = document.getElementById('audio-input').value;
-            if (device) {
-                audioConstraints.deviceId = { exact: device };
-            }
-
-            constraints.audio = Object.keys(audioConstraints).length ? audioConstraints : true;
-        }
-
-        if (document.getElementById('use-video').checked) {
-            const videoConstraints = {};
-
-            const device = document.getElementById('video-input').value;
-            if (device) {
-                videoConstraints.deviceId = { exact: device };
-            }
-
-            const resolution = document.getElementById('video-resolution').value;
-            if (resolution) {
-                const dimensions = resolution.split('x');
-                videoConstraints.width = parseInt(dimensions[0], 0);
-                videoConstraints.height = parseInt(dimensions[1], 0);
-            }
-
-            constraints.video = Object.keys(videoConstraints).length ? videoConstraints : true;
-        }
-
-        // Acquire media and start negociation.
-        
-        if (constraints.audio || constraints.video) {
-            if (constraints.video) {
-                document.getElementById(`media${conn_id}`).style.display = 'block';
-            }
-            navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
-                stream.getTracks().forEach((track) => {
-                    pc.addTrack(track, stream);
-                });
-                return negotiate(pc);
-            }, (err) => {
-                alert('Could not acquire media: ' + err);
-            });
-        } else {
-            negotiate(pc);
-        }
-    }
+    });
+    display_media_boxes();
     // document.getElementById('stop').style.display = 'inline-block';
 }
 

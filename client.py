@@ -147,6 +147,11 @@ async def javascript(request):
     content = open(os.path.join(ROOT, "client2.js"), "r").read()
     return web.Response(content_type="application/javascript", text=content)
 
+# async def javascript2(request):
+    # content = open(os.path.join(ROOT, "create_elements.js"), "r").read()
+    # print(content)
+    # return web.Response(content_type="application/javascript", text=content)
+
 get_req_response=None
 get_req_response2=None
 pcs = set() # dictionary to store sdp,offer with pc
@@ -160,7 +165,7 @@ async def offer(request):
     params = await request.json()
  
     if params["livestream"]==True:#send stream from server to client
-     
+        print("HELLO WORLD FROM LS")
         offer = RTCSessionDescription(sdp=params["sdp"], type=params["type"])
         # Setup  multiple RTC sessions
         pc = RTCPeerConnection()
@@ -329,6 +334,7 @@ if __name__ == "__main__":
     # Add arguments to the api endpoint
 
     app.router.add_get("/client", index)
+    # app.router.add_get("/create_elements.js",javascript2)
     app.router.add_get("/client2.js", javascript)
     app.router.add_post("/offer", offer)
     app.router.add_options("/offer",handle_options)

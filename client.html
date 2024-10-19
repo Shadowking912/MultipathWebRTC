@@ -27,38 +27,21 @@
         margin-bottom: 8px;
     }
 
-    #media {
+    /* #media {
         max-width: 1280px;
-    }
+    } */
     #AudioOption{
         display:None;
     }
     #container{
-        display:flex;
-        flex-direction:row;
-        justify-content:space-between;
-        border: 2px solid green;
-    }
-    #inner0{
-        /* border: 2px solid black; */
-        width:50%;
-        /* display:inline-block; */
-    }
-    #inner1{
-        /* border: 2px solid black; */
-        width:50%;
-        /* display:inline-block; */
-    }
- 
-    #video-stuff{
-        /* border: 2px solid red; */
-        display:flex;
-        /* width:50%; */
-        font-size:1.2vw;
-        flex-direction: column;
-        align-items: center;
-        /* justify-content: center; */
-        /* justify-content: space-evenly; */
+        display:grid;
+
+        /* flex-direction:row; */
+        gap:0.1em;
+        grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));
+        /* margin:auto; */
+        text-align: center;
+        /* border: 2px solid green; */
     }
     .parameter-options{
         /* border: 2px solid green; */
@@ -69,15 +52,17 @@
         /* display:flex; */
         /* flex-direction: column; */
     }
-    .parameter-options select{
-        margin: 0.8em;
-        font-size:1vw;
+    .parameter-options select,input{
+        margin: 0.6em;
+        font-size:1em;
     }
     #checkbox_video{
         /* border: 2px solid blue; */
+        margin-bottom: 0.4em;
     }
     #checkbox_data{
         /* border: 2px solid blueviolet; */
+        margin-bottom: 0.4em;
     }
     #IntroBox{
         /* border: 2px solid green; */
@@ -113,42 +98,49 @@
     #ip-box{
         font-size:1.2vw;
     }
-    #main-stuff{
+    #main-stuff-inner{
         /* border: 2px solid black; */
         display:flex;
         justify-content: space-between;
-        width:38%;
-        margin: auto;
+        width:40vw;
+        font-size:2vw;
         background-color: white;
-        padding:1.2em;
+        padding:0.6em;
+        margin-bottom: 0.8em;
     }
     #data-stuff{
         /* border: 2px solid violet; */
         display:flex;
         flex-direction: column;
         align-items: center;
-        font-size:1.2vw;
+        font-size:0.8em;
         background-color: #f5f5f5;
-        padding:0.8em;
+        padding:0.2em;
+        width:48%;
+        margin-right:0.4em;
     }
     #video-stuff{
         /* border: 2px solid red; */
         display:flex;
         flex-direction: column;
         align-items: center;
-        font-size:1.2vw;
+        /* font-size:1.2vw; */
+        width:48%;
+        font-size:0.8em;
         background-color: #f5f5f5;
-        padding:0.8em;
+        padding:0.2em;
+        margin-left:0.4em;
 
     }
-    #data-options{
-        /* border: 2px solid yellow; */
+    /* #data-options{
+        border: 2px solid yellow;
         display:flex;
         flex-direction: column;
         font-size:1.5vw;
-    }
+    } */
     #start{
-        margin:auto;
+        /* margin-left:auto; */
+        /* margin-right:auto */
         padding-left:1.2em;
         padding-right:1.2em;
         font-size:1vw;
@@ -156,11 +148,40 @@
         border-radius: 0.2em;
         color:white;
         cursor:pointer;
+        width:5%;
+        display: inline;
     }
     #start:hover{
         background-color: #218838;
         text-decoration: underline;
     }
+    #main-stuff{
+        /* border: 10px solid red; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-top:2em;
+    }
+    .option-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    /* #grid-container{
+        display: flex;
+        justify-content: center;
+        border: 2px solid red;
+    } */
+    /* .option-container label{} */
+    #combined-container{
+        border: 2px solid red;
+        text-align: center;
+    }
+    /* #video{
+        width:50%;
+        border: 0.4em;
+    } */
     </style>
 </head>
 <body>
@@ -180,100 +201,126 @@
 <hr>
 <!-- <h2>Options</h2> -->
 <div id="main-stuff">
-    <div id="data-stuff">
-        <div class="option">
-            <div id="checkbox_data">
-                <input id="use-datachannel" checked="checked" type="checkbox"/>
-                <label for="use-datachannel">Use datachannel</label>
-            </div>
-            <div id="data-options" class="parameter-options">
-                <select id="datachannel-parameters">
-                    <option value='{"ordered": true}'>Ordered, reliable</option>
-                    <option value='{"ordered": false, "maxRetransmits": 0}'>Unordered, no retransmissions</option>
-                    <option value='{"ordered": false, "maxPacketLifetime": 500}'>Unordered, 500ms lifetime</option>
-                </select>
+    <div id="main-stuff-inner">
+
+        <div id="data-stuff">
+            <div class="option">
+                <div id="checkbox_data">
+                    <input id="use-datachannel" checked="checked" type="checkbox"/>
+                    <label for="use-datachannel">Use datachannel</label>
+                </div>
+                <div id="data-options" class="parameter-options">
+                    <div class="option-container">
+                        <label for="datachannel-label">Channel Parameters : </label>
+                        <select id="datachannel-parameters">
+                            <option value='{"ordered": true}'>Ordered, reliable</option>
+                            <option value='{"ordered": false, "maxRetransmits": 0}'>Unordered, no retransmissions</option>
+                            <option value='{"ordered": false, "maxPacketLifetime": 500}'>Unordered, 500ms lifetime</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Audio Option removed  -->
-    <div id="audio-stuff"> 
-        <div class="option" id="AudioOption">
-            <input id="use-audio" type="checkbox">
-            <!-- <input id="use-audio" checked="checked" type="checkbox"/> -->
-            <label for="use-audio">Use audio</label>
-            <select id="audio-input">
-                <option value="" selected>Default device</option>
-            </select>
-            <select id="audio-codec">
-                <option value="default" selected>Default codecs</option>
-                <option value="opus/48000/2">Opus</option>
-                <option value="PCMU/8000">PCMU</option>
-                <option value="PCMA/8000">PCMA</option>
-            </select>
-        </div>
-    </div>
-
-    <div id="video-stuff">
-        <div class="option">
-            <div id="checkbox_video">
-                <input id="use-video" type="checkbox"/>
-                <label for="use-video">Use video</label>
-            </div>
-            <div id="video-options" class="parameter-options">
-                <select id="video-input" selected>
+        <!-- Audio Option removed  -->
+        <div id="audio-stuff"> 
+            <div class="option" id="AudioOption">
+                <input id="use-audio" type="checkbox">
+                <!-- <input id="use-audio" checked="checked" type="checkbox"/> -->
+                <label for="use-audio">Use audio</label>
+                <select id="audio-input">
                     <option value="" selected>Default device</option>
                 </select>
-                <select id="video-resolution">
-                    <option value="" selected>Default resolution</option>
-                    <option value="320x240">320x240</option>
-                    <option value="640x480">640x480</option>
-                    <option value="960x540">960x540</option>
-                    <option value="1280x720">1280x720</option>
-                </select>
-                <select id="video-transform">
-                    <option value="none" selected>No transform</option>
-                    <option value="edges">Edge detection</option>
-                    <option value="cartoon">Cartoon effect</option>
-                    <option value="rotate">Rotate</option>
-                </select>
-                <select id="video-codec">
+                <select id="audio-codec">
                     <option value="default" selected>Default codecs</option>
-                    <option value="VP8/90000">VP8</option>
-                    <option value="H264/90000">H264</option>
+                    <option value="opus/48000/2">Opus</option>
+                    <option value="PCMU/8000">PCMU</option>
+                    <option value="PCMA/8000">PCMA</option>
                 </select>
-                <select id="mode">
-                    <option value="webcam" selected>Web Cam</option>
-                    <option value="livestream" >Live Stream</option>
-                </select>
-                <div>
-                    <label for="remoteip" id="remotelabel" style="display:none">Remote IP Address</label>
-                    <input type="text" id="remoteip" style="display:none" placeholder="Enter the IP Address to call" value="127.0.0.1:8080">
-                    <label for="numconnections" id="numconslabel" style="display:none">Number of Connections</label>
-                    <input type="number" id="numconnections" style="display:none" placeholder="Enter the number of connections" value="2" required>
+            </div>
+        </div>
+
+        <div id="video-stuff">
+            <div class="option">
+                <div id="checkbox_video">
+                    <input id="use-video" type="checkbox"/>
+                    <label for="use-video">Use video</label>
+                </div>
+                <div id="video-options" class="parameter-options">
+                    <div class="option-container">
+                        <label for="video-input">Video Input : </label>
+                        <select id="video-input" selected>
+                            <option value="" selected>Default device</option>
+                        </select>
+                    </div>
+                    <div class="option-container">
+                        <label for="video-resolution">Resolution : </label>
+                        <select id="video-resolution">
+                            <option value="" selected>Default resolution</option>
+                            <option value="320x240">320x240</option>
+                            <option value="640x480">640x480</option>
+                            <option value="960x540">960x540</option>
+                            <option value="1280x720">1280x720</option>
+                        </select>
+                    </div>
+                    <div class="option-container">
+                        <label for="video-transform">Transformation :  </label>
+                        <select id="video-transform">
+                            <option value="none" selected>No transform</option>
+                            <option value="edges">Edge detection</option>
+                            <option value="cartoon">Cartoon effect</option>
+                            <option value="rotate">Rotate</option>
+                        </select>
+                    </div>
+                    <div class="option-container">
+                        <label for="video-codec">Codec : </label>
+                        <select id="video-codec">
+                            <option value="default" selected>Default codecs</option>
+                            <option value="VP8/90000">VP8</option>
+                            <option value="H264/90000">H264</option>
+                        </select>
+                    </div>
+                    <div class="option-container">
+                        <label for="mode">Mode : </label>
+                        <select id="mode">
+                            <option value="webcam" selected>Web Cam</option>
+                            <option value="livestream" >Live Stream</option>
+                        </select>
+                    </div>
+                    <!-- <div> -->
+                    <div class="option-container">
+                        <label for="remoteip" id="remotelabel" style="display:none">Remote IP Address : </label>
+                        <input type="text" id="remoteip" style="display:none" placeholder="Enter the IP Address to call" value="127.0.0.1:8080">
+                    </div>                    
+                    <div class="option-container">
+                        <label for="numconnections" id="numconslabel" style="display:none">Number of Connections : </label>
+                        <input type="number" id="numconnections" style="display:none" placeholder="Enter the number of connections" value="1" required>
+                    </div>
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
     </div>
+    <button id="start" onclick="start()">Start</button>
 </div>
-<button id="start" onclick="start()">Start</button>
+
 <!-- <div class="option">
     <input id="use-stun" type="checkbox"/>
     <label for="use-stun">Use STUN server</label>
 </div> -->
 
 
-
-<h2>State</h2>
-<p>
-    ICE gathering state: <span id="ice-gathering-state"></span>
-</p>
-<p>
-    ICE connection state: <span id="ice-connection-state"></span>
-</p>
-<p>
-    Signaling state: <span id="signaling-state"></span>
-</p>
+<!-- <div id="combined-container"> -->
+    <h2>State</h2>
+    <p>
+        ICE gathering state: <span id="ice-gathering-state"></span>
+    </p>
+    <p>
+        ICE connection state: <span id="ice-connection-state"></span>
+    </p>
+    <p>
+        Signaling state: <span id="signaling-state"></span>
+    </p>
 <!-- <div id="media" style="display: none">
     <h2>Media</h2>
 
@@ -285,27 +332,29 @@
 <pre id="data-channel" style="height: 200px;"></pre> -->
 
 
-<div id="container">
-    <div id="inner0">
-        <div id="media0" style="display: none">
-            <h2>Media</h2>
-            <audio id="audio0" autoplay="true"></audio>
-            <video id="video0" autoplay="true" playsinline="true"></video>
+<!-- <div id="grid-container"> -->
+   <div id="container">
+        <!-- <div id="inner0">
+            <div id="media0" style="display: none">
+                <h2>Media</h2>
+                <audio id="audio0" autoplay="true"></audio>
+                <video id="video0" autoplay="true" playsinline="true"></video>
+            </div>
+            <h2>Data channel</h2>
+            <pre id="data-channel1" style="height: 200px;"></pre>
         </div>
-        <h2>Data channel</h2>
-        <pre id="data-channel1" style="height: 200px;"></pre>
-    </div>
-    <div id="inner1">
-        <div id="media1" style="display: none">
-            <h2>Media</h2>
-            <audio id="audio1" autoplay="true"></audio>
-            <video id="video1" autoplay="true" playsinline="true"></video>
-        </div>
-        <h2>Data channel</h2>
-        <pre id="data-channel2" style="height: 200px;"></pre>
-    </div>
-
-</div>
+        <div id="inner1">
+            <div id="media1" style="display: none">
+                <h2>Media</h2>
+                <audio id="audio1" autoplay="true"></audio>
+                <video id="video1" autoplay="true" playsinline="true"></video>
+            </div>
+            <h2>Data channel</h2>
+            <pre id="data-channel2" style="height: 200px;"></pre>
+        </div> -->
+    </div> 
+<!-- </div> -->
+<!-- </div> -->
 
 <!-- SDP Remove  -->
 <!-- <h2 id="">SDP</h2>
@@ -318,7 +367,7 @@
 <!-- SDP Removed -->
 
 
-
+<!-- <script src="create_elements.js"></script> -->
 <script src="client2.js"></script>
 <script>
     const ipAddress = document.getElementById('IPAddress').textContent;
