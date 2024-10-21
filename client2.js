@@ -7,7 +7,10 @@ var iceConnectionLog = document.getElementById('ice-connection-state'),
     livestream = document.getElementById('mode');
     ipaddr = null;
     num_connections=null;
-
+    pcs=[];
+    dcs=[];
+    pc=null;
+    dc=null;
 
 livestream.addEventListener('change', function(){
     if (this.value=="livestream") {
@@ -281,8 +284,6 @@ function start() {
                 dataChannelLog.push(document.getElementById(`data-channel${i}`));
             }
             
-            
-            let pcs=[]
             for(let i=0;i<num_connections;i++)
             {   
                 pc=createPeerConnection(i);
@@ -300,6 +301,7 @@ function start() {
                     var parameters = JSON.parse(document.getElementById('datachannel-parameters').value);
         
                     dc = pc.createDataChannel('chat', parameters);
+                    dcs.push(dc);
                     dc.addEventListener('close', () => {
                         clearInterval(dcInterval);
                         dataChannelLog[i].textContent += '- close\n';
@@ -496,27 +498,42 @@ function stop() {
     document.getElementById('start').setAttribute("onClick","start()");
 
     // close data channel
-    if (dc) {
-        dc.close();
-    }
+    
 
     // close transceivers
-    if (pc.getTransceivers) {
-        pc.getTransceivers().forEach((transceiver) => {
-            if (transceiver.stop) {
-                transceiver.stop();
-            }
-        });
-    }
-    // close local audio / video
-    pc.getSenders().forEach((sender) => {
-        sender.track.stop();
-    });
+    if(document.getElementById('mode').value=="livestream"){
 
-    // close peer connection
-    setTimeout(() => {
-        pc.close();
-    }, 500);
+        for(let i=0;i<num_connections;i++)
+        {
+            dcs[i].close();
+            setTimeout(() => {
+                pcs[i].close();
+            }, 300+i);
+        }
+    }
+    else{
+        if (dc) {
+            dc.close();
+        }
+
+        if (pc.getTransceivers) {
+            pc.getTransceivers().forEach((transceiver) => {
+                if (transceiver.stop) {
+                    transceiver.stop();
+                }
+            });
+        }
+        // close local audio / video
+        pc.getSenders().forEach((sender) => {
+            sender.track.stop();
+        });
+    
+        // close peer connection
+        setTimeout(() => {
+            pc.close();
+        }, 500);
+    }
+    
     
 
 }
