@@ -68,12 +68,15 @@ class VideoTransformTrack(MediaStreamTrack):
         if id!=None:
             print("id",id," frameidx",self.frameidx)
         if id!=None:
-            if self.frameidx%num_connections==1 and id==0:
-                self.frameidx += 1
-                return self.process_frame(frame)
-            elif self.frameidx%num_connections==0 and id==1:
+            if self.frameidx%num_connections==id:
                 self.frameidx+=1
                 return self.process_frame(frame)
+            # if self.frameidx%num_connections==1 and id==0:
+            #     self.frameidx += 1
+            #     return self.process_frame(frame)
+            # elif self.frameidx%num_connections==0 and id==1:
+            #     self.frameidx+=1
+            #     return self.process_frame(frame)
             else:
                 print("sending empty frame")
                 self.frameidx+=1
