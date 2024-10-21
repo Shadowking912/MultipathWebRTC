@@ -272,6 +272,7 @@ function start() {
             // let dataChannelLog=[]
             ipaddr = document.getElementById('remoteip').value;
             num_connections = document.getElementById('numconnections').value;
+            
             // display_media_boxes(num_connections);
             console.log("Num Connections"+num_connections);
             for(let i=2;i<=num_connections;i++)
@@ -507,7 +508,6 @@ function stop() {
             }
         });
     }
-
     // close local audio / video
     pc.getSenders().forEach((sender) => {
         sender.track.stop();

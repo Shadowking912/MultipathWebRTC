@@ -34,6 +34,7 @@ clients={}
 
 relay=MediaRelay()
 relay_modified=MediaRelay()
+num_connections=0
 
 class VideoTransformTrackchild(MediaStreamTrack):
     """
@@ -66,14 +67,11 @@ class VideoTransformTrack(MediaStreamTrack):
         frame = await self.track.recv()
         if id!=None:
             print("id",id," frameidx",self.frameidx)
-        # except:
-        #     stack = inspect.stack()
-        #     traceback.print_stack(f=stack[1][0])
         if id!=None:
-            if self.frameidx%3==1 and id==0:
+            if self.frameidx%num_connections==1 and id==0:
                 self.frameidx += 1
                 return self.process_frame(frame)
-            elif self.frameidx%3==0 and id==1:
+            elif self.frameidx%num_connections==0 and id==1:
                 self.frameidx+=1
                 return self.process_frame(frame)
             else:
@@ -161,11 +159,12 @@ relay_id=0
 child_relays=set()
 gid=0
 async def offer(request):
-    global get_req_response,i,d,get_req_response2,relay_modified,gid
+    global get_req_response,i,d,get_req_response2,relay_modified,gid,num_connections
     params = await request.json()
  
     if params["livestream"]==True:#send stream from server to client
-        print("HELLO WORLD FROM LS")
+        
+        num_connections=params['num_connections']
         offer = RTCSessionDescription(sdp=params["sdp"], type=params["type"])
         # Setup  multiple RTC sessions
         pc = RTCPeerConnection()
