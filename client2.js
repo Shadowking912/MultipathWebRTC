@@ -1,12 +1,49 @@
 // get DOM elements
 // var dataChannelLog1 = document.getElementById('data-channel1'),
     // dataChannelLog2 = document.getElementById('data-channel2'),
+
+// import firebase from 'firebase/app';
+// import 'firebase/firestore';
+
+// import firebase from "firebase/compat/app";
+// import "firebase/firestore";
+// var callId = document.getElementById('call-id');
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCSDmlSbyXF1mSP5cmSr4YvoxBcdX7Az_w",
+    authDomain: "webrtc-5c034.firebaseapp.com",
+    projectId: "webrtc-5c034",
+    storageBucket: "webrtc-5c034.appspot.com",
+    messagingSenderId: "235227962161",
+    appId: "1:235227962161:web:1deb3f828786f351126e10"
+};
+
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
+
+const firestore = firebase.firestore();
+// callDoc.collection('offerCandidates').add({}); // placeholder data
+
+const servers = {
+    sdpSemantics: 'unified-plan',
+    iceServers: [
+      {
+        urls: ['stun:stun1.l.google.com:19302', 'stun:stun2.l.google.com:19302'],
+      },
+    ],
+    iceCandidatePoolSize: 1,
+};
+
 var iceConnectionLog = document.getElementById('ice-connection-state'),
     iceGatheringLog = document.getElementById('ice-gathering-state'),
     signalingLog = document.getElementById('signaling-state');
     livestream = document.getElementById('mode');
     ipaddr = null;
+    callDoc=null;
     num_connections=null;
+    answerCandidates=null;
+    offerCandidates=null;
 
 
 livestream.addEventListener('change', function(){
@@ -32,7 +69,11 @@ livestream.addEventListener('change', function(){
 // data channel
 var dc = null, dcInterval = null;
 
-function createPeerConnection(conn_id) {
+
+
+
+
+function createPeerConnection(conn_id,conn_type) {
     var config = {
         sdpSemantics: 'unified-plan'
     };
@@ -40,9 +81,22 @@ function createPeerConnection(conn_id) {
     // if (document.getElementById('use-stun').checked) {
     //     config.iceServers = [{ urls: ['stun:stun.l.google.com:19302'] }];
     // }
-
-    pc = new RTCPeerConnection(config);
-
+    if (conn_type==1)
+    {
+        pc = new RTCPeerConnection(config);
+    }
+    else
+    {
+        pc = new RTCPeerConnection(servers);
+        const callDoc = firestore.collection('calls').doc(ipaddr);
+        const offerCandidates = callDoc.collection('offerCandidates');
+        pc.onicecandidate = (event) => {
+            event.candidate && offerCandidates.add(event.candidate.toJSON());
+        };
+    }
+    
+    // Get candidates for caller, save to db
+    
     // register some listeners to help debugging
     pc.addEventListener('icegatheringstatechange', () => {
         iceGatheringLog.textContent += ' -> ' + pc.iceGatheringState;
@@ -68,6 +122,7 @@ function createPeerConnection(conn_id) {
             document.getElementById(`audio${conn_id}`).srcObject = evt.streams[0];
     });
     return pc;
+
 }
 
 function enumerateInputDevices() {
@@ -102,6 +157,7 @@ function negotiate(pc){
         return pc.setLocalDescription(offer);
     }).then(() => {
         // wait for ICE gathering to complete
+        console.log("ICE Gathering State ");
         return new Promise((resolve) => {
             if (pc.iceGatheringState === 'complete') {
                 resolve();
@@ -116,42 +172,46 @@ function negotiate(pc){
             }
         });
     }).then(() => {
-        var offer = pc.localDescription;
+        var offerDescription = pc.localDescription;
         var codec;
 
         codec = document.getElementById('audio-codec').value;
         if (codec !== 'default') {
-            offer.sdp = sdpFilterCodec('audio', codec, offer.sdp);
+            offerDescription.sdp = sdpFilterCodec('audio', codec, offerDescription.sdp);
         }
 
         codec = document.getElementById('video-codec').value;
         if (codec !== 'default') {
-            offer.sdp = sdpFilterCodec('video', codec, offer.sdp);
+            offerDescription.sdp = sdpFilterCodec('video', codec, offerDescription.sdp);
         }
 
-        // document.getElementById('offer-sdp').textContent = offer.sdp;
         console.log(document.getElementById('mode').value)
         if(document.getElementById('mode').value=="livestream")
         {
-            console.log(`${ipaddr}`);
-            return fetch(`http://${ipaddr}/offer`, {
-                body: JSON.stringify({
-                    sdp: offer.sdp,
-                    type: offer.type,
-                    video_transform: document.getElementById('video-transform').value,
-                    livestream: true,
-                    num_connections:num_connections
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                method: 'POST'
-            }).then((response) => {
-                return response.json();
-            }).then((answer) => {
-                return pc.setRemoteDescription(answer);
-            }).catch((e) => {
-                alert(e);
+            console.log("setting");
+            let offer = {
+                sdp: offerDescription.sdp,
+                type: offerDescription.type,
+            };
+            callDoc.update({offers: firebase.firestore.FieldValue.arrayUnion(offer)}).then(()=>{
+                console.log("Data : ");
+                callDoc.onSnapshot((snapshot) => {
+                    let data = snapshot.data();
+                    if (!pc.currentRemoteDescription && data?.answer) {
+                        const answerDescription = new RTCSessionDescription(data.answer);
+                        pc.setRemoteDescription(answerDescription);
+                    }
+                });
+                answerCandidates.onSnapshot((snapshot) => {
+                    console.log("asnwer changes : ",snapshot.docChanges());
+                    snapshot.docChanges().forEach((change) => {
+                        console.log("Change2 : ",change);
+                        if (change.type === 'added') {
+                        const candidate = new RTCIceCandidate(change.doc.data());
+                        pc.addIceCandidate(candidate);
+                        }
+                    });
+                });
             });
 
         }
@@ -161,8 +221,8 @@ function negotiate(pc){
             console.log("webcam")
             return fetch(`/offer`, {
                 body: JSON.stringify({
-                    sdp: offer.sdp,
-                    type: offer.type,
+                    sdp: offerDescription.sdp,
+                    type: offerDescription.type,
                     video_transform: document.getElementById('video-transform').value,
                     livestream:false,
                     num_connections:num_connections
@@ -175,13 +235,60 @@ function negotiate(pc){
                 return response.json();
             }).then((answer) => {
                 console.log("Answer : ",answer);
-                // document.getElementById('answer-sdp').textContent = answer.sdp;
-                return pc.setRemoteDescription(answer);
+                return pc.setRemoteDescription(answer)
+            }).then(()=>{
+                // console.log("id",document.getElementById("IPAddress").value);
+                callDoc.onSnapshot((snapshot) => {
+                    console.log("hello")
+                    answerCandidates = callDoc.collection('answerCandidates');
+                    pc.onicecandidate = (event) => {
+                        event.candidate && answerCandidates.add(event.candidate.toJSON());
+                    };
+                    callDoc.get().then((snapshot) => {
+                        let callData = snapshot.data();
+                        console.log("Call Data : ",callData);   
+                        if(callData?.offers){
+                            let offers = callData.offers;
+                            for(let i=0;i<offers.length;i++){
+                                console.log("sending to backend2");
+                                return fetch(`/offer`, {
+                                    body: JSON.stringify({
+                                        sdp: offers[i].sdp,
+                                        type: offers[i].type,
+                                        video_transform: document.getElementById('video-transform').value,
+                                        livestream: true,
+                                        num_connections:num_connections
+                                    }),
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    method: 'POST'
+                                }).then((response) => {
+                                    return response.json();
+                                }).then((answer) => {
+                                    callDoc.update({ answer });
+                                    offerCandidates.onSnapshot((snapshot) => {
+                                        snapshot.docChanges().forEach((change) => {
+                                            console.log(change);
+                                            if (change.type === 'added') {
+                                            let data = change.doc.data();
+                                            pc.addIceCandidate(new RTCIceCandidate(data));
+                                            }
+                                        });
+                                    });
+                                })
+                            }
+                        }
+                    }).catch(error => {
+                        console.error('Error:', error); // Handle any errors
+                    });
+ 
+                });
             }).catch((e) => {
                 alert(e);
             });
         }
-    });
+        });
 }
 function display_media_boxes()
 {
@@ -263,7 +370,6 @@ function start() {
     {
         let dataChannelLog=[]
         dataChannelLog.push(document.getElementById('data-channel1'));
-        // console.log("Data Channel Log : ",dataChannelLog);
         inner = document.getElementById('inner0');
         console.log("Inner : ",inner);  
         
@@ -271,6 +377,11 @@ function start() {
         {
             // let dataChannelLog=[]
             ipaddr = document.getElementById('remoteip').value;
+            callDoc = firestore.collection('calls').doc(ipaddr);
+            offerCandidates=callDoc.collection('offerCandidates');
+            answerCandidates=callDoc.collection('answerCandidates');
+            
+
             num_connections = document.getElementById('numconnections').value;
             // display_media_boxes(num_connections);
             console.log("Num Connections"+num_connections);
@@ -284,7 +395,7 @@ function start() {
             let pcs=[]
             for(let i=0;i<num_connections;i++)
             {   
-                pc=createPeerConnection(i);
+                pc=createPeerConnection(i,2);
                 pcs.push(pc);
                 var time_start = null;
                 const current_stamp = () => {
@@ -387,9 +498,16 @@ function start() {
         else
         {
             // display_media_boxes(1);
+            callDoc = firestore.collection('calls').doc();
+            offerCandidates=callDoc.collection('offerCandidates');
+            answerCandidates=callDoc.collection('answerCandidates');
+            document.getElementById("IPAddress").innerHTML = callDoc.id;
+            document.getElementById("IPAddress").value = callDoc.id;
+            callDoc.set({check: true});
+
             console.log("Here");
             let conn_id=0;
-            pc = createPeerConnection(conn_id);
+            pc = createPeerConnection(conn_id,1);
 
             var time_start = null;
 

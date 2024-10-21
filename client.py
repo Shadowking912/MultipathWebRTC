@@ -160,6 +160,7 @@ d={}
 relay_id=0
 child_relays=set()
 gid=0
+
 async def offer(request):
     global get_req_response,i,d,get_req_response2,relay_modified,gid
     params = await request.json()
