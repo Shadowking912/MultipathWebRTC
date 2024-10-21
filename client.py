@@ -79,7 +79,7 @@ class VideoTransformTrack(MediaStreamTrack):
             #     return self.process_frame(frame)
             else:
                 print("sending empty frame")
-                self.frameidx+=1
+                # self.frameidx+=1
                 return self.process_frame(frame,transform="empty")    
         else:
             return self.process_frame(frame)      
