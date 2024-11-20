@@ -17,6 +17,7 @@ const firebaseConfig = {
     messagingSenderId: "235227962161",
     appId: "1:235227962161:web:1deb3f828786f351126e10"
 };
+  
 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
@@ -32,7 +33,7 @@ const servers = {
         urls: ['stun:stun1.l.google.com:19302', 'stun:stun2.l.google.com:19302'],
       },
     ],
-    iceCandidatePoolSize: 1,
+    iceCandidatePoolSize: 5,
 };
 
 var iceConnectionLog = document.getElementById('ice-connection-state'),
@@ -68,12 +69,13 @@ livestream.addEventListener('change', function(){
 
 // data channel
 var dc = null, dcInterval = null;
+var callDoc=null;
+var client_pcs={};
 
 
 
 
-
-function createPeerConnection(conn_id,conn_type) {
+function createPeerConnection(conn_id,conn_type,puuid) {
     var config = {
         sdpSemantics: 'unified-plan'
     };
@@ -81,17 +83,45 @@ function createPeerConnection(conn_id,conn_type) {
     // if (document.getElementById('use-stun').checked) {
     //     config.iceServers = [{ urls: ['stun:stun.l.google.com:19302'] }];
     // }
+    console.log("conn_type : ",conn_type);
     if (conn_type==1)
     {
         pc = new RTCPeerConnection(config);
     }
+    else if(conn_type==3){
+        pc = new RTCPeerConnection(servers);
+        var callDocFirst = firestore.collection('calls').doc(ipaddr);
+        console.log("ip",ipaddr);
+        pc.onicecandidate = (event) => {
+            console.log("Candidate : ",puuid);
+            if(event.candidate)
+            {
+                console.log("Candidate : ",puuid);
+                const candidateData = {
+                    [puuid]:{answercandidates: firebase.firestore.FieldValue.arrayUnion(event.candidate.toJSON())}
+                };
+                callDocFirst.set(candidateData,{merge:true});
+            }
+            callDoc = callDocFirst;
+            // event.candidate && callDoc.update({[uuid]:{answercandidates: firebase.firestore.FieldValue.arrayUnion(event.candidate.toJSON())}});
+        };
+    }
     else
     {
         pc = new RTCPeerConnection(servers);
-        const callDoc = firestore.collection('calls').doc(ipaddr);
+        var callDocFirst = firestore.collection('calls').doc(ipaddr);
         // const offerCandidates = callDoc.collection('offerCandidates')
         pc.onicecandidate = (event) => {
-            event.candidate && callDoc.update({[uuid]:{offercandidates: firebase.firestore.FieldValue.arrayUnion(event.candidate.toJSON())}});
+            if(event.candidate)
+            {
+                const candidateData = {
+                    [puuid]:{offercandidates: firebase.firestore.FieldValue.arrayUnion(event.candidate.toJSON())}
+                };
+                callDocFirst.set(candidateData,{merge:true});
+            }
+            callDoc = callDocFirst;
+            // event.candidate && callDoc.update()
+            // event.candidate && callDoc.update({[uuid]:{offercandidates: firebase.firestore.FieldValue.arrayUnion(event.candidate.toJSON())}});
         };
     }
     
@@ -158,11 +188,95 @@ function answer(){
         console.log(doc)
         var data=doc.data();
         console.log(data);
+        // Iterate over the data
+        if(data){
+            console.log("Length = ",Object.keys(data).length);
+            var keys = Object.keys(data);
+            for(let i=0;i<keys.length;i++){
+                if(keys[i]!='check' && Object.keys(data[keys[i]]).includes('offers') && !(Object.keys(data[keys[i]]).includes('answer'))){
+                    var remoteoffer=data[keys[i]]['offers'];
+                    return fetch(`/offer`, {
+                        body: JSON.stringify({
+                            sdp: remoteoffer.sdp,
+                            type: remoteoffer.type,
+                            roomid:ipaddr,
+                            clientid: keys[i],
+                            video_transform: document.getElementById('video-transform').value,
+                            livestream: true,
+                        }),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        method: 'POST'
+                    })
+                }
+               
+            }
+        }
+       
+        // if(Object.keys(data).length>1)
+        // {
+        //     console.log("Key = ",Object.keys(data));
+        //     let pc = createPeerConnection(0,2);
+        //     pc.onicecandidate = (event) => {
+        //         // event.candidate && callDoc.update({[Object.keys(data)[0]]:{answercandidates: firebase.firestore.FieldValue.arrayUnion(event.candidate.toJSON())}});
+        //         if(event.candidate)
+        //         {
+        //             const candidateData = {
+        //                 [uuid]:{offers:{answercandidates: firebase.firestore.FieldValue.arrayUnion(event.candidate.toJSON())}}
+        //                 // [Object.keys(data)[1]]:{answercandidates: firebase.firestore.FieldValue.arrayUnion(event.candidate.toJSON())}
+        //             };
+        //             callDoc.set(candidateData,{merge:true});
+        //         }
+        //     };
+        //     pc.setRemoteDescription(new RTCSessionDescription(data[Object.keys(data)[0]].offer)).then(() => {
+        //         return pc.createAnswer();
+        //     }).then((answer) => {
+        //         return pc.setLocalDescription(answer);
+        //     }).then(() => {
+        //         console.log("Answer : ",pc.localDescription);
+        //         callDoc.update({[Object.keys(data)[0]]:{answer: pc.localDescription}});
+        //     }
+        //     ).catch((e) => {
+        //         alert(e);
+        //     }
+        //     )};
+            
+        // }
+        // for (var key in data) {
+            // console.log("Key = ",key);
+        //     if (data.hasOwnProperty(key)) {
+        //         console.log(key + " -> " + data[key]);
+                // if (key==uuid)
+                // {
+                    // console.log("Answering to "+key);
+                    // let pc = createPeerConnection(0,2);
+                    // pc.onicecandidate = (event) => {
+                    //     event.candidate && callDoc.update({[key]:{answercandidates: firebase.firestore.FieldValue.arrayUnion(event.candidate.toJSON())}});
+                    // };
+                // }
+        //             pc.setRemoteDescription(new RTCSessionDescription(data[key].offer)).then(() => {
+        //                 return pc.createAnswer();
+        //             }).then((answer) => {
+        //                 return pc.setLocalDescription(answer);
+        //             }).then(() => {
+        //                 console.log("Answer : ",pc.localDescription);
+        //                 callDoc.update({[key]:{answer: pc.localDescription}});
+        //             }
+        //             ).catch((e) => {
+        //                 alert(e);
+        //             }
+        //             );
+        //         }
+        //     }
+        // }
+    });
+    
 
         // answerCandidates = callDoc.collection('answerCandidates');
-        pc2.onicecandidate = (event) => {
-            event.candidate && answerCandidates.add(event.candidate.toJSON());
-        };
+        // pc2.onicecandidate = (event) => {
+        //     event.candidate && answerCandidates.add(event.candidate.toJSON());
+        // };
     //     let callData = snapshot.data();
         
     //     callDoc.get().then((snapshot) => {
@@ -191,7 +305,7 @@ function answer(){
     //             }
     //         }
     //     });
-    }); 
+    // }); 
     //         if(callData?.offers){
     //             let offers = callData.offers;
     //             // Promise.all(offers.map(offer => pc.setRemoteDescription(offer))).then(() => {
@@ -271,30 +385,38 @@ function negotiate(pc){
         {
             console.log("setting");
             let offer = {
+
                 sdp: offerDescription.sdp,
                 type: offerDescription.type,
             };
-            callDoc.update({offers: firebase.firestore.FieldValue.arrayUnion(offer)}).then(()=>{
+            console.log({[uuid]:{offers:offer}});   
+            console.log("Offer = ",offer)
+            console.log("CallDoc : ",callDoc);
+            callDoc.set({[uuid]:{offers:offer}},{merge:true}).then(()=>{
+                console.log("Offer set");
+            }).then(()=>{
                 callDoc.onSnapshot((snapshot) => {
                     let data = snapshot.data();
                     console.log("Data : ",data);
-                    if (!pc.currentRemoteDescription && data?.answer) {
-                        const answerDescription = new RTCSessionDescription(data.answer);
-                        pc.setRemoteDescription(answerDescription);
+                    console.log("Datakeys:",Object.keys(data[uuid]));
+                    if(Object.keys(data[uuid]).includes('answer'))
+                    {
+                        console.log("Answer : ",data[uuid].answer);
+                        pc.setRemoteDescription(data[uuid].answer);
                     }
                 });
-                // answerCandidates.onSnapshot((snapshot) => {
-                //     console.log("asnwer changes : ",snapshot.docChanges());
-                //     snapshot.docChanges().forEach((change) => {
-                //         console.log("Change2 : ",change);
-                //         if (change.type === 'added') {
-                //         const candidate = new RTCIceCandidate(change.doc.data());
-                //         pc.addIceCandidate(candidate);
-                //         }
-                //     });
-                // });
             });
-
+                // answerCandidates.onSnapshot((snapshot) => {
+                    // console.log("asnwer changes : ",snapshot.docChanges());
+                    // snapshot.docChanges().forEach((change) => {
+                        // console.log("Change2 : ",change);
+                        // if (change.type === 'added') {
+                        // const candidate = new RTCIceCandidate(change.doc.data());
+                        // pc.addIceCandidate(candidate);
+                        // }
+                    // });
+                // });
+            // });
         }
         else
         {
@@ -427,7 +549,7 @@ function start() {
             let pcs=[]
             for(let i=0;i<num_connections;i++)
             {   
-                pc=createPeerConnection(i,2);
+                pc=createPeerConnection(i,2,uuid);
                 pcs.push(pc);
                 var time_start = null;
                 const current_stamp = () => {
@@ -538,6 +660,7 @@ function start() {
             
             document.getElementById("IPAddress").innerHTML = callDoc.id;
             document.getElementById("IPAddress").value = callDoc.id;
+            ipaddr=callDoc.id;
             callDoc.set({check: true});
             
             let conn_id=0;

@@ -19,6 +19,19 @@ from collections import deque
 import traceback
 import inspect
 import numpy as np
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+import uuid
+
+
+id=uuid.uuid4()
+# Use a service account.
+cred = credentials.Certificate('service.json')
+app = firebase_admin.initialize_app(cred)
+db = firestore.client()
+
+
 
 ROOT = os.path.dirname(__file__)
 
@@ -141,10 +154,11 @@ async def index(request):
     global IPAddr
     content = open(os.path.join(ROOT, "client.html"), "r").read()
     content = content.replace("{{IPAddress}}", IPAddr+":"+str(portnumber))
+    content = content.replace("{{id}}",str(id))
     return web.Response(content_type="text/html", text=content)
 
 async def javascript(request):
-    content = open(os.path.join(ROOT, "client2.js"), "r").read()
+    content = open(os.path.join(ROOT, "client3.js"), "r").read()
     return web.Response(content_type="application/javascript", text=content)
 
 # async def javascript2(request):
@@ -190,6 +204,9 @@ async def offer(request):
 
         answer = await pc.createAnswer()
         await pc.setLocalDescription(answer)
+        db.collection("calls").document(params['roomid']).set({str(params['clientid']):{"answer":{'sdp':pc.localDescription.sdp,'type':pc.localDescription.type}}},merge=True)
+        
+        # await firestore.collection("calls").doc(params['callid']).
 
         response = web.Response(
             content_type="application/json",
@@ -336,7 +353,7 @@ if __name__ == "__main__":
 
     app.router.add_get("/client", index)
     # app.router.add_get("/create_elements.js",javascript2)
-    app.router.add_get("/client2.js", javascript)
+    app.router.add_get("/client3.js", javascript)
     app.router.add_post("/offer", offer)
     app.router.add_options("/offer",handle_options)
     web.run_app(
