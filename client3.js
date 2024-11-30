@@ -2,12 +2,6 @@
 // var dataChannelLog1 = document.getElementById('data-channel1'),
     // dataChannelLog2 = document.getElementById('data-channel2'),
 
-// import firebase from 'firebase/app';
-// import 'firebase/firestore';
-
-// import firebase from "firebase/compat/app";
-// import "firebase/firestore";
-// var callId = document.getElementById('call-id');
 
 const firebaseConfig = {
     apiKey: "AIzaSyCSDmlSbyXF1mSP5cmSr4YvoxBcdX7Az_w",
@@ -106,8 +100,9 @@ function createPeerConnection(conn_id,conn_type,puuid) {
             // event.candidate && callDoc.update({[uuid]:{answercandidates: firebase.firestore.FieldValue.arrayUnion(event.candidate.toJSON())}});
         };
     }
-    else
+    else if (conn_type==2)
     {
+        console.log("Candidate : ",puuid);
         pc = new RTCPeerConnection(servers);
         var callDocFirst = firestore.collection('calls').doc(ipaddr);
         // const offerCandidates = callDoc.collection('offerCandidates')
@@ -213,140 +208,10 @@ function answer(){
                
             }
         }
-       
-        // if(Object.keys(data).length>1)
-        // {
-        //     console.log("Key = ",Object.keys(data));
-        //     let pc = createPeerConnection(0,2);
-        //     pc.onicecandidate = (event) => {
-        //         // event.candidate && callDoc.update({[Object.keys(data)[0]]:{answercandidates: firebase.firestore.FieldValue.arrayUnion(event.candidate.toJSON())}});
-        //         if(event.candidate)
-        //         {
-        //             const candidateData = {
-        //                 [uuid]:{offers:{answercandidates: firebase.firestore.FieldValue.arrayUnion(event.candidate.toJSON())}}
-        //                 // [Object.keys(data)[1]]:{answercandidates: firebase.firestore.FieldValue.arrayUnion(event.candidate.toJSON())}
-        //             };
-        //             callDoc.set(candidateData,{merge:true});
-        //         }
-        //     };
-        //     pc.setRemoteDescription(new RTCSessionDescription(data[Object.keys(data)[0]].offer)).then(() => {
-        //         return pc.createAnswer();
-        //     }).then((answer) => {
-        //         return pc.setLocalDescription(answer);
-        //     }).then(() => {
-        //         console.log("Answer : ",pc.localDescription);
-        //         callDoc.update({[Object.keys(data)[0]]:{answer: pc.localDescription}});
-        //     }
-        //     ).catch((e) => {
-        //         alert(e);
-        //     }
-        //     )};
-            
-        // }
-        // for (var key in data) {
-            // console.log("Key = ",key);
-        //     if (data.hasOwnProperty(key)) {
-        //         console.log(key + " -> " + data[key]);
-                // if (key==uuid)
-                // {
-                    // console.log("Answering to "+key);
-                    // let pc = createPeerConnection(0,2);
-                    // pc.onicecandidate = (event) => {
-                    //     event.candidate && callDoc.update({[key]:{answercandidates: firebase.firestore.FieldValue.arrayUnion(event.candidate.toJSON())}});
-                    // };
-                // }
-        //             pc.setRemoteDescription(new RTCSessionDescription(data[key].offer)).then(() => {
-        //                 return pc.createAnswer();
-        //             }).then((answer) => {
-        //                 return pc.setLocalDescription(answer);
-        //             }).then(() => {
-        //                 console.log("Answer : ",pc.localDescription);
-        //                 callDoc.update({[key]:{answer: pc.localDescription}});
-        //             }
-        //             ).catch((e) => {
-        //                 alert(e);
-        //             }
-        //             );
-        //         }
-        //     }
-        // }
     });
-    
-
-        // answerCandidates = callDoc.collection('answerCandidates');
-        // pc2.onicecandidate = (event) => {
-        //     event.candidate && answerCandidates.add(event.candidate.toJSON());
-        // };
-    //     let callData = snapshot.data();
-        
-    //     callDoc.get().then((snapshot) => {
-    //         let callData = snapshot.data();
-    //         console.log("Call Data : ",callData);  
-    //         if(callData?.offers){
-    //             let offers = callData.offers;
-    //             for(let i=0;i<offers.length;i++){
-    //                 console.log("sending to backend2");
-    //                 return fetch(`/offer`, {
-    //                     body: JSON.stringify({
-    //                         sdp: offers[i].sdp,
-    //                         type: offers[i].type,
-    //                         callid: callDoc.id,
-    //                         video_transform: document.getElementById('video-transform').value,
-    //                         livestream: true,
-    //                         num_connections:num_connections
-    //                     }),
-    //                     headers: {
-    //                         'Content-Type': 'application/json'
-    //                     },
-    //                     method: 'POST'
-    //                 }).then((response) => {
-    //                     console.log(response.json());
-    //                 })
-    //             }
-    //         }
-    //     });
-    // }); 
-    //         if(callData?.offers){
-    //             let offers = callData.offers;
-    //             // Promise.all(offers.map(offer => pc.setRemoteDescription(offer))).then(() => {
-    //             for(let i=0;i<offers.length;i++){
-    //                 console.log("sending to backend2");
-    //                 return fetch(`/offer`, {
-    //                     body: JSON.stringify({
-    //                         sdp: offers[i].sdp,
-    //                         type: offers[i].type,
-    //                         video_transform: document.getElementById('video-transform').value,
-    //                         livestream: true,
-    //                         num_connections:num_connections
-    //                     }),
-    //                     headers: {
-    //                         'Content-Type': 'application/json'
-    //                     },
-    //                     method: 'POST'
-    //                 }).then((response) => {
-    //                     return response.json();
-    //                 }).then((answer) => {
-    //                     callDoc.update({ answer });
-    //                     offerCandidates.onSnapshot((snapshot) => {
-    //                         snapshot.docChanges().forEach((change) => {
-    //                             console.log(change);
-    //                             if (change.type === 'added') {
-    //                             let data = change.doc.data();
-    //                             pc.addIceCandidate(new RTCIceCandidate(data));
-    //                             }
-    //                         });
-    //                     });
-    //                 })
-    //             }
-    //         }
-        // }).catch(error => {
-        //     console.error('Error:', error); // Handle any errors
-        // });
-
-    // });
 }
 
-function negotiate(pc){
+function negotiate(pc,uuid=null){
     console.log("Negotiate");
     return pc.createOffer().then((offer) => {
         return pc.setLocalDescription(offer);
@@ -390,18 +255,14 @@ function negotiate(pc){
                 type: offerDescription.type,
             };
             console.log({[uuid]:{offers:offer}});   
-            console.log("Offer = ",offer)
-            console.log("CallDoc : ",callDoc);
             callDoc.set({[uuid]:{offers:offer}},{merge:true}).then(()=>{
-                console.log("Offer set");
+                console.log("Offer set"+uuid);
             }).then(()=>{
                 callDoc.onSnapshot((snapshot) => {
                     let data = snapshot.data();
-                    console.log("Data : ",data);
-                    console.log("Datakeys:",Object.keys(data[uuid]));
-                    if(Object.keys(data[uuid]).includes('answer'))
+                    if(Object.keys(data[uuid]).includes('answer') && !pc.remoteDescription)
                     {
-                        console.log("Answer : ",data[uuid].answer);
+                        console.log("Answer : ",data[uuid].answer,"UUID : ",uuid);
                         pc.setRemoteDescription(data[uuid].answer);
                     }
                 });
@@ -537,8 +398,20 @@ function start() {
 
 
             num_connections = document.getElementById('numconnections').value;
-            // display_media_boxes(num_connections);
-            console.log("Num Connections"+num_connections);
+            // display_media_boxes(num_connections)
+            fetch(`/getuuid`, {
+                body: JSON.stringify({
+                    num_connections:num_connections
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST'
+            }).then((response) => {
+                return response.json();
+            }).then((uuid_data) => {
+                uuids=uuid_data['uuids'];
+                console.log("uuids:"+uuids)
             for(let i=2;i<=num_connections;i++)
             {
                 console.log("push");
@@ -549,7 +422,7 @@ function start() {
             let pcs=[]
             for(let i=0;i<num_connections;i++)
             {   
-                pc=createPeerConnection(i,2,uuid);
+                pc=createPeerConnection(i,2,uuids[i]);
                 pcs.push(pc);
                 var time_start = null;
                 const current_stamp = () => {
@@ -638,16 +511,17 @@ function start() {
                             console.log(track)
                             pcs[i].addTrack(track, stream);
                         });
-                        return negotiate(pcs[i]);
+                        return negotiate(pcs[i],uuids[i]);
                     
                     }, (err) => {
                         alert('Could not acquire media: ' + err);
                     });
 
                 } else {
-                    negotiate(pcs[i]);
+                    negotiate(pcs[i],uuids[i]);
                 }
             }
+            })
         }
         else
         {

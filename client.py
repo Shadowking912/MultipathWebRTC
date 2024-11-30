@@ -319,6 +319,20 @@ async def handle_options(request):
     response.headers["Access-Control-Allow-Headers"] = "*"
     return response
 
+async def getuuid(request):
+    params=await request.json()
+    ids=[]
+    for i in range(int(params['num_connections'])):
+        id=uuid.uuid4()
+        ids.append(str(id))
+    
+    return web.Response(
+        content_type="application/json",
+        text=json.dumps(
+            {"uuids": ids}
+        ),
+    )
+
 if __name__ == "__main__":
    
     parser = argparse.ArgumentParser(
@@ -356,6 +370,7 @@ if __name__ == "__main__":
     app.router.add_get("/client3.js", javascript)
     app.router.add_post("/offer", offer)
     app.router.add_options("/offer",handle_options)
+    app.router.add_post("/getuuid",getuuid)
     web.run_app(
         app, access_log=None, host=args.host, port=args.port, ssl_context=ssl_context
     )
