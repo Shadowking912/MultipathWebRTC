@@ -48,56 +48,37 @@ pc_id_map={}
 relay=MediaRelay()
 relay_modified=MediaRelay()
 
-# class RoundRobin:
-#     def __init__(self,id,):
-
-
 class MinRTT:
-    def __init__(self,alpha=0.125):
+    def __init__(self,alpha=0.75):
         self.pcs={}
         self.count=0
         self.threshold=5
         self.alpha=alpha
 
     def add_pc(self,gid):
-        print("ADDING PC = ",gid)
-        self.pcs[gid]=1e9       
-    async def log_stats(self,interval=5.0):
+        self.pcs[gid]=1e9
+
+    async def log_stats(self,interval=1.0):
         self.count+=1
         rtt=1e9
-        i=1
-        while i<=len(self.pcs):
-            # pc  = pc_id_map[i]
+        i=0
+        while i<len(self.pcs):
             pc = pc_id_map[i]
             id = i
-            print("PC = ",pc)
-            print("Connection State = ",pc.connectionState) 
+            # print("PC = ",pc)
+            # print("Connection State = ",pc.connectionState) 
             if pc.connectionState!="closed":
-                
-                print("----------- HERE -----------------")
                 stats = await pc.getStats()
-                print("-------------------------- SURI ------------------")
                 for report in stats.values():
-
-                    # print(report)
-
-                    # print(report)
                     print("REPORT = ",report)
                     if report.type == "remote-inbound-rtp" and report.kind == "video":
-                        print("PC = ",pc)
-                        print("id = ",id)
-                        print("RTT = ",report.roundTripTime)
                         if report.roundTripTime==None:
                             rtt=0
                         else:
                             rtt=report.roundTripTime
-                
-                        print("pcs = ",self.pcs)
-                        print(len(self.pcs.keys()))
                         if len(self.pcs.keys())==0:
                             self.pcs[id]=rtt
                         else:
-                            print("HERE ")
                             self.pcs[id] = self.alpha *rtt + (1 - self.alpha) * self.pcs[id]   
             i+=1     
         await asyncio.sleep(interval)
@@ -111,7 +92,6 @@ class MinRTT:
         if len(self.pcs.keys())==0:
             return None
         for pc in self.pcs.keys():
-            print(self.pcs)
             if self.pcs[pc]<minRTT:
                 minRTT=self.pcs[pc]
                 optimal_pc=pc
@@ -120,7 +100,6 @@ class MinRTT:
         return optimal_pc
 
 MinRTT_scheduler=MinRTT()  
-#    print("PC VALLLLL = ",pc)
 
 
 class VideoTransformTrackchild(MediaStreamTrack):
@@ -160,7 +139,7 @@ class VideoTransformTrack(MediaStreamTrack):
             optimal_id = MinRTT_scheduler.get_optimal_pc()
             print("OPTIMAL ID = ",optimal_id)   
 
-            if optimal_id!=None:
+            if optimal_id!=None and optimal_id!=id:
                 return self.process_frame(frame)   
             else:
                 return self.process_frame(frame,transform="empty") 
@@ -233,11 +212,6 @@ async def javascript(request):
     content = open(os.path.join(ROOT, "client3.js"), "r").read()
     return web.Response(content_type="application/javascript", text=content)
 
-# async def javascript2(request):
-    # content = open(os.path.join(ROOT, "create_elements.js"), "r").read()
-    # print(content)
-    # return web.Response(content_type="application/javascript", text=content)
-
 get_req_response=None
 get_req_response2=None
 pcs = set() # dictionary to store sdp,offer with pc
@@ -279,15 +253,8 @@ async def offer(request):
         answer = await pc.createAnswer()
         await pc.setLocalDescription(answer)
 
-        # Start logging of stats
-        # asyncio.create_task(log_stats(pc)) 
-        # gid+=1
-      
-
         db.collection("calls").document(params['roomid']).set({str(params['clientid']):{"answer":{'sdp':pc.localDescription.sdp,'type':pc.localDescription.type}}},merge=True)
         
-        # await firestore.collection("calls").doc(params['callid']).
-
         response = web.Response(
             content_type="application/json",
             text=json.dumps(
@@ -371,9 +338,6 @@ async def offer(request):
 
         # Start logging of stats
         asyncio.create_task(MinRTT_scheduler.log_stats())
-
-        # asyncio.create_task(log_stats(pc))  
-        
 
         print(get_req_response)
         response =  web.Response(

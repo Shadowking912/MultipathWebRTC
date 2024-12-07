@@ -175,22 +175,22 @@ function enumerateInputDevices() {
         alert(e);
     });
 }
-
+var current_answer=null;
 function answer(){
-
     console.log("waiting")
-    callDoc.onSnapshot((doc) => {
-        console.log(doc)
+    callDoc.onSnapshot(async (doc) => {
         var data=doc.data();
         console.log(data);
         // Iterate over the data
-        if(data){
+        if(data && current_answer===null){
             console.log("Length = ",Object.keys(data).length);
             var keys = Object.keys(data);
             for(let i=0;i<keys.length;i++){
-                if(keys[i]!='check' && Object.keys(data[keys[i]]).includes('offers') && !(Object.keys(data[keys[i]]).includes('answer'))){
+                if(keys[i]!=='check' && Object.keys(data[keys[i]]).includes('offers') && !(Object.keys(data[keys[i]]).includes('answer'))){
+                    console.log("Answering : ",keys[i]);
                     var remoteoffer=data[keys[i]]['offers'];
-                    return fetch(`/offer`, {
+                    current_answer=keys[i];
+                    await fetch(`/offer`, {
                         body: JSON.stringify({
                             sdp: remoteoffer.sdp,
                             type: remoteoffer.type,
@@ -204,6 +204,8 @@ function answer(){
                         },
                         method: 'POST'
                     })
+                    current_answer=null;
+                    console.log("Answered : ",keys[i]);
                 }
                
             }
