@@ -23,7 +23,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 import uuid
-
+from aiortc.stats import RTCStatsReport 
 
 id=uuid.uuid4()
 # Use a service account.
@@ -44,9 +44,84 @@ IPAddr = socket.gethostbyname(hostname)
 portnumber = None
 print("Your Computer IP Address is:" + IPAddr)
 clients={}
-
+pc_id_map={}
 relay=MediaRelay()
 relay_modified=MediaRelay()
+
+# class RoundRobin:
+#     def __init__(self,id,):
+
+
+class MinRTT:
+    def __init__(self,alpha=0.125):
+        self.pcs={}
+        self.count=0
+        self.threshold=5
+        self.alpha=alpha
+
+    def add_pc(self,gid):
+        print("ADDING PC = ",gid)
+        self.pcs[gid]=1e9       
+    async def log_stats(self,interval=5.0):
+        self.count+=1
+        rtt=1e9
+        i=1
+        while i<=len(self.pcs):
+            # pc  = pc_id_map[i]
+            pc = pc_id_map[i]
+            id = i
+            print("PC = ",pc)
+            print("Connection State = ",pc.connectionState) 
+            if pc.connectionState!="closed":
+                
+                print("----------- HERE -----------------")
+                stats = await pc.getStats()
+                print("-------------------------- SURI ------------------")
+                for report in stats.values():
+
+                    # print(report)
+
+                    # print(report)
+                    print("REPORT = ",report)
+                    if report.type == "remote-inbound-rtp" and report.kind == "video":
+                        print("PC = ",pc)
+                        print("id = ",id)
+                        print("RTT = ",report.roundTripTime)
+                        if report.roundTripTime==None:
+                            rtt=0
+                        else:
+                            rtt=report.roundTripTime
+                
+                        print("pcs = ",self.pcs)
+                        print(len(self.pcs.keys()))
+                        if len(self.pcs.keys())==0:
+                            self.pcs[id]=rtt
+                        else:
+                            print("HERE ")
+                            self.pcs[id] = self.alpha *rtt + (1 - self.alpha) * self.pcs[id]   
+            i+=1     
+        await asyncio.sleep(interval)
+        await self.log_stats()
+
+    
+    def get_optimal_pc(self):
+        minRTT=1e9
+        optimal_pc=None
+        print("PCS = ",self.pcs)
+        if len(self.pcs.keys())==0:
+            return None
+        for pc in self.pcs.keys():
+            print(self.pcs)
+            if self.pcs[pc]<minRTT:
+                minRTT=self.pcs[pc]
+                optimal_pc=pc
+        if optimal_pc==None:
+            return None
+        return optimal_pc
+
+MinRTT_scheduler=MinRTT()  
+#    print("PC VALLLLL = ",pc)
+
 
 class VideoTransformTrackchild(MediaStreamTrack):
     """
@@ -57,6 +132,7 @@ class VideoTransformTrackchild(MediaStreamTrack):
         super().__init__()  # don't forget this!
         self.parent_relay=track
         self.rid=id
+    
 
     async def recv(self):
         frame = await self.parent_relay.recv(self.rid)
@@ -75,26 +151,21 @@ class VideoTransformTrack(MediaStreamTrack):
         self.rid=rid
 
     async def recv(self,id=None):
-
+        # if MinRTT_scheduler.count<=MinRTT_scheduler.threshold:
         frame = await self.track.recv()
+
         if id!=None:
             print("id",id," frameidx",self.frameidx)
-        # except:
-        #     stack = inspect.stack()
-        #     traceback.print_stack(f=stack[1][0])
-        if id!=None:
-            if self.frameidx%3==1 and id==0:
-                self.frameidx += 1
-                return self.process_frame(frame)
-            elif self.frameidx%3==0 and id==1:
-                self.frameidx+=1
-                return self.process_frame(frame)
+
+            optimal_id = MinRTT_scheduler.get_optimal_pc()
+            print("OPTIMAL ID = ",optimal_id)   
+
+            if optimal_id!=None:
+                return self.process_frame(frame)   
             else:
-                print("sending empty frame")
-                self.frameidx+=1
-                return self.process_frame(frame,transform="empty")    
+                return self.process_frame(frame,transform="empty") 
         else:
-            return self.process_frame(frame)      
+            return self.process_frame(frame)   
     
     def process_frame(self,frame,transform=None):
 
@@ -150,6 +221,7 @@ class VideoTransformTrack(MediaStreamTrack):
         else:
             return frame
 
+
 async def index(request):
     global IPAddr
     content = open(os.path.join(ROOT, "client.html"), "r").read()
@@ -196,6 +268,8 @@ async def offer(request):
         if get_req_response!=None:
             pc.addTrack(VideoTransformTrackchild(
                 get_req_response,id=gid))
+            pc_id_map[gid]=pc
+            MinRTT_scheduler.add_pc(gid)
             gid+=1
             # pc.addTrack(get_req_response)
 
@@ -204,6 +278,12 @@ async def offer(request):
 
         answer = await pc.createAnswer()
         await pc.setLocalDescription(answer)
+
+        # Start logging of stats
+        # asyncio.create_task(log_stats(pc)) 
+        # gid+=1
+      
+
         db.collection("calls").document(params['roomid']).set({str(params['clientid']):{"answer":{'sdp':pc.localDescription.sdp,'type':pc.localDescription.type}}},merge=True)
         
         # await firestore.collection("calls").doc(params['callid']).
@@ -288,6 +368,13 @@ async def offer(request):
         # send answer
         answer = await pc.createAnswer()
         await pc.setLocalDescription(answer)
+
+        # Start logging of stats
+        asyncio.create_task(MinRTT_scheduler.log_stats())
+
+        # asyncio.create_task(log_stats(pc))  
+        
+
         print(get_req_response)
         response =  web.Response(
             content_type="application/json",
