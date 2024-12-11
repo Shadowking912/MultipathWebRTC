@@ -139,10 +139,19 @@ class VideoTransformTrack(MediaStreamTrack):
             optimal_id = MinRTT_scheduler.get_optimal_pc()
             print("OPTIMAL ID = ",optimal_id)   
 
-            if optimal_id!=None and optimal_id!=id:
+            if optimal_id!=None and optimal_id==id:
+                # return None
                 return self.process_frame(frame)   
             else:
-                return self.process_frame(frame,transform="empty") 
+                # return None
+                while optimal_id!=None and optimal_id!=id:
+                    frame = await self.track.recv() 
+                    optimal_id = MinRTT_scheduler.get_optimal_pc()
+                    print("OPTIMAL ID = ",optimal_id)
+
+                return self.process_frame(frame)
+                
+                # return self.process_frame(frame,transform="empty") 
         else:
             return self.process_frame(frame)   
     
