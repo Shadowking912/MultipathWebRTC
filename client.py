@@ -24,6 +24,35 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 import uuid
 from aiortc.stats import RTCStatsReport 
+import ntplib
+import threading
+import time
+
+timestamps=[]
+save_counter=0
+def get_ntp_time():
+    ntp_client = ntplib.NTPClient()
+    response = ntp_client.request('pool.ntp.org')
+    return response.tx_time  
+
+
+def write_data():
+    # global save_counter
+    # if len(timestamps)//20>save_counter:
+        # with open("send_stats.txt",'a') as file:
+    while True:
+        print("HELLO FROM WRITE DATA")
+        pass
+        # print("Opened the file")
+            # for i in range(save_counter*20,len(timestamps)):
+                # file.write(str(timestamps[i])+"\n")
+            # save_counter+=1
+            # file.flush()
+
+        # asyncio.sleep(2)
+        # time.sleep(2)
+    # await write_data()
+
 
 id=uuid.uuid4()
 # Use a service account.
@@ -141,6 +170,7 @@ class VideoTransformTrack(MediaStreamTrack):
 
             if optimal_id!=None and optimal_id==id:
                 # return None
+                timestamps.append(get_ntp_time())
                 return self.process_frame(frame)   
             else:
                 # return None
@@ -148,7 +178,8 @@ class VideoTransformTrack(MediaStreamTrack):
                     frame = await self.track.recv() 
                     optimal_id = MinRTT_scheduler.get_optimal_pc()
                     print("OPTIMAL ID = ",optimal_id)
-
+                
+                timestamps.append(get_ntp_time())
                 return self.process_frame(frame)
                 
                 # return self.process_frame(frame,transform="empty") 
@@ -346,8 +377,10 @@ async def offer(request):
         await pc.setLocalDescription(answer)
 
         # Start logging of stats
-        asyncio.create_task(MinRTT_scheduler.log_stats())
+        task1 = asyncio.create_task(MinRTT_scheduler.log_stats())
 
+       
+      
         print(get_req_response)
         response =  web.Response(
             content_type="application/json",
@@ -431,7 +464,12 @@ if __name__ == "__main__":
     app.router.add_post("/offer", offer)
     app.router.add_options("/offer",handle_options)
     app.router.add_post("/getuuid",getuuid)
+    thread = threading.Thread(target=write_data)
+    thread.start()
+
     web.run_app(
         app, access_log=None, host=args.host, port=args.port, ssl_context=ssl_context
     )
- 
+    
+    # await task2
+        
