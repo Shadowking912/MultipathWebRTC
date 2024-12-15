@@ -360,7 +360,25 @@ function display_media_boxes()
         video.style.margin = 'auto';
         video.style.width = '80%';
         video.style.height = '80%';
-        video.style.borderRadius = '2em';
+        video.style.borderRadius = '2em';  
+        
+        video.requestVideoFrameCallback((now,metadata)=>{
+            console.log("Metadata : ",metadata);
+            console.log("Timestamp : ",now);   
+            console.log("HERE");
+            // Send this timestamp using post request
+            fetch(`/incoming_frame`, {
+                body: JSON.stringify({
+                    timestamp:now
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST'
+            }
+            )
+        })
+
         media.appendChild(video);
         inner.appendChild(media);
         let divData = document.createElement('div');
@@ -525,6 +543,7 @@ function start() {
                     // return negotiate(pcs[i]);
                     navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
                         console.log("Stream : ",stream);
+
                         stream.getTracks().forEach((track) => {
                             console.log(track)
                             pcs[i].addTrack(track, stream);
