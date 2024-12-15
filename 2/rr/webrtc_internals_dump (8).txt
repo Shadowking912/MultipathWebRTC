@@ -1,0 +1,3212 @@
+{
+ "getUserMedia": [
+  {
+   "origin": "http://192.168.56.1:8080",
+   "pid": 47892,
+   "request_id": 0,
+   "request_type": "getUserMedia",
+   "rid": 32,
+   "timestamp": 1734301840542.467,
+   "video": ""
+  },
+  {
+   "pid": 47892,
+   "request_id": 0,
+   "request_type": "getUserMedia",
+   "rid": 32,
+   "stream_id": "4e00330d-a0af-4349-a25c-14891279d38d",
+   "timestamp": 1734301841055.642,
+   "video_track_info": "id:f8638e31-a06f-402c-83ad-d0d00895795c label:HD User Facing (04f2:b64f)"
+  },
+  {
+   "origin": "http://192.168.56.1:8080",
+   "pid": 47892,
+   "request_id": 1,
+   "request_type": "getUserMedia",
+   "rid": 32,
+   "timestamp": 1734301964175.603,
+   "video": ""
+  },
+  {
+   "pid": 47892,
+   "request_id": 1,
+   "request_type": "getUserMedia",
+   "rid": 32,
+   "stream_id": "a02a27c7-ed96-4552-be50-a3e572f47601",
+   "timestamp": 1734301964555.554,
+   "video_track_info": "id:aba38781-2e57-4cae-8e4b-3c02889b20ba label:HD User Facing (04f2:b64f)"
+  },
+  {
+   "origin": "http://192.168.56.1:8080",
+   "pid": 47892,
+   "request_id": 2,
+   "request_type": "getUserMedia",
+   "rid": 32,
+   "timestamp": 1734302156836.559,
+   "video": ""
+  },
+  {
+   "pid": 47892,
+   "request_id": 2,
+   "request_type": "getUserMedia",
+   "rid": 32,
+   "stream_id": "37676f15-7891-40ab-aa61-37fdb05baf93",
+   "timestamp": 1734302157226.351,
+   "video_track_info": "id:044afc97-5738-4309-9cab-bf51451e7d0f label:HD User Facing (04f2:b64f)"
+  },
+  {
+   "origin": "http://192.168.56.1:8080",
+   "pid": 47892,
+   "request_id": 3,
+   "request_type": "getUserMedia",
+   "rid": 32,
+   "timestamp": 1734302270093.502,
+   "video": ""
+  },
+  {
+   "pid": 47892,
+   "request_id": 3,
+   "request_type": "getUserMedia",
+   "rid": 32,
+   "stream_id": "7df2d6bf-c703-4044-b5a8-bbfec7501c81",
+   "timestamp": 1734302270485.43,
+   "video_track_info": "id:ac256da9-6eac-441d-b213-c0fbb6e0820e label:HD User Facing (04f2:b64f)"
+  },
+  {
+   "origin": "http://192.168.56.1:8080",
+   "pid": 47892,
+   "request_id": 4,
+   "request_type": "getUserMedia",
+   "rid": 32,
+   "timestamp": 1734302500888.694,
+   "video": ""
+  },
+  {
+   "pid": 47892,
+   "request_id": 4,
+   "request_type": "getUserMedia",
+   "rid": 32,
+   "stream_id": "3025978e-f094-40bd-a8d9-9ff6c57f132c",
+   "timestamp": 1734302501276.503,
+   "video_track_info": "id:e533cbe2-3cbd-471a-a225-ec0cf10b6cee label:HD User Facing (04f2:b64f)"
+  },
+  {
+   "origin": "http://192.168.56.1:8080",
+   "pid": 47892,
+   "request_id": 5,
+   "request_type": "getUserMedia",
+   "rid": 32,
+   "timestamp": 1734302887200.171,
+   "video": ""
+  },
+  {
+   "pid": 47892,
+   "request_id": 5,
+   "request_type": "getUserMedia",
+   "rid": 32,
+   "stream_id": "2c298d80-81f2-47a3-a094-8162ae6396fa",
+   "timestamp": 1734302887586.99,
+   "video_track_info": "id:ab3517ac-e46e-413c-88c1-66c6fd05c053 label:HD User Facing (04f2:b64f)"
+  },
+  {
+   "origin": "http://192.168.56.1:8080",
+   "pid": 47892,
+   "request_id": 6,
+   "request_type": "getUserMedia",
+   "rid": 32,
+   "timestamp": 1734303101340.113,
+   "video": ""
+  },
+  {
+   "pid": 47892,
+   "request_id": 6,
+   "request_type": "getUserMedia",
+   "rid": 32,
+   "stream_id": "40390770-4554-4380-97f9-83e90f1105ac",
+   "timestamp": 1734303101730.01,
+   "video_track_info": "id:fa6e814f-6327-43cd-a9cf-d1f5acf421cf label:HD User Facing (04f2:b64f)"
+  }
+ ],
+ "PeerConnections": {
+  "32-7": {
+   "pid": 47892,
+   "rtcConfiguration": "{ iceServers: [], iceTransportPolicy: all, bundlePolicy: balanced, rtcpMuxPolicy: require, iceCandidatePoolSize: 0 }",
+   "stats": {
+    "CF3B:1A:B4:29:59:41:1C:6C:80:9E:4C:D7:63:A1:D6:EB:07:6C:BE:3E:9B:DC:14:14:5E:40:1B:9E:86:C9:92:39-fingerprint": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "certificate",
+     "values": "[\"3B:1A:B4:29:59:41:1C:6C:80:9E:4C:D7:63:A1:D6:EB:07:6C:BE:3E:9B:DC:14:14:5E:40:1B:9E:86:C9:92:39\",\"3B:1A:B4:29:59:41:1C:6C:80:9E:4C:D7:63:A1:D6:EB:07:6C:BE:3E:9B:DC:14:14:5E:40:1B:9E:86:C9:92:39\",\"3B:1A:B4:29:59:41:1C:6C:80:9E:4C:D7:63:A1:D6:EB:07:6C:BE:3E:9B:DC:14:14:5E:40:1B:9E:86:C9:92:39\",\"3B:1A:B4:29:59:41:1C:6C:80:9E:4C:D7:63:A1:D6:EB:07:6C:BE:3E:9B:DC:14:14:5E:40:1B:9E:86:C9:92:39\",\"3B:1A:B4:29:59:41:1C:6C:80:9E:4C:D7:63:A1:D6:EB:07:6C:BE:3E:9B:DC:14:14:5E:40:1B:9E:86:C9:92:39\",\"3B:1A:B4:29:59:41:1C:6C:80:9E:4C:D7:63:A1:D6:EB:07:6C:BE:3E:9B:DC:14:14:5E:40:1B:9E:86:C9:92:39\"]"
+    },
+    "CF3B:1A:B4:29:59:41:1C:6C:80:9E:4C:D7:63:A1:D6:EB:07:6C:BE:3E:9B:DC:14:14:5E:40:1B:9E:86:C9:92:39-fingerprintAlgorithm": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "certificate",
+     "values": "[\"sha-256\",\"sha-256\",\"sha-256\",\"sha-256\",\"sha-256\",\"sha-256\"]"
+    },
+    "CF3B:1A:B4:29:59:41:1C:6C:80:9E:4C:D7:63:A1:D6:EB:07:6C:BE:3E:9B:DC:14:14:5E:40:1B:9E:86:C9:92:39-base64Certificate": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "certificate",
+     "values": "[\"MIIBFDCBvKADAgECAghKqSo8hH7xqjAKBggqhkjOPQQDAjARMQ8wDQYDVQQDDAZXZWJSVEMwHhcNMjQxMjE0MjI1MTQxWhcNMjUwMTE0MjI1MTQxWjARMQ8wDQYDVQQDDAZXZWJSVEMwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAS9e5dT47jybvPojszzBwwOL6cjFh5igRXl0/3K7P/jLI4rA7IvqLBGVWbBRy0kWDbZYalxtD8nPp7Ak2UqAL7jMAoGCCqGSM49BAMCA0cAMEQCIAE45Z/neD9W/xu/Y9J35dW7/MNUFMzIBMEa0KxwHyvXAiAJBMHVD15G21Z6aWYQFJllP0sk2H9BJZvc1ITuUCeJuQ==\",\"MIIBFDCBvKADAgECAghKqSo8hH7xqjAKBggqhkjOPQQDAjARMQ8wDQYDVQQDDAZXZWJSVEMwHhcNMjQxMjE0MjI1MTQxWhcNMjUwMTE0MjI1MTQxWjARMQ8wDQYDVQQDDAZXZWJSVEMwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAS9e5dT47jybvPojszzBwwOL6cjFh5igRXl0/3K7P/jLI4rA7IvqLBGVWbBRy0kWDbZYalxtD8nPp7Ak2UqAL7jMAoGCCqGSM49BAMCA0cAMEQCIAE45Z/neD9W/xu/Y9J35dW7/MNUFMzIBMEa0KxwHyvXAiAJBMHVD15G21Z6aWYQFJllP0sk2H9BJZvc1ITuUCeJuQ==\",\"MIIBFDCBvKADAgECAghKqSo8hH7xqjAKBggqhkjOPQQDAjARMQ8wDQYDVQQDDAZXZWJSVEMwHhcNMjQxMjE0MjI1MTQxWhcNMjUwMTE0MjI1MTQxWjARMQ8wDQYDVQQDDAZXZWJSVEMwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAS9e5dT47jybvPojszzBwwOL6cjFh5igRXl0/3K7P/jLI4rA7IvqLBGVWbBRy0kWDbZYalxtD8nPp7Ak2UqAL7jMAoGCCqGSM49BAMCA0cAMEQCIAE45Z/neD9W/xu/Y9J35dW7/MNUFMzIBMEa0KxwHyvXAiAJBMHVD15G21Z6aWYQFJllP0sk2H9BJZvc1ITuUCeJuQ==\",\"MIIBFDCBvKADAgECAghKqSo8hH7xqjAKBggqhkjOPQQDAjARMQ8wDQYDVQQDDAZXZWJSVEMwHhcNMjQxMjE0MjI1MTQxWhcNMjUwMTE0MjI1MTQxWjARMQ8wDQYDVQQDDAZXZWJSVEMwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAS9e5dT47jybvPojszzBwwOL6cjFh5igRXl0/3K7P/jLI4rA7IvqLBGVWbBRy0kWDbZYalxtD8nPp7Ak2UqAL7jMAoGCCqGSM49BAMCA0cAMEQCIAE45Z/neD9W/xu/Y9J35dW7/MNUFMzIBMEa0KxwHyvXAiAJBMHVD15G21Z6aWYQFJllP0sk2H9BJZvc1ITuUCeJuQ==\",\"MIIBFDCBvKADAgECAghKqSo8hH7xqjAKBggqhkjOPQQDAjARMQ8wDQYDVQQDDAZXZWJSVEMwHhcNMjQxMjE0MjI1MTQxWhcNMjUwMTE0MjI1MTQxWjARMQ8wDQYDVQQDDAZXZWJSVEMwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAS9e5dT47jybvPojszzBwwOL6cjFh5igRXl0/3K7P/jLI4rA7IvqLBGVWbBRy0kWDbZYalxtD8nPp7Ak2UqAL7jMAoGCCqGSM49BAMCA0cAMEQCIAE45Z/neD9W/xu/Y9J35dW7/MNUFMzIBMEa0KxwHyvXAiAJBMHVD15G21Z6aWYQFJllP0sk2H9BJZvc1ITuUCeJuQ==\",\"MIIBFDCBvKADAgECAghKqSo8hH7xqjAKBggqhkjOPQQDAjARMQ8wDQYDVQQDDAZXZWJSVEMwHhcNMjQxMjE0MjI1MTQxWhcNMjUwMTE0MjI1MTQxWjARMQ8wDQYDVQQDDAZXZWJSVEMwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAS9e5dT47jybvPojszzBwwOL6cjFh5igRXl0/3K7P/jLI4rA7IvqLBGVWbBRy0kWDbZYalxtD8nPp7Ak2UqAL7jMAoGCCqGSM49BAMCA0cAMEQCIAE45Z/neD9W/xu/Y9J35dW7/MNUFMzIBMEa0KxwHyvXAiAJBMHVD15G21Z6aWYQFJllP0sk2H9BJZvc1ITuUCeJuQ==\"]"
+    },
+    "CF3B:1A:B4:29:59:41:1C:6C:80:9E:4C:D7:63:A1:D6:EB:07:6C:BE:3E:9B:DC:14:14:5E:40:1B:9E:86:C9:92:39-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "certificate",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "CF94:DD:A8:06:B3:D6:15:E9:70:B9:54:44:4B:FB:BC:2A:89:62:0A:EA:6F:C4:8C:38:C4:9B:58:1C:6E:78:BD:44-fingerprint": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "certificate",
+     "values": "[\"94:DD:A8:06:B3:D6:15:E9:70:B9:54:44:4B:FB:BC:2A:89:62:0A:EA:6F:C4:8C:38:C4:9B:58:1C:6E:78:BD:44\",\"94:DD:A8:06:B3:D6:15:E9:70:B9:54:44:4B:FB:BC:2A:89:62:0A:EA:6F:C4:8C:38:C4:9B:58:1C:6E:78:BD:44\",\"94:DD:A8:06:B3:D6:15:E9:70:B9:54:44:4B:FB:BC:2A:89:62:0A:EA:6F:C4:8C:38:C4:9B:58:1C:6E:78:BD:44\",\"94:DD:A8:06:B3:D6:15:E9:70:B9:54:44:4B:FB:BC:2A:89:62:0A:EA:6F:C4:8C:38:C4:9B:58:1C:6E:78:BD:44\",\"94:DD:A8:06:B3:D6:15:E9:70:B9:54:44:4B:FB:BC:2A:89:62:0A:EA:6F:C4:8C:38:C4:9B:58:1C:6E:78:BD:44\",\"94:DD:A8:06:B3:D6:15:E9:70:B9:54:44:4B:FB:BC:2A:89:62:0A:EA:6F:C4:8C:38:C4:9B:58:1C:6E:78:BD:44\"]"
+    },
+    "CF94:DD:A8:06:B3:D6:15:E9:70:B9:54:44:4B:FB:BC:2A:89:62:0A:EA:6F:C4:8C:38:C4:9B:58:1C:6E:78:BD:44-fingerprintAlgorithm": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "certificate",
+     "values": "[\"sha-256\",\"sha-256\",\"sha-256\",\"sha-256\",\"sha-256\",\"sha-256\"]"
+    },
+    "CF94:DD:A8:06:B3:D6:15:E9:70:B9:54:44:4B:FB:BC:2A:89:62:0A:EA:6F:C4:8C:38:C4:9B:58:1C:6E:78:BD:44-base64Certificate": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "certificate",
+     "values": "[\"MIIBVDCB/KADAgECAhQqZRot51OFhLRE6jH0LNLR4IuQATAKBggqhkjOPQQDAjArMSkwJwYDVQQDDCA0ZWQyODRjOGI4NzAwZDYwNzdiZGNiNGQwMTBjOTE5NDAeFw0yNDEyMTQyMjUxNDFaFw0yNTAxMTQyMjUxNDFaMCsxKTAnBgNVBAMMIDRlZDI4NGM4Yjg3MDBkNjA3N2JkY2I0ZDAxMGM5MTk0MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzE78M4hfz3PgBvRONsN1snh0shWo7mMhrF+f4sb6UICH553dOQ3s2uKDbNfJMpXfCIKttIcB/WeY5M5eoCTixjAKBggqhkjOPQQDAgNHADBEAiAA3Pwc3GHlb2lKzw7reIoJFH55psHF7aL1LUWLDZS7RQIgGaRokZBFjTB0KZuDJlppZ9k60G1qC5Een/OexGAhpKc=\",\"MIIBVDCB/KADAgECAhQqZRot51OFhLRE6jH0LNLR4IuQATAKBggqhkjOPQQDAjArMSkwJwYDVQQDDCA0ZWQyODRjOGI4NzAwZDYwNzdiZGNiNGQwMTBjOTE5NDAeFw0yNDEyMTQyMjUxNDFaFw0yNTAxMTQyMjUxNDFaMCsxKTAnBgNVBAMMIDRlZDI4NGM4Yjg3MDBkNjA3N2JkY2I0ZDAxMGM5MTk0MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzE78M4hfz3PgBvRONsN1snh0shWo7mMhrF+f4sb6UICH553dOQ3s2uKDbNfJMpXfCIKttIcB/WeY5M5eoCTixjAKBggqhkjOPQQDAgNHADBEAiAA3Pwc3GHlb2lKzw7reIoJFH55psHF7aL1LUWLDZS7RQIgGaRokZBFjTB0KZuDJlppZ9k60G1qC5Een/OexGAhpKc=\",\"MIIBVDCB/KADAgECAhQqZRot51OFhLRE6jH0LNLR4IuQATAKBggqhkjOPQQDAjArMSkwJwYDVQQDDCA0ZWQyODRjOGI4NzAwZDYwNzdiZGNiNGQwMTBjOTE5NDAeFw0yNDEyMTQyMjUxNDFaFw0yNTAxMTQyMjUxNDFaMCsxKTAnBgNVBAMMIDRlZDI4NGM4Yjg3MDBkNjA3N2JkY2I0ZDAxMGM5MTk0MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzE78M4hfz3PgBvRONsN1snh0shWo7mMhrF+f4sb6UICH553dOQ3s2uKDbNfJMpXfCIKttIcB/WeY5M5eoCTixjAKBggqhkjOPQQDAgNHADBEAiAA3Pwc3GHlb2lKzw7reIoJFH55psHF7aL1LUWLDZS7RQIgGaRokZBFjTB0KZuDJlppZ9k60G1qC5Een/OexGAhpKc=\",\"MIIBVDCB/KADAgECAhQqZRot51OFhLRE6jH0LNLR4IuQATAKBggqhkjOPQQDAjArMSkwJwYDVQQDDCA0ZWQyODRjOGI4NzAwZDYwNzdiZGNiNGQwMTBjOTE5NDAeFw0yNDEyMTQyMjUxNDFaFw0yNTAxMTQyMjUxNDFaMCsxKTAnBgNVBAMMIDRlZDI4NGM4Yjg3MDBkNjA3N2JkY2I0ZDAxMGM5MTk0MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzE78M4hfz3PgBvRONsN1snh0shWo7mMhrF+f4sb6UICH553dOQ3s2uKDbNfJMpXfCIKttIcB/WeY5M5eoCTixjAKBggqhkjOPQQDAgNHADBEAiAA3Pwc3GHlb2lKzw7reIoJFH55psHF7aL1LUWLDZS7RQIgGaRokZBFjTB0KZuDJlppZ9k60G1qC5Een/OexGAhpKc=\",\"MIIBVDCB/KADAgECAhQqZRot51OFhLRE6jH0LNLR4IuQATAKBggqhkjOPQQDAjArMSkwJwYDVQQDDCA0ZWQyODRjOGI4NzAwZDYwNzdiZGNiNGQwMTBjOTE5NDAeFw0yNDEyMTQyMjUxNDFaFw0yNTAxMTQyMjUxNDFaMCsxKTAnBgNVBAMMIDRlZDI4NGM4Yjg3MDBkNjA3N2JkY2I0ZDAxMGM5MTk0MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzE78M4hfz3PgBvRONsN1snh0shWo7mMhrF+f4sb6UICH553dOQ3s2uKDbNfJMpXfCIKttIcB/WeY5M5eoCTixjAKBggqhkjOPQQDAgNHADBEAiAA3Pwc3GHlb2lKzw7reIoJFH55psHF7aL1LUWLDZS7RQIgGaRokZBFjTB0KZuDJlppZ9k60G1qC5Een/OexGAhpKc=\",\"MIIBVDCB/KADAgECAhQqZRot51OFhLRE6jH0LNLR4IuQATAKBggqhkjOPQQDAjArMSkwJwYDVQQDDCA0ZWQyODRjOGI4NzAwZDYwNzdiZGNiNGQwMTBjOTE5NDAeFw0yNDEyMTQyMjUxNDFaFw0yNTAxMTQyMjUxNDFaMCsxKTAnBgNVBAMMIDRlZDI4NGM4Yjg3MDBkNjA3N2JkY2I0ZDAxMGM5MTk0MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzE78M4hfz3PgBvRONsN1snh0shWo7mMhrF+f4sb6UICH553dOQ3s2uKDbNfJMpXfCIKttIcB/WeY5M5eoCTixjAKBggqhkjOPQQDAgNHADBEAiAA3Pwc3GHlb2lKzw7reIoJFH55psHF7aL1LUWLDZS7RQIgGaRokZBFjTB0KZuDJlppZ9k60G1qC5Een/OexGAhpKc=\"]"
+    },
+    "CF94:DD:A8:06:B3:D6:15:E9:70:B9:54:44:4B:FB:BC:2A:89:62:0A:EA:6F:C4:8C:38:C4:9B:58:1C:6E:78:BD:44-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "certificate",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "CIT01_96-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "codec",
+     "values": "[\"T01\",\"T01\",\"T01\",\"T01\",\"T01\",\"T01\"]"
+    },
+    "CIT01_96-payloadType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "codec",
+     "values": "[96,96,96,96,96,96]"
+    },
+    "CIT01_96-mimeType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "codec",
+     "values": "[\"video/VP8\",\"video/VP8\",\"video/VP8\",\"video/VP8\",\"video/VP8\",\"video/VP8\"]"
+    },
+    "CIT01_96-clockRate": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "codec",
+     "values": "[90000,90000,90000,90000,90000,90000]"
+    },
+    "CIT01_96-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "codec",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "COT01_96-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "codec",
+     "values": "[\"T01\",\"T01\",\"T01\",\"T01\",\"T01\",\"T01\"]"
+    },
+    "COT01_96-payloadType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "codec",
+     "values": "[96,96,96,96,96,96]"
+    },
+    "COT01_96-mimeType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "codec",
+     "values": "[\"video/VP8\",\"video/VP8\",\"video/VP8\",\"video/VP8\",\"video/VP8\",\"video/VP8\"]"
+    },
+    "COT01_96-clockRate": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "codec",
+     "values": "[90000,90000,90000,90000,90000,90000]"
+    },
+    "COT01_96-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "codec",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "CPbvj15uVO_BHzpIkHt-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[\"T01\",\"T01\",\"T01\",\"T01\",\"T01\",\"T01\"]"
+    },
+    "CPbvj15uVO_BHzpIkHt-localCandidateId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[\"Ibvj15uVO\",\"Ibvj15uVO\",\"Ibvj15uVO\",\"Ibvj15uVO\",\"Ibvj15uVO\",\"Ibvj15uVO\"]"
+    },
+    "CPbvj15uVO_BHzpIkHt-remoteCandidateId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[\"IBHzpIkHt\",\"IBHzpIkHt\",\"IBHzpIkHt\",\"IBHzpIkHt\",\"IBHzpIkHt\",\"IBHzpIkHt\"]"
+    },
+    "CPbvj15uVO_BHzpIkHt-state": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[\"succeeded\",\"succeeded\",\"succeeded\",\"succeeded\",\"succeeded\",\"succeeded\"]"
+    },
+    "CPbvj15uVO_BHzpIkHt-priority": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[9115038255648080000,9115038255648080000,9115038255648080000,9115038255648080000,9115038255648080000,9115038255648080000]"
+    },
+    "CPbvj15uVO_BHzpIkHt-nominated": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[true,true,true,true,true,true]"
+    },
+    "CPbvj15uVO_BHzpIkHt-writable": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[true,true,true,true,true,true]"
+    },
+    "CPbvj15uVO_BHzpIkHt-packetsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[597,11256,23290,32050,32228,32435]"
+    },
+    "CPbvj15uVO_BHzpIkHt-[packetsSent/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0,177.65822261478425,200.53468806838066,200.9449136357682,206.89134136910536,204.23264761815483]"
+    },
+    "CPbvj15uVO_BHzpIkHt-packetsReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[853,10004,17618,24258,24386,24555]"
+    },
+    "CPbvj15uVO_BHzpIkHt-[packetsReceived/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0,152.52372597315798,126.87976690648583,152.31440942254576,148.775796040705,166.74066399743074]"
+    },
+    "CPbvj15uVO_BHzpIkHt-bytesSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[539234,12366950,25805317,35565959,35767610,35998616]"
+    },
+    "CPbvj15uVO_BHzpIkHt-[bytesSent_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0,1577101.7935284327,1791496.582678026,1791188.4600179468,1875049.2529627625,1823341.7196397863]"
+    },
+    "CPbvj15uVO_BHzpIkHt-bytesReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[940597,12212376,21555076,29970103,30130755,30343917]"
+    },
+    "CPbvj15uVO_BHzpIkHt-[bytesReceived_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0,1502973.429287288,1245494.7184420542,1544252.8527467193,1493820.5740957086,1682498.1500127967]"
+    },
+    "CPbvj15uVO_BHzpIkHt-totalRoundTripTime": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0.012,0.033,0.062,0.08,0.082,0.082]"
+    },
+    "CPbvj15uVO_BHzpIkHt-[totalRoundTripTime/responsesReceived]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0,0.0009545454545454546,0.0013181818181818182,0.0011250000000000001,0.0020000000000000018,0]"
+    },
+    "CPbvj15uVO_BHzpIkHt-currentRoundTripTime": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0.001,0.001,0.001,0.001,0.002,0.002]"
+    },
+    "CPbvj15uVO_BHzpIkHt-availableOutgoingBitrate": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[524364,2675648,2600992,2734736,2734736,2734736]"
+    },
+    "CPbvj15uVO_BHzpIkHt-availableIncomingBitrate": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[890272,2388988,2307250,2373448,2373448,2373448]"
+    },
+    "CPbvj15uVO_BHzpIkHt-requestsReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[3,15,27,35,36,36]"
+    },
+    "CPbvj15uVO_BHzpIkHt-requestsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[8,30,52,68,69,69]"
+    },
+    "CPbvj15uVO_BHzpIkHt-responsesReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[8,30,52,68,69,69]"
+    },
+    "CPbvj15uVO_BHzpIkHt-responsesSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[3,15,27,35,36,36]"
+    },
+    "CPbvj15uVO_BHzpIkHt-consentRequestsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[7,29,51,67,68,68]"
+    },
+    "CPbvj15uVO_BHzpIkHt-packetsDiscardedOnSend": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "CPbvj15uVO_BHzpIkHt-bytesDiscardedOnSend": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "CPbvj15uVO_BHzpIkHt-lastPacketReceivedTimestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[1734303119420,1734303179428,1734303239443,1734303283012,1734303283857,1734303284929]"
+    },
+    "CPbvj15uVO_BHzpIkHt-[lastPacketReceivedTimestamp]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[\"12/16/2024, 4:21:59 AM\",\"12/16/2024, 4:22:59 AM\",\"12/16/2024, 4:23:59 AM\",\"12/16/2024, 4:24:43 AM\",\"12/16/2024, 4:24:43 AM\",\"12/16/2024, 4:24:44 AM\"]"
+    },
+    "CPbvj15uVO_BHzpIkHt-lastPacketSentTimestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[1734303119413,1734303179428,1734303239442,1734303283012,1734303283911,1734303284928]"
+    },
+    "CPbvj15uVO_BHzpIkHt-[lastPacketSentTimestamp]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[\"12/16/2024, 4:21:59 AM\",\"12/16/2024, 4:22:59 AM\",\"12/16/2024, 4:23:59 AM\",\"12/16/2024, 4:24:43 AM\",\"12/16/2024, 4:24:43 AM\",\"12/16/2024, 4:24:44 AM\"]"
+    },
+    "CPbvj15uVO_BHzpIkHt-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[\"T01\"]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-localCandidateId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[\"IsmEkNCDV\"]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-remoteCandidateId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[\"I6dUM3X0Q\"]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-state": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[\"in-progress\"]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-priority": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[9114767775787647000]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-nominated": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[false]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-writable": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[false]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-packetsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-[packetsSent/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-packetsReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-[packetsReceived/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-bytesSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-[bytesSent_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-bytesReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-[bytesReceived_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-totalRoundTripTime": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-[totalRoundTripTime/responsesReceived]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-requestsReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-requestsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[6]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-responsesReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-responsesSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-consentRequestsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-packetsDiscardedOnSend": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-bytesDiscardedOnSend": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_6dUM3X0Q-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[225360009.236]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[\"T01\"]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-localCandidateId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[\"IsmEkNCDV\"]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-remoteCandidateId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[\"ICMLT28+Q\"]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-state": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[\"in-progress\"]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-priority": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[9114767775787647000]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-nominated": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[false]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-writable": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[false]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-packetsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-[packetsSent/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-packetsReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-[packetsReceived/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-bytesSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-[bytesSent_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-bytesReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-[bytesReceived_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-totalRoundTripTime": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-[totalRoundTripTime/responsesReceived]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-requestsReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-requestsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[7]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-responsesReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-responsesSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-consentRequestsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-packetsDiscardedOnSend": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-bytesDiscardedOnSend": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPsmEkNCDV_CMLT28+Q-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[225360009.236]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[\"T01\"]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-localCandidateId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[\"IuaVwNWgP\"]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-remoteCandidateId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[\"I6dUM3X0Q\"]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-state": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[\"in-progress\"]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-priority": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[9114486300810936000]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-nominated": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[false]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-writable": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[false]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-packetsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-[packetsSent/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-packetsReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-[packetsReceived/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-bytesSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-[bytesSent_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-bytesReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-[bytesReceived_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-totalRoundTripTime": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-[totalRoundTripTime/responsesReceived]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-requestsReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-requestsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[6]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-responsesReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-responsesSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-consentRequestsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-packetsDiscardedOnSend": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-bytesDiscardedOnSend": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_6dUM3X0Q-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[225360009.236]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[\"T01\"]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-localCandidateId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[\"IuaVwNWgP\"]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-remoteCandidateId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[\"ICMLT28+Q\"]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-state": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[\"in-progress\"]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-priority": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[9114486300810936000]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-nominated": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[false]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-writable": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[false]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-packetsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-[packetsSent/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-packetsReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-[packetsReceived/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-bytesSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-[bytesSent_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-bytesReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-[bytesReceived_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-totalRoundTripTime": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-[totalRoundTripTime/responsesReceived]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-requestsReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-requestsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[6]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-responsesReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-responsesSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-consentRequestsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-packetsDiscardedOnSend": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-bytesDiscardedOnSend": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[0]"
+    },
+    "CPuaVwNWgP_CMLT28+Q-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "candidate-pair",
+     "values": "[225360009.236]"
+    },
+    "CPvLbR8XVI_/rHt350c-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[\"T01\",\"T01\",\"T01\",\"T01\",\"T01\",\"T01\"]"
+    },
+    "CPvLbR8XVI_/rHt350c-localCandidateId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[\"IvLbR8XVI\",\"IvLbR8XVI\",\"IvLbR8XVI\",\"IvLbR8XVI\",\"IvLbR8XVI\",\"IvLbR8XVI\"]"
+    },
+    "CPvLbR8XVI_/rHt350c-remoteCandidateId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[\"I/rHt350c\",\"I/rHt350c\",\"I/rHt350c\",\"I/rHt350c\",\"I/rHt350c\",\"I/rHt350c\"]"
+    },
+    "CPvLbR8XVI_/rHt350c-state": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[\"succeeded\",\"succeeded\",\"succeeded\",\"succeeded\",\"succeeded\",\"succeeded\"]"
+    },
+    "CPvLbR8XVI_/rHt350c-priority": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[9114193830717948000,9114193830717948000,9114193830717948000,9114193830717948000,9114193830717948000,9114193830717948000]"
+    },
+    "CPvLbR8XVI_/rHt350c-nominated": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "CPvLbR8XVI_/rHt350c-writable": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[true,true,true,true,true,true]"
+    },
+    "CPvLbR8XVI_/rHt350c-packetsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "CPvLbR8XVI_/rHt350c-[packetsSent/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "CPvLbR8XVI_/rHt350c-packetsReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "CPvLbR8XVI_/rHt350c-[packetsReceived/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "CPvLbR8XVI_/rHt350c-bytesSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "CPvLbR8XVI_/rHt350c-[bytesSent_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "CPvLbR8XVI_/rHt350c-bytesReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "CPvLbR8XVI_/rHt350c-[bytesReceived_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "CPvLbR8XVI_/rHt350c-totalRoundTripTime": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0.008,0.012,0.014,0.016,0.016,0.016]"
+    },
+    "CPvLbR8XVI_/rHt350c-[totalRoundTripTime/responsesReceived]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0,0.0013333333333333333,0.001,0.001,0,0]"
+    },
+    "CPvLbR8XVI_/rHt350c-currentRoundTripTime": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0.001,0.001,0.001,0.001,0.001,0.001]"
+    },
+    "CPvLbR8XVI_/rHt350c-requestsReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[1,1,1,1,1,1]"
+    },
+    "CPvLbR8XVI_/rHt350c-requestsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[6,9,11,13,13,13]"
+    },
+    "CPvLbR8XVI_/rHt350c-responsesReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[6,9,11,13,13,13]"
+    },
+    "CPvLbR8XVI_/rHt350c-responsesSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[1,1,1,1,1,1]"
+    },
+    "CPvLbR8XVI_/rHt350c-consentRequestsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[5,8,10,12,12,12]"
+    },
+    "CPvLbR8XVI_/rHt350c-packetsDiscardedOnSend": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "CPvLbR8XVI_/rHt350c-bytesDiscardedOnSend": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "CPvLbR8XVI_/rHt350c-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "candidate-pair",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "I/rHt350c-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[\"T01\",\"T01\",\"T01\",\"T01\",\"T01\",\"T01\"]"
+    },
+    "I/rHt350c-isRemote": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[true,true,true,true,true,true]"
+    },
+    "I/rHt350c-ip": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\"]"
+    },
+    "I/rHt350c-address": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\"]"
+    },
+    "I/rHt350c-port": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[55904,55904,55904,55904,55904,55904]"
+    },
+    "I/rHt350c-protocol": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[\"udp\",\"udp\",\"udp\",\"udp\",\"udp\",\"udp\"]"
+    },
+    "I/rHt350c-candidateType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[\"host\",\"host\",\"host\",\"host\",\"host\",\"host\"]"
+    },
+    "I/rHt350c-priority": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[2130706431,2130706431,2130706431,2130706431,2130706431,2130706431]"
+    },
+    "I/rHt350c-foundation": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[\"970c1c4240390fa61a3532e205393525\",\"970c1c4240390fa61a3532e205393525\",\"970c1c4240390fa61a3532e205393525\",\"970c1c4240390fa61a3532e205393525\",\"970c1c4240390fa61a3532e205393525\",\"970c1c4240390fa61a3532e205393525\"]"
+    },
+    "I/rHt350c-usernameFragment": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[\"1Y4W\",\"1Y4W\",\"1Y4W\",\"1Y4W\",\"1Y4W\",\"1Y4W\"]"
+    },
+    "I/rHt350c-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "I39szh/17-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"T01\",\"T01\",\"T01\",\"T01\",\"T01\",\"T01\"]"
+    },
+    "I39szh/17-isRemote": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "I39szh/17-networkType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\"]"
+    },
+    "I39szh/17-ip": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\"]"
+    },
+    "I39szh/17-address": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\"]"
+    },
+    "I39szh/17-port": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[9,9,9,9,9,9]"
+    },
+    "I39szh/17-protocol": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"tcp\",\"tcp\",\"tcp\",\"tcp\",\"tcp\",\"tcp\"]"
+    },
+    "I39szh/17-candidateType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"host\",\"host\",\"host\",\"host\",\"host\",\"host\"]"
+    },
+    "I39szh/17-priority": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[1518217471,1518217471,1518217471,1518217471,1518217471,1518217471]"
+    },
+    "I39szh/17-foundation": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[1396132327,1396132327,1396132327,1396132327,1396132327,1396132327]"
+    },
+    "I39szh/17-usernameFragment": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\"]"
+    },
+    "I39szh/17-tcpType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"active\",\"active\",\"active\",\"active\",\"active\",\"active\"]"
+    },
+    "I39szh/17-vpn": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "I39szh/17-networkAdapterType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\"]"
+    },
+    "I39szh/17-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "I6dUM3X0Q-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[\"T01\"]"
+    },
+    "I6dUM3X0Q-isRemote": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[true]"
+    },
+    "I6dUM3X0Q-ip": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\"]"
+    },
+    "I6dUM3X0Q-address": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\"]"
+    },
+    "I6dUM3X0Q-port": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[55903]"
+    },
+    "I6dUM3X0Q-protocol": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[\"udp\"]"
+    },
+    "I6dUM3X0Q-candidateType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[\"host\"]"
+    },
+    "I6dUM3X0Q-priority": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[2130706431]"
+    },
+    "I6dUM3X0Q-foundation": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[\"490b3309fc46eee33edf0f18ce8581b2\"]"
+    },
+    "I6dUM3X0Q-usernameFragment": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[\"1Y4W\"]"
+    },
+    "I6dUM3X0Q-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[225360009.236]"
+    },
+    "IBHzpIkHt-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[\"T01\",\"T01\",\"T01\",\"T01\",\"T01\",\"T01\"]"
+    },
+    "IBHzpIkHt-isRemote": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[true,true,true,true,true,true]"
+    },
+    "IBHzpIkHt-ip": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\"]"
+    },
+    "IBHzpIkHt-address": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\"]"
+    },
+    "IBHzpIkHt-port": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[55901,55901,55901,55901,55901,55901]"
+    },
+    "IBHzpIkHt-protocol": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[\"udp\",\"udp\",\"udp\",\"udp\",\"udp\",\"udp\"]"
+    },
+    "IBHzpIkHt-candidateType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[\"host\",\"host\",\"host\",\"host\",\"host\",\"host\"]"
+    },
+    "IBHzpIkHt-priority": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[2130706431,2130706431,2130706431,2130706431,2130706431,2130706431]"
+    },
+    "IBHzpIkHt-foundation": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[\"ae5c2359578edcf27f2d217b587052e6\",\"ae5c2359578edcf27f2d217b587052e6\",\"ae5c2359578edcf27f2d217b587052e6\",\"ae5c2359578edcf27f2d217b587052e6\",\"ae5c2359578edcf27f2d217b587052e6\",\"ae5c2359578edcf27f2d217b587052e6\"]"
+    },
+    "IBHzpIkHt-usernameFragment": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[\"1Y4W\",\"1Y4W\",\"1Y4W\",\"1Y4W\",\"1Y4W\",\"1Y4W\"]"
+    },
+    "IBHzpIkHt-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "remote-candidate",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "ICMLT28+Q-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[\"T01\"]"
+    },
+    "ICMLT28+Q-isRemote": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[true]"
+    },
+    "ICMLT28+Q-ip": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\"]"
+    },
+    "ICMLT28+Q-address": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\"]"
+    },
+    "ICMLT28+Q-port": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[55902]"
+    },
+    "ICMLT28+Q-protocol": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[\"udp\"]"
+    },
+    "ICMLT28+Q-candidateType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[\"host\"]"
+    },
+    "ICMLT28+Q-priority": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[2130706431]"
+    },
+    "ICMLT28+Q-foundation": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[\"668907ad30e1f62cb3bd10a3ffbf5e32\"]"
+    },
+    "ICMLT28+Q-usernameFragment": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[\"1Y4W\"]"
+    },
+    "ICMLT28+Q-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:36:00.009Z",
+     "statsType": "remote-candidate",
+     "values": "[225360009.236]"
+    },
+    "ILMdQ9hUU-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"T01\",\"T01\",\"T01\",\"T01\",\"T01\",\"T01\"]"
+    },
+    "ILMdQ9hUU-isRemote": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "ILMdQ9hUU-networkType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\"]"
+    },
+    "ILMdQ9hUU-ip": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\"]"
+    },
+    "ILMdQ9hUU-address": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\"]"
+    },
+    "ILMdQ9hUU-port": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[9,9,9,9,9,9]"
+    },
+    "ILMdQ9hUU-protocol": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"tcp\",\"tcp\",\"tcp\",\"tcp\",\"tcp\",\"tcp\"]"
+    },
+    "ILMdQ9hUU-candidateType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"host\",\"host\",\"host\",\"host\",\"host\",\"host\"]"
+    },
+    "ILMdQ9hUU-priority": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[1518083839,1518083839,1518083839,1518083839,1518083839,1518083839]"
+    },
+    "ILMdQ9hUU-foundation": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[562628960,562628960,562628960,562628960,562628960,562628960]"
+    },
+    "ILMdQ9hUU-usernameFragment": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\"]"
+    },
+    "ILMdQ9hUU-tcpType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"active\",\"active\",\"active\",\"active\",\"active\",\"active\"]"
+    },
+    "ILMdQ9hUU-vpn": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "ILMdQ9hUU-networkAdapterType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\"]"
+    },
+    "ILMdQ9hUU-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "ISWDa/2mj-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"T01\",\"T01\",\"T01\",\"T01\",\"T01\",\"T01\"]"
+    },
+    "ISWDa/2mj-isRemote": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "ISWDa/2mj-networkType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\"]"
+    },
+    "ISWDa/2mj-ip": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\"]"
+    },
+    "ISWDa/2mj-address": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\"]"
+    },
+    "ISWDa/2mj-port": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[9,9,9,9,9,9]"
+    },
+    "ISWDa/2mj-protocol": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"tcp\",\"tcp\",\"tcp\",\"tcp\",\"tcp\",\"tcp\"]"
+    },
+    "ISWDa/2mj-candidateType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"host\",\"host\",\"host\",\"host\",\"host\",\"host\"]"
+    },
+    "ISWDa/2mj-priority": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[1518151935,1518151935,1518151935,1518151935,1518151935,1518151935]"
+    },
+    "ISWDa/2mj-foundation": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[693884824,693884824,693884824,693884824,693884824,693884824]"
+    },
+    "ISWDa/2mj-usernameFragment": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\"]"
+    },
+    "ISWDa/2mj-tcpType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"active\",\"active\",\"active\",\"active\",\"active\",\"active\"]"
+    },
+    "ISWDa/2mj-vpn": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "ISWDa/2mj-networkAdapterType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\"]"
+    },
+    "ISWDa/2mj-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "IT01V3801179921-ssrc": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[3801179921,3801179921,3801179921,3801179921,3801179921,3801179921]"
+    },
+    "IT01V3801179921-kind": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[\"video\",\"video\",\"video\",\"video\",\"video\",\"video\"]"
+    },
+    "IT01V3801179921-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[\"T01\",\"T01\",\"T01\",\"T01\",\"T01\",\"T01\"]"
+    },
+    "IT01V3801179921-codecId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[\"CIT01_96\",\"CIT01_96\",\"CIT01_96\",\"CIT01_96\",\"CIT01_96\",\"CIT01_96\"]"
+    },
+    "IT01V3801179921-[codec]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[\"VP8 (96)\",\"VP8 (96)\",\"VP8 (96)\",\"VP8 (96)\",\"VP8 (96)\",\"VP8 (96)\"]"
+    },
+    "IT01V3801179921-jitter": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0.009,0.008,0.008,0.011,0.008,0.009]"
+    },
+    "IT01V3801179921-packetsLost": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "IT01V3801179921-trackIdentifier": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[\"81011765-5c59-4b1a-b9d8-25eb8ba6213a\",\"81011765-5c59-4b1a-b9d8-25eb8ba6213a\",\"81011765-5c59-4b1a-b9d8-25eb8ba6213a\",\"81011765-5c59-4b1a-b9d8-25eb8ba6213a\",\"81011765-5c59-4b1a-b9d8-25eb8ba6213a\",\"81011765-5c59-4b1a-b9d8-25eb8ba6213a\"]"
+    },
+    "IT01V3801179921-mid": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "IT01V3801179921-packetsReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[808,9728,17087,23560,23684,23849]"
+    },
+    "IT01V3801179921-[packetsReceived/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,148.67354777407596,122.63044453176113,148.4836102699004,144.12655241443295,162.79413940577558]"
+    },
+    "IT01V3801179921-bytesReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[909521,11863790,20940966,29125621,29281813,29489121]"
+    },
+    "IT01V3801179921-[bytesReceived_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,1460636.8031404298,1210097.1631722064,1501976.97909914,1452349.3209493621,1636292.240093698]"
+    },
+    "IT01V3801179921-headerBytesReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[19392,233472,410088,565440,568416,572376]"
+    },
+    "IT01V3801179921-[headerBytesReceived_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,28545.32117262258,23545.045350098135,28508.853171820876,27672.29806357113,31256.47476590891]"
+    },
+    "IT01V3801179921-rtxSsrc": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[1913981937,1913981937,1913981937,1913981937,1913981937,1913981937]"
+    },
+    "IT01V3801179921-lastPacketReceivedTimestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[1734303119419.032,1734303179426.902,1734303239441.319,1734303283010.645,1734303283855.422,1734303284927.551]"
+    },
+    "IT01V3801179921-[lastPacketReceivedTimestamp]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[\"12/16/2024, 4:21:59 AM\",\"12/16/2024, 4:22:59 AM\",\"12/16/2024, 4:23:59 AM\",\"12/16/2024, 4:24:43 AM\",\"12/16/2024, 4:24:43 AM\",\"12/16/2024, 4:24:44 AM\"]"
+    },
+    "IT01V3801179921-jitterBufferDelay": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[5.4336519999999995,11.744658999999999,21.336177,27.256003999999997,27.298534999999998,27.42107]"
+    },
+    "IT01V3801179921-[jitterBufferDelay/jitterBufferEmittedCount_in_ms]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,6.3299969909729175,12.771661784287618,16.3531132596685,6.075857142857188,15.31687500000034]"
+    },
+    "IT01V3801179921-jitterBufferTargetDelay": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[4.744479999999999,15.959138999999999,24.221259,26.866863,26.918304,26.976498]"
+    },
+    "IT01V3801179921-[jitterBufferTargetDelay/jitterBufferEmittedCount_in_ms]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,11.248404212637913,11.001491344873504,7.308298342541433,7.348714285714359,7.274250000000038]"
+    },
+    "IT01V3801179921-jitterBufferMinimumDelay": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[4.744479999999999,15.959138999999999,24.221259,26.866863,26.918304,26.976498]"
+    },
+    "IT01V3801179921-[jitterBufferMinimumDelay/jitterBufferEmittedCount_in_ms]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,11.248404212637913,11.001491344873504,7.308298342541433,7.348714285714359,7.274250000000038]"
+    },
+    "IT01V3801179921-jitterBufferEmittedCount": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[206,1203,1954,2316,2323,2331]"
+    },
+    "IT01V3801179921-framesReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[206,1203,1953,2316,2323,2331]"
+    },
+    "IT01V3801179921-[framesReceived/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,16.617435776990327,12.49800698448442,8.326826900660258,8.136176345976054,7.893049183310331]"
+    },
+    "IT01V3801179921-[framesReceived-framesDecoded-framesDropped]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "IT01V3801179921-frameWidth": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[640,640,640,640,640,640]"
+    },
+    "IT01V3801179921-frameHeight": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[480,480,480,480,480,480]"
+    },
+    "IT01V3801179921-framesPerSecond": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[17,17,8,9,9,8]"
+    },
+    "IT01V3801179921-framesDecoded": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[206,1203,1953,2316,2323,2331]"
+    },
+    "IT01V3801179921-[framesDecoded/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,16.617435776990327,12.49800698448442,8.326826900660258,8.136176345976054,7.893049183310331]"
+    },
+    "IT01V3801179921-keyFramesDecoded": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[1,1,1,1,1,1]"
+    },
+    "IT01V3801179921-[keyFramesDecoded/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "IT01V3801179921-framesDropped": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "IT01V3801179921-totalDecodeTime": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0.257246,2.027236,3.499393,4.52721,4.546035,4.567125]"
+    },
+    "IT01V3801179921-[totalDecodeTime/framesDecoded_in_ms]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,1.7753159478435305,1.962876,2.831451790633609,2.689285714285664,2.6362500000000066]"
+    },
+    "IT01V3801179921-totalProcessingDelay": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[5.711266999999999,13.863757,24.966182999999997,31.967322999999997,32.029205,32.173528]"
+    },
+    "IT01V3801179921-[totalProcessingDelay/jitterBufferEmittedCount_in_ms]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,8.177021063189569,14.783523302263646,19.340165745856353,8.840285714285809,18.040374999999997]"
+    },
+    "IT01V3801179921-totalAssemblyTime": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0.021613,0.166563,0.42674199999999995,0.684245,0.688067,0.694377]"
+    },
+    "IT01V3801179921-[totalAssemblyTime/framesAssembledFromMultiplePackets_in_ms]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,0.1453861584754263,0.3482985274431057,0.709374655647383,0.5459999999999988,0.7887500000000047]"
+    },
+    "IT01V3801179921-framesAssembledFromMultiplePackets": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[198,1195,1942,2305,2312,2320]"
+    },
+    "IT01V3801179921-totalInterFrameDelay": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[12.316,72.318,132.207,175.909,176.754,177.707]"
+    },
+    "IT01V3801179921-[totalInterFrameDelay/framesDecoded_in_ms]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,60.18254764292878,79.85199999999999,120.39118457300276,120.71428571428555,119.12500000000037]"
+    },
+    "IT01V3801179921-totalSquaredInterFrameDelay": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0.8029519999999991,4.463631999999999,10.710496999999943,16.017830999999973,16.12065799999997,16.234752999999966]"
+    },
+    "IT01V3801179921-[interFrameDelayStDev_in_ms]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,7.0537964573961665,44.19062603463839,11.25688669419325,10.845858797759865,8.432637487722147]"
+    },
+    "IT01V3801179921-pauseCount": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "IT01V3801179921-totalPausesDuration": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "IT01V3801179921-freezeCount": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,0,1,1,1,1]"
+    },
+    "IT01V3801179921-totalFreezesDuration": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,0,0.93,0.93,0.93,0.93]"
+    },
+    "IT01V3801179921-decoderImplementation": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[\"libvpx\",\"libvpx\",\"libvpx\",\"libvpx\",\"libvpx\",\"libvpx\"]"
+    },
+    "IT01V3801179921-firCount": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "IT01V3801179921-pliCount": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "IT01V3801179921-nackCount": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "IT01V3801179921-qpSum": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[3581,10180,16234,17894,17925,17960]"
+    },
+    "IT01V3801179921-[qpSum/framesDecoded]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,6.618856569709127,8.072,4.573002754820936,4.428571428571429,4.375]"
+    },
+    "IT01V3801179921-powerEfficientDecoder": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "IT01V3801179921-minPlayoutDelay": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "IT01V3801179921-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "inbound-rtp",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "Ibvj15uVO-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"T01\",\"T01\",\"T01\",\"T01\",\"T01\",\"T01\"]"
+    },
+    "Ibvj15uVO-isRemote": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "Ibvj15uVO-networkType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"ethernet\",\"ethernet\",\"ethernet\",\"ethernet\",\"ethernet\",\"ethernet\"]"
+    },
+    "Ibvj15uVO-ip": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\"]"
+    },
+    "Ibvj15uVO-address": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\"]"
+    },
+    "Ibvj15uVO-port": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[55897,55897,55897,55897,55897,55897]"
+    },
+    "Ibvj15uVO-protocol": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"udp\",\"udp\",\"udp\",\"udp\",\"udp\",\"udp\"]"
+    },
+    "Ibvj15uVO-candidateType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"host\",\"host\",\"host\",\"host\",\"host\",\"host\"]"
+    },
+    "Ibvj15uVO-priority": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[2122260223,2122260223,2122260223,2122260223,2122260223,2122260223]"
+    },
+    "Ibvj15uVO-foundation": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[1502616734,1502616734,1502616734,1502616734,1502616734,1502616734]"
+    },
+    "Ibvj15uVO-usernameFragment": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\"]"
+    },
+    "Ibvj15uVO-vpn": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "Ibvj15uVO-networkAdapterType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"ethernet\",\"ethernet\",\"ethernet\",\"ethernet\",\"ethernet\",\"ethernet\"]"
+    },
+    "Ibvj15uVO-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "IsmEkNCDV-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"T01\",\"T01\",\"T01\",\"T01\",\"T01\",\"T01\"]"
+    },
+    "IsmEkNCDV-isRemote": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "IsmEkNCDV-networkType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\"]"
+    },
+    "IsmEkNCDV-ip": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\"]"
+    },
+    "IsmEkNCDV-address": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\",\"2409:40d0:2010:ad5e:6023:7253:bcfb:eafc\"]"
+    },
+    "IsmEkNCDV-port": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[55899,55899,55899,55899,55899,55899]"
+    },
+    "IsmEkNCDV-protocol": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"udp\",\"udp\",\"udp\",\"udp\",\"udp\",\"udp\"]"
+    },
+    "IsmEkNCDV-candidateType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"host\",\"host\",\"host\",\"host\",\"host\",\"host\"]"
+    },
+    "IsmEkNCDV-priority": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[2122197247,2122197247,2122197247,2122197247,2122197247,2122197247]"
+    },
+    "IsmEkNCDV-foundation": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[2912787827,2912787827,2912787827,2912787827,2912787827,2912787827]"
+    },
+    "IsmEkNCDV-usernameFragment": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\"]"
+    },
+    "IsmEkNCDV-vpn": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "IsmEkNCDV-networkAdapterType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\"]"
+    },
+    "IsmEkNCDV-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "IuaVwNWgP-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"T01\",\"T01\",\"T01\",\"T01\",\"T01\",\"T01\"]"
+    },
+    "IuaVwNWgP-isRemote": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "IuaVwNWgP-networkType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\"]"
+    },
+    "IuaVwNWgP-ip": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\"]"
+    },
+    "IuaVwNWgP-address": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\",\"2409:40d0:2010:ad5e:e811:9b0:337c:4861\"]"
+    },
+    "IuaVwNWgP-port": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[55900,55900,55900,55900,55900,55900]"
+    },
+    "IuaVwNWgP-protocol": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"udp\",\"udp\",\"udp\",\"udp\",\"udp\",\"udp\"]"
+    },
+    "IuaVwNWgP-candidateType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"host\",\"host\",\"host\",\"host\",\"host\",\"host\"]"
+    },
+    "IuaVwNWgP-priority": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[2122131711,2122131711,2122131711,2122131711,2122131711,2122131711]"
+    },
+    "IuaVwNWgP-foundation": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[3622896396,3622896396,3622896396,3622896396,3622896396,3622896396]"
+    },
+    "IuaVwNWgP-usernameFragment": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\"]"
+    },
+    "IuaVwNWgP-vpn": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "IuaVwNWgP-networkAdapterType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\"]"
+    },
+    "IuaVwNWgP-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "IvLbR8XVI-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"T01\",\"T01\",\"T01\",\"T01\",\"T01\",\"T01\"]"
+    },
+    "IvLbR8XVI-isRemote": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "IvLbR8XVI-networkType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\"]"
+    },
+    "IvLbR8XVI-ip": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\"]"
+    },
+    "IvLbR8XVI-address": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\",\"192.168.132.145\"]"
+    },
+    "IvLbR8XVI-port": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[55898,55898,55898,55898,55898,55898]"
+    },
+    "IvLbR8XVI-protocol": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"udp\",\"udp\",\"udp\",\"udp\",\"udp\",\"udp\"]"
+    },
+    "IvLbR8XVI-candidateType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"host\",\"host\",\"host\",\"host\",\"host\",\"host\"]"
+    },
+    "IvLbR8XVI-priority": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[2122063615,2122063615,2122063615,2122063615,2122063615,2122063615]"
+    },
+    "IvLbR8XVI-foundation": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[3743669748,3743669748,3743669748,3743669748,3743669748,3743669748]"
+    },
+    "IvLbR8XVI-usernameFragment": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\"]"
+    },
+    "IvLbR8XVI-vpn": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "IvLbR8XVI-networkAdapterType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\",\"wifi\"]"
+    },
+    "IvLbR8XVI-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "Ix/8ARli7-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"T01\",\"T01\",\"T01\",\"T01\",\"T01\",\"T01\"]"
+    },
+    "Ix/8ARli7-isRemote": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "Ix/8ARli7-networkType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"ethernet\",\"ethernet\",\"ethernet\",\"ethernet\",\"ethernet\",\"ethernet\"]"
+    },
+    "Ix/8ARli7-ip": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\"]"
+    },
+    "Ix/8ARli7-address": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\",\"192.168.56.1\"]"
+    },
+    "Ix/8ARli7-port": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[9,9,9,9,9,9]"
+    },
+    "Ix/8ARli7-protocol": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"tcp\",\"tcp\",\"tcp\",\"tcp\",\"tcp\",\"tcp\"]"
+    },
+    "Ix/8ARli7-candidateType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"host\",\"host\",\"host\",\"host\",\"host\",\"host\"]"
+    },
+    "Ix/8ARli7-priority": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[1518280447,1518280447,1518280447,1518280447,1518280447,1518280447]"
+    },
+    "Ix/8ARli7-foundation": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[2805647370,2805647370,2805647370,2805647370,2805647370,2805647370]"
+    },
+    "Ix/8ARli7-usernameFragment": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\"]"
+    },
+    "Ix/8ARli7-tcpType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"active\",\"active\",\"active\",\"active\",\"active\",\"active\"]"
+    },
+    "Ix/8ARli7-vpn": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "Ix/8ARli7-networkAdapterType": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[\"ethernet\",\"ethernet\",\"ethernet\",\"ethernet\",\"ethernet\",\"ethernet\"]"
+    },
+    "Ix/8ARli7-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "local-candidate",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "OT01V2827440857-ssrc": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[2827440857,2827440857,2827440857,2827440857,2827440857,2827440857]"
+    },
+    "OT01V2827440857-kind": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[\"video\",\"video\",\"video\",\"video\",\"video\",\"video\"]"
+    },
+    "OT01V2827440857-transportId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[\"T01\",\"T01\",\"T01\",\"T01\",\"T01\",\"T01\"]"
+    },
+    "OT01V2827440857-codecId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[\"COT01_96\",\"COT01_96\",\"COT01_96\",\"COT01_96\",\"COT01_96\",\"COT01_96\"]"
+    },
+    "OT01V2827440857-[codec]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[\"VP8 (96)\",\"VP8 (96)\",\"VP8 (96)\",\"VP8 (96)\",\"VP8 (96)\",\"VP8 (96)\"]"
+    },
+    "OT01V2827440857-packetsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[544,10759,22327,30735,30908,31107]"
+    },
+    "OT01V2827440857-[packetsSent/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,170.257880102263,192.76925972868767,192.87041482300674,201.07978683626533,196.33959843484448]"
+    },
+    "OT01V2827440857-bytesSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[517472,11999882,25050237,34527519,34723558,34947890]"
+    },
+    "OT01V2827440857-[bytesSent_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,1531058.8625080965,1739769.8980266792,1739188.687663763,1822866.1425014853,1770663.5093903732]"
+    },
+    "OT01V2827440857-mediaSourceId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[\"SV7\",\"SV7\",\"SV7\",\"SV7\",\"SV7\",\"SV7\"]"
+    },
+    "OT01V2827440857-remoteId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[\"RIV2827440857\",\"RIV2827440857\",\"RIV2827440857\",\"RIV2827440857\",\"RIV2827440857\",\"RIV2827440857\"]"
+    },
+    "OT01V2827440857-mid": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "OT01V2827440857-retransmittedPacketsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "OT01V2827440857-[retransmittedPacketsSent/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "OT01V2827440857-headerBytesSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[11626,215926,447286,615446,618906,622886]"
+    },
+    "OT01V2827440857-[headerBytesSent_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,27241.26081636208,30843.08155659003,30859.26637168108,32172.765893802454,31414.33574957512]"
+    },
+    "OT01V2827440857-retransmittedBytesSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "OT01V2827440857-[retransmittedBytesSent_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "OT01V2827440857-targetBitrate": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[522540,1700000,1700000,1700000,1700000,1700000]"
+    },
+    "OT01V2827440857-framesEncoded": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[207,1204,2201,2925,2940,2957]"
+    },
+    "OT01V2827440857-[framesEncoded/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,16.617435776990327,16.614017284707955,16.607775967157096,17.434663598520114,16.772729514534454]"
+    },
+    "OT01V2827440857-keyFramesEncoded": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[1,1,1,1,1,1]"
+    },
+    "OT01V2827440857-totalEncodeTime": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0.745,5.565,10.862,14.673,14.757,14.843]"
+    },
+    "OT01V2827440857-[totalEncodeTime/framesEncoded_in_ms]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,4.8345035105315946,5.312938816449348,5.263812154696132,5.599999999999976,5.058823529411782]"
+    },
+    "OT01V2827440857-totalEncodedBytesTarget": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "OT01V2827440857-[totalEncodedBytesTarget_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "OT01V2827440857-frameWidth": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[640,640,640,640,640,640]"
+    },
+    "OT01V2827440857-frameHeight": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[480,480,480,480,480,480]"
+    },
+    "OT01V2827440857-framesPerSecond": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[17,17,17,16,17,17]"
+    },
+    "OT01V2827440857-framesSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[207,1204,2201,2925,2940,2957]"
+    },
+    "OT01V2827440857-[framesSent/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,16.617435776990327,16.614017284707955,16.607775967157096,17.434663598520114,16.772729514534454]"
+    },
+    "OT01V2827440857-hugeFramesSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[1,1,1,1,1,1]"
+    },
+    "OT01V2827440857-totalPacketSendDelay": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0.349722,0.364628,0.383079,0.39789399999999997,0.39819699999999997,0.398508]"
+    },
+    "OT01V2827440857-[totalPacketSendDelay/packetsSent_in_ms]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,0.0014592266275085689,0.0015950034578146607,0.0017620123691722128,0.0017514450867051892,0.0015628140703517876]"
+    },
+    "OT01V2827440857-qualityLimitationReason": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[\"none\",\"none\",\"none\",\"none\",\"none\",\"none\"]"
+    },
+    "OT01V2827440857-qualityLimitationDurations": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[\"{\\\"bandwidth\\\":0,\\\"cpu\\\":0,\\\"none\\\":12.494,\\\"other\\\":0}\",\"{\\\"bandwidth\\\":0,\\\"cpu\\\":0,\\\"none\\\":72.492,\\\"other\\\":0}\",\"{\\\"bandwidth\\\":0,\\\"cpu\\\":0,\\\"none\\\":132.501,\\\"other\\\":0}\",\"{\\\"bandwidth\\\":0,\\\"cpu\\\":0,\\\"none\\\":176.095,\\\"other\\\":0}\",\"{\\\"bandwidth\\\":0,\\\"cpu\\\":0,\\\"none\\\":176.955,\\\"other\\\":0}\",\"{\\\"bandwidth\\\":0,\\\"cpu\\\":0,\\\"none\\\":177.969,\\\"other\\\":0}\"]"
+    },
+    "OT01V2827440857-qualityLimitationResolutionChanges": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "OT01V2827440857-encoderImplementation": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[\"libvpx\",\"libvpx\",\"libvpx\",\"libvpx\",\"libvpx\",\"libvpx\"]"
+    },
+    "OT01V2827440857-firCount": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "OT01V2827440857-pliCount": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "OT01V2827440857-nackCount": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "OT01V2827440857-qpSum": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[10587,21365,30321,36904,37035,37182]"
+    },
+    "OT01V2827440857-[qpSum/framesEncoded]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[0,10.810431293881646,8.98294884653962,9.092541436464089,8.733333333333333,8.647058823529411]"
+    },
+    "OT01V2827440857-active": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[true,true,true,true,true,true]"
+    },
+    "OT01V2827440857-powerEfficientEncoder": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[false,false,false,false,false,false]"
+    },
+    "OT01V2827440857-scalabilityMode": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[\"L1T1\",\"L1T1\",\"L1T1\",\"L1T1\",\"L1T1\",\"L1T1\"]"
+    },
+    "OT01V2827440857-rtxSsrc": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[266074443,266074443,266074443,266074443,266074443,266074443]"
+    },
+    "OT01V2827440857-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "outbound-rtp",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "P-dataChannelsOpened": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "peer-connection",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "P-dataChannelsClosed": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "peer-connection",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "P-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "peer-connection",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "RIV2827440857-ssrc": {
+     "startTime": "1970-01-03T14:35:59.346Z",
+     "endTime": "1970-01-03T14:38:45.128Z",
+     "statsType": "remote-inbound-rtp",
+     "values": "[2827440857,2827440857,2827440857,2827440857,2827440857,2827440857]"
+    },
+    "RIV2827440857-kind": {
+     "startTime": "1970-01-03T14:35:59.346Z",
+     "endTime": "1970-01-03T14:38:45.128Z",
+     "statsType": "remote-inbound-rtp",
+     "values": "[\"video\",\"video\",\"video\",\"video\",\"video\",\"video\"]"
+    },
+    "RIV2827440857-transportId": {
+     "startTime": "1970-01-03T14:35:59.346Z",
+     "endTime": "1970-01-03T14:38:45.128Z",
+     "statsType": "remote-inbound-rtp",
+     "values": "[\"T01\",\"T01\",\"T01\",\"T01\",\"T01\",\"T01\"]"
+    },
+    "RIV2827440857-codecId": {
+     "startTime": "1970-01-03T14:35:59.346Z",
+     "endTime": "1970-01-03T14:38:45.128Z",
+     "statsType": "remote-inbound-rtp",
+     "values": "[\"COT01_96\",\"COT01_96\",\"COT01_96\",\"COT01_96\",\"COT01_96\",\"COT01_96\"]"
+    },
+    "RIV2827440857-jitter": {
+     "startTime": "1970-01-03T14:35:59.346Z",
+     "endTime": "1970-01-03T14:38:45.128Z",
+     "statsType": "remote-inbound-rtp",
+     "values": "[0.0016769999999999999,0.001411,0.001488,0.004644,0.003,0.002477]"
+    },
+    "RIV2827440857-packetsLost": {
+     "startTime": "1970-01-03T14:35:59.346Z",
+     "endTime": "1970-01-03T14:38:45.128Z",
+     "statsType": "remote-inbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "RIV2827440857-localId": {
+     "startTime": "1970-01-03T14:35:59.346Z",
+     "endTime": "1970-01-03T14:38:45.128Z",
+     "statsType": "remote-inbound-rtp",
+     "values": "[\"OT01V2827440857\",\"OT01V2827440857\",\"OT01V2827440857\",\"OT01V2827440857\",\"OT01V2827440857\",\"OT01V2827440857\"]"
+    },
+    "RIV2827440857-roundTripTime": {
+     "startTime": "1970-01-03T14:35:59.346Z",
+     "endTime": "1970-01-03T14:38:45.128Z",
+     "statsType": "remote-inbound-rtp",
+     "values": "[0.001,0.001,0.00145,0.002228,0.002029,0.001]"
+    },
+    "RIV2827440857-fractionLost": {
+     "startTime": "1970-01-03T14:35:59.346Z",
+     "endTime": "1970-01-03T14:38:45.128Z",
+     "statsType": "remote-inbound-rtp",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "RIV2827440857-totalRoundTripTime": {
+     "startTime": "1970-01-03T14:35:59.346Z",
+     "endTime": "1970-01-03T14:38:45.128Z",
+     "statsType": "remote-inbound-rtp",
+     "values": "[0.017506999999999998,0.086198,1.04561,1.100776,1.102805,1.103805]"
+    },
+    "RIV2827440857-roundTripTimeMeasurements": {
+     "startTime": "1970-01-03T14:35:59.346Z",
+     "endTime": "1970-01-03T14:38:45.128Z",
+     "statsType": "remote-inbound-rtp",
+     "values": "[12,76,136,181,182,183]"
+    },
+    "RIV2827440857-timestamp": {
+     "startTime": "1970-01-03T14:35:59.346Z",
+     "endTime": "1970-01-03T14:38:45.128Z",
+     "statsType": "remote-inbound-rtp",
+     "values": "[225359346.311,225418936.525,225479293.098,225522882.423,225523726.489,225525128.877]"
+    },
+    "SV7-trackIdentifier": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "media-source",
+     "values": "[\"fa6e814f-6327-43cd-a9cf-d1f5acf421cf\",\"fa6e814f-6327-43cd-a9cf-d1f5acf421cf\",\"fa6e814f-6327-43cd-a9cf-d1f5acf421cf\",\"fa6e814f-6327-43cd-a9cf-d1f5acf421cf\",\"fa6e814f-6327-43cd-a9cf-d1f5acf421cf\",\"fa6e814f-6327-43cd-a9cf-d1f5acf421cf\"]"
+    },
+    "SV7-kind": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "media-source",
+     "values": "[\"video\",\"video\",\"video\",\"video\",\"video\",\"video\"]"
+    },
+    "SV7-width": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "media-source",
+     "values": "[640,640,640,640,640,640]"
+    },
+    "SV7-height": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "media-source",
+     "values": "[480,480,480,480,480,480]"
+    },
+    "SV7-frames": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "media-source",
+     "values": "[207,1204,2201,2926,2940,2957]"
+    },
+    "SV7-framesPerSecond": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "media-source",
+     "values": "[16,16,16,17,17,17]"
+    },
+    "SV7-track.deliveredFrames": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "media-source",
+     "values": "[295,1292,2289,3014,3028,3045]"
+    },
+    "SV7-track.discardedFrames": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "media-source",
+     "values": "[0,0,0,0,0,0]"
+    },
+    "SV7-track.totalFrames": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "media-source",
+     "values": "[295,1292,2289,3014,3028,3045]"
+    },
+    "SV7-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "media-source",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    },
+    "T01-bytesSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[539234,12366950,25805317,35565959,35767610,35998616]"
+    },
+    "T01-[bytesSent_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[0,1577101.7935284327,1791496.582678026,1791188.4600179468,1875049.2529627625,1823341.7196397863]"
+    },
+    "T01-packetsSent": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[597,11256,23290,32050,32228,32435]"
+    },
+    "T01-[packetsSent/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[0,177.65822261478425,200.53468806838066,200.9449136357682,206.89134136910536,204.23264761815483]"
+    },
+    "T01-bytesReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[940597,12212376,21555076,29970103,30130755,30343917]"
+    },
+    "T01-[bytesReceived_in_bits/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[0,1502973.429287288,1245494.7184420542,1544252.8527467193,1493820.5740957086,1682498.1500127967]"
+    },
+    "T01-packetsReceived": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[853,10004,17618,24258,24386,24555]"
+    },
+    "T01-[packetsReceived/s]": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[0,152.52372597315798,126.87976690648583,152.31440942254576,148.775796040705,166.74066399743074]"
+    },
+    "T01-dtlsState": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[\"connected\",\"connected\",\"connected\",\"connected\",\"connected\",\"connected\"]"
+    },
+    "T01-selectedCandidatePairId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[\"CPbvj15uVO_BHzpIkHt\",\"CPbvj15uVO_BHzpIkHt\",\"CPbvj15uVO_BHzpIkHt\",\"CPbvj15uVO_BHzpIkHt\",\"CPbvj15uVO_BHzpIkHt\",\"CPbvj15uVO_BHzpIkHt\"]"
+    },
+    "T01-localCertificateId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[\"CF3B:1A:B4:29:59:41:1C:6C:80:9E:4C:D7:63:A1:D6:EB:07:6C:BE:3E:9B:DC:14:14:5E:40:1B:9E:86:C9:92:39\",\"CF3B:1A:B4:29:59:41:1C:6C:80:9E:4C:D7:63:A1:D6:EB:07:6C:BE:3E:9B:DC:14:14:5E:40:1B:9E:86:C9:92:39\",\"CF3B:1A:B4:29:59:41:1C:6C:80:9E:4C:D7:63:A1:D6:EB:07:6C:BE:3E:9B:DC:14:14:5E:40:1B:9E:86:C9:92:39\",\"CF3B:1A:B4:29:59:41:1C:6C:80:9E:4C:D7:63:A1:D6:EB:07:6C:BE:3E:9B:DC:14:14:5E:40:1B:9E:86:C9:92:39\",\"CF3B:1A:B4:29:59:41:1C:6C:80:9E:4C:D7:63:A1:D6:EB:07:6C:BE:3E:9B:DC:14:14:5E:40:1B:9E:86:C9:92:39\",\"CF3B:1A:B4:29:59:41:1C:6C:80:9E:4C:D7:63:A1:D6:EB:07:6C:BE:3E:9B:DC:14:14:5E:40:1B:9E:86:C9:92:39\"]"
+    },
+    "T01-remoteCertificateId": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[\"CF94:DD:A8:06:B3:D6:15:E9:70:B9:54:44:4B:FB:BC:2A:89:62:0A:EA:6F:C4:8C:38:C4:9B:58:1C:6E:78:BD:44\",\"CF94:DD:A8:06:B3:D6:15:E9:70:B9:54:44:4B:FB:BC:2A:89:62:0A:EA:6F:C4:8C:38:C4:9B:58:1C:6E:78:BD:44\",\"CF94:DD:A8:06:B3:D6:15:E9:70:B9:54:44:4B:FB:BC:2A:89:62:0A:EA:6F:C4:8C:38:C4:9B:58:1C:6E:78:BD:44\",\"CF94:DD:A8:06:B3:D6:15:E9:70:B9:54:44:4B:FB:BC:2A:89:62:0A:EA:6F:C4:8C:38:C4:9B:58:1C:6E:78:BD:44\",\"CF94:DD:A8:06:B3:D6:15:E9:70:B9:54:44:4B:FB:BC:2A:89:62:0A:EA:6F:C4:8C:38:C4:9B:58:1C:6E:78:BD:44\",\"CF94:DD:A8:06:B3:D6:15:E9:70:B9:54:44:4B:FB:BC:2A:89:62:0A:EA:6F:C4:8C:38:C4:9B:58:1C:6E:78:BD:44\"]"
+    },
+    "T01-tlsVersion": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[\"FEFD\",\"FEFD\",\"FEFD\",\"FEFD\",\"FEFD\",\"FEFD\"]"
+    },
+    "T01-dtlsCipher": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[\"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256\",\"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256\",\"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256\",\"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256\",\"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256\",\"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256\"]"
+    },
+    "T01-dtlsRole": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[\"server\",\"server\",\"server\",\"server\",\"server\",\"server\"]"
+    },
+    "T01-srtpCipher": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[\"AES_CM_128_HMAC_SHA1_80\",\"AES_CM_128_HMAC_SHA1_80\",\"AES_CM_128_HMAC_SHA1_80\",\"AES_CM_128_HMAC_SHA1_80\",\"AES_CM_128_HMAC_SHA1_80\",\"AES_CM_128_HMAC_SHA1_80\"]"
+    },
+    "T01-selectedCandidatePairChanges": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[1,1,1,1,1,1]"
+    },
+    "T01-iceRole": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[\"controlling\",\"controlling\",\"controlling\",\"controlling\",\"controlling\",\"controlling\"]"
+    },
+    "T01-iceLocalUsernameFragment": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\",\"0Zc3\"]"
+    },
+    "T01-iceState": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[\"connected\",\"connected\",\"connected\",\"connected\",\"connected\",\"connected\"]"
+    },
+    "T01-timestamp": {
+     "startTime": "1970-01-03T14:36:00.009Z",
+     "endTime": "1970-01-03T14:38:45.483Z",
+     "statsType": "transport",
+     "values": "[225360009.236,225420006.459,225480016.027,225523610.064,225524470.419,225525483.969]"
+    }
+   },
+   "updateLog": [
+    {
+     "time": "12/16/2024, 4:21:41 AM",
+     "type": "transceiverAdded",
+     "value": "Caused by: addTrack\n\ngetTransceivers()[0]:{\n  mid:null,\n  kind:'video',\n  sender:{\n    track:'fa6e814f-6327-43cd-a9cf-d1f5acf421cf',\n    streams:['40390770-4554-4380-97f9-83e90f1105ac'],\n    encodings: [\n      {active: true, },\n    ],\n  },\n  receiver:{\n    track:'81011765-5c59-4b1a-b9d8-25eb8ba6213a',\n    streams:[],\n  },\n  direction:'sendrecv',\n  currentDirection:null,\n}"
+    },
+    {
+     "time": "12/16/2024, 4:21:41 AM",
+     "type": "createOffer",
+     "value": "options: {offerToReceiveVideo: -1, offerToReceiveAudio: -1, voiceActivityDetection: true, iceRestart: false}"
+    },
+    {
+     "time": "12/16/2024, 4:21:41 AM",
+     "type": "negotiationneeded",
+     "value": ""
+    },
+    {
+     "time": "12/16/2024, 4:21:41 AM",
+     "type": "createOfferOnSuccess",
+     "value": "type: offer, sdp: v=0\r\no=- 5002683140831828820 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS 40390770-4554-4380-97f9-83e90f1105ac\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 102 103 104 105 106 107 108 109 127 125 39 40 45 46 98 99 100 101 112 113 116 117 118\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:0Zc3\r\na=ice-pwd:d2AzdFVvY7vbgrTzsdrL32hY\r\na=ice-options:trickle\r\na=fingerprint:sha-256 3B:1A:B4:29:59:41:1C:6C:80:9E:4C:D7:63:A1:D6:EB:07:6C:BE:3E:9B:DC:14:14:5E:40:1B:9E:86:C9:92:39\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 urn:3gpp:video-orientation\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendrecv\r\na=msid:40390770-4554-4380-97f9-83e90f1105ac fa6e814f-6327-43cd-a9cf-d1f5acf421cf\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:104 H264/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=fmtp:104 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:105 rtx/90000\r\na=fmtp:105 apt=104\r\na=rtpmap:106 H264/90000\r\na=rtcp-fb:106 goog-remb\r\na=rtcp-fb:106 transport-cc\r\na=rtcp-fb:106 ccm fir\r\na=rtcp-fb:106 nack\r\na=rtcp-fb:106 nack pli\r\na=fmtp:106 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=106\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:127 H264/90000\r\na=rtcp-fb:127 goog-remb\r\na=rtcp-fb:127 transport-cc\r\na=rtcp-fb:127 ccm fir\r\na=rtcp-fb:127 nack\r\na=rtcp-fb:127 nack pli\r\na=fmtp:127 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d001f\r\na=rtpmap:125 rtx/90000\r\na=fmtp:125 apt=127\r\na=rtpmap:39 H264/90000\r\na=rtcp-fb:39 goog-remb\r\na=rtcp-fb:39 transport-cc\r\na=rtcp-fb:39 ccm fir\r\na=rtcp-fb:39 nack\r\na=rtcp-fb:39 nack pli\r\na=fmtp:39 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=4d001f\r\na=rtpmap:40 rtx/90000\r\na=fmtp:40 apt=39\r\na=rtpmap:45 AV1/90000\r\na=rtcp-fb:45 goog-remb\r\na=rtcp-fb:45 transport-cc\r\na=rtcp-fb:45 ccm fir\r\na=rtcp-fb:45 nack\r\na=rtcp-fb:45 nack pli\r\na=fmtp:45 level-idx=5;profile=0;tier=0\r\na=rtpmap:46 rtx/90000\r\na=fmtp:46 apt=45\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:112 H264/90000\r\na=rtcp-fb:112 goog-remb\r\na=rtcp-fb:112 transport-cc\r\na=rtcp-fb:112 ccm fir\r\na=rtcp-fb:112 nack\r\na=rtcp-fb:112 nack pli\r\na=fmtp:112 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=64001f\r\na=rtpmap:113 rtx/90000\r\na=fmtp:113 apt=112\r\na=rtpmap:116 red/90000\r\na=rtpmap:117 rtx/90000\r\na=fmtp:117 apt=116\r\na=rtpmap:118 ulpfec/90000\r\na=ssrc-group:FID 2827440857 266074443\r\na=ssrc:2827440857 cname:zYu2eRgz+0qq3TL7\r\na=ssrc:2827440857 msid:40390770-4554-4380-97f9-83e90f1105ac fa6e814f-6327-43cd-a9cf-d1f5acf421cf\r\na=ssrc:266074443 cname:zYu2eRgz+0qq3TL7\r\na=ssrc:266074443 msid:40390770-4554-4380-97f9-83e90f1105ac fa6e814f-6327-43cd-a9cf-d1f5acf421cf\r\n"
+    },
+    {
+     "time": "12/16/2024, 4:21:41 AM",
+     "type": "setLocalDescription",
+     "value": "type: offer, sdp: v=0\r\no=- 5002683140831828820 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS 40390770-4554-4380-97f9-83e90f1105ac\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 102 103 104 105 106 107 108 109 127 125 39 40 45 46 98 99 100 101 112 113 116 117 118\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:0Zc3\r\na=ice-pwd:d2AzdFVvY7vbgrTzsdrL32hY\r\na=ice-options:trickle\r\na=fingerprint:sha-256 3B:1A:B4:29:59:41:1C:6C:80:9E:4C:D7:63:A1:D6:EB:07:6C:BE:3E:9B:DC:14:14:5E:40:1B:9E:86:C9:92:39\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 urn:3gpp:video-orientation\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendrecv\r\na=msid:40390770-4554-4380-97f9-83e90f1105ac fa6e814f-6327-43cd-a9cf-d1f5acf421cf\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:104 H264/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=fmtp:104 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:105 rtx/90000\r\na=fmtp:105 apt=104\r\na=rtpmap:106 H264/90000\r\na=rtcp-fb:106 goog-remb\r\na=rtcp-fb:106 transport-cc\r\na=rtcp-fb:106 ccm fir\r\na=rtcp-fb:106 nack\r\na=rtcp-fb:106 nack pli\r\na=fmtp:106 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=106\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:127 H264/90000\r\na=rtcp-fb:127 goog-remb\r\na=rtcp-fb:127 transport-cc\r\na=rtcp-fb:127 ccm fir\r\na=rtcp-fb:127 nack\r\na=rtcp-fb:127 nack pli\r\na=fmtp:127 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d001f\r\na=rtpmap:125 rtx/90000\r\na=fmtp:125 apt=127\r\na=rtpmap:39 H264/90000\r\na=rtcp-fb:39 goog-remb\r\na=rtcp-fb:39 transport-cc\r\na=rtcp-fb:39 ccm fir\r\na=rtcp-fb:39 nack\r\na=rtcp-fb:39 nack pli\r\na=fmtp:39 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=4d001f\r\na=rtpmap:40 rtx/90000\r\na=fmtp:40 apt=39\r\na=rtpmap:45 AV1/90000\r\na=rtcp-fb:45 goog-remb\r\na=rtcp-fb:45 transport-cc\r\na=rtcp-fb:45 ccm fir\r\na=rtcp-fb:45 nack\r\na=rtcp-fb:45 nack pli\r\na=fmtp:45 level-idx=5;profile=0;tier=0\r\na=rtpmap:46 rtx/90000\r\na=fmtp:46 apt=45\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:112 H264/90000\r\na=rtcp-fb:112 goog-remb\r\na=rtcp-fb:112 transport-cc\r\na=rtcp-fb:112 ccm fir\r\na=rtcp-fb:112 nack\r\na=rtcp-fb:112 nack pli\r\na=fmtp:112 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=64001f\r\na=rtpmap:113 rtx/90000\r\na=fmtp:113 apt=112\r\na=rtpmap:116 red/90000\r\na=rtpmap:117 rtx/90000\r\na=fmtp:117 apt=116\r\na=rtpmap:118 ulpfec/90000\r\na=ssrc-group:FID 2827440857 266074443\r\na=ssrc:2827440857 cname:zYu2eRgz+0qq3TL7\r\na=ssrc:2827440857 msid:40390770-4554-4380-97f9-83e90f1105ac fa6e814f-6327-43cd-a9cf-d1f5acf421cf\r\na=ssrc:266074443 cname:zYu2eRgz+0qq3TL7\r\na=ssrc:266074443 msid:40390770-4554-4380-97f9-83e90f1105ac fa6e814f-6327-43cd-a9cf-d1f5acf421cf\r\n"
+    },
+    {
+     "time": "12/16/2024, 4:21:41 AM",
+     "type": "setLocalDescriptionOnSuccess",
+     "value": ""
+    },
+    {
+     "time": "12/16/2024, 4:21:41 AM",
+     "type": "signalingstatechange",
+     "value": "have-local-offer"
+    },
+    {
+     "time": "12/16/2024, 4:21:41 AM",
+     "type": "transceiverModified",
+     "value": "Caused by: setLocalDescription\n\ngetTransceivers()[0]:{\n  mid:'0',\n  kind:'video',\n  sender:{\n    track:'fa6e814f-6327-43cd-a9cf-d1f5acf421cf',\n    streams:['40390770-4554-4380-97f9-83e90f1105ac'],\n    encodings: [\n      {active: true, },\n    ],\n  },\n  receiver:{\n    track:'81011765-5c59-4b1a-b9d8-25eb8ba6213a',\n    streams:[],\n  },\n  direction:'sendrecv',\n  currentDirection:null,\n}"
+    },
+    {
+     "time": "12/16/2024, 4:21:41 AM",
+     "type": "icegatheringstatechange",
+     "value": "gathering"
+    },
+    {
+     "time": "12/16/2024, 4:21:41 AM",
+     "type": "icecandidate",
+     "value": "sdpMid: 0, sdpMLineIndex: 0, candidate: candidate:1502616734 1 udp 2122260223 192.168.56.1 55897 typ host generation 0 ufrag 0Zc3 network-id 4"
+    },
+    {
+     "time": "12/16/2024, 4:21:41 AM",
+     "type": "icecandidate",
+     "value": "sdpMid: 0, sdpMLineIndex: 0, candidate: candidate:3743669748 1 udp 2122063615 192.168.132.145 55898 typ host generation 0 ufrag 0Zc3 network-id 1 network-cost 10"
+    },
+    {
+     "time": "12/16/2024, 4:21:41 AM",
+     "type": "icecandidate",
+     "value": "sdpMid: 0, sdpMLineIndex: 0, candidate: candidate:2912787827 1 udp 2122197247 2409:40d0:2010:ad5e:6023:7253:bcfb:eafc 55899 typ host generation 0 ufrag 0Zc3 network-id 2 network-cost 10"
+    },
+    {
+     "time": "12/16/2024, 4:21:41 AM",
+     "type": "icecandidate",
+     "value": "sdpMid: 0, sdpMLineIndex: 0, candidate: candidate:3622896396 1 udp 2122131711 2409:40d0:2010:ad5e:e811:9b0:337c:4861 55900 typ host generation 0 ufrag 0Zc3 network-id 3 network-cost 10"
+    },
+    {
+     "time": "12/16/2024, 4:21:41 AM",
+     "type": "icecandidate",
+     "value": "sdpMid: 0, sdpMLineIndex: 0, candidate: candidate:2805647370 1 tcp 1518280447 192.168.56.1 9 typ host tcptype active generation 0 ufrag 0Zc3 network-id 4"
+    },
+    {
+     "time": "12/16/2024, 4:21:41 AM",
+     "type": "icecandidate",
+     "value": "sdpMid: 0, sdpMLineIndex: 0, candidate: candidate:562628960 1 tcp 1518083839 192.168.132.145 9 typ host tcptype active generation 0 ufrag 0Zc3 network-id 1 network-cost 10"
+    },
+    {
+     "time": "12/16/2024, 4:21:41 AM",
+     "type": "icecandidate",
+     "value": "sdpMid: 0, sdpMLineIndex: 0, candidate: candidate:1396132327 1 tcp 1518217471 2409:40d0:2010:ad5e:6023:7253:bcfb:eafc 9 typ host tcptype active generation 0 ufrag 0Zc3 network-id 2 network-cost 10"
+    },
+    {
+     "time": "12/16/2024, 4:21:41 AM",
+     "type": "icecandidate",
+     "value": "sdpMid: 0, sdpMLineIndex: 0, candidate: candidate:693884824 1 tcp 1518151935 2409:40d0:2010:ad5e:e811:9b0:337c:4861 9 typ host tcptype active generation 0 ufrag 0Zc3 network-id 3 network-cost 10"
+    },
+    {
+     "time": "12/16/2024, 4:21:41 AM",
+     "type": "icegatheringstatechange",
+     "value": "complete"
+    },
+    {
+     "time": "12/16/2024, 4:21:46 AM",
+     "type": "setRemoteDescription",
+     "value": "type: answer, sdp: v=0\r\no=- 3943291901 3943291901 IN IP4 0.0.0.0\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic:WMS *\r\nm=video 55901 UDP/TLS/RTP/SAVPF 96 97 102 103 106 107\r\nc=IN IP4 192.168.56.1\r\na=sendrecv\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=mid:0\r\na=msid:b43e772d-461c-4d11-b212-b25a029b8569 0f6c2098-b90c-4a37-91a1-3eab2049fc9f\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=rtcp-mux\r\na=ssrc-group:FID 3801179921 1913981937\r\na=ssrc:3801179921 cname:b6feae2f-e112-4efc-b819-efbca3e53499\r\na=ssrc:1913981937 cname:b6feae2f-e112-4efc-b819-efbca3e53499\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtcp-fb:96 goog-remb\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=rtcp-fb:102 goog-remb\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:106 H264/90000\r\na=rtcp-fb:106 nack\r\na=rtcp-fb:106 nack pli\r\na=rtcp-fb:106 goog-remb\r\na=fmtp:106 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=106\r\na=candidate:ae5c2359578edcf27f2d217b587052e6 1 udp 2130706431 192.168.56.1 55901 typ host\r\na=candidate:668907ad30e1f62cb3bd10a3ffbf5e32 1 udp 2130706431 2409:40d0:2010:ad5e:e811:9b0:337c:4861 55902 typ host\r\na=candidate:490b3309fc46eee33edf0f18ce8581b2 1 udp 2130706431 2409:40d0:2010:ad5e:6023:7253:bcfb:eafc 55903 typ host\r\na=candidate:970c1c4240390fa61a3532e205393525 1 udp 2130706431 192.168.132.145 55904 typ host\r\na=candidate:0197021295577ca0c060dd1830dffc74 1 udp 1694498815 152.59.71.214 55904 typ srflx raddr 192.168.132.145 rport 55904\r\na=end-of-candidates\r\na=ice-ufrag:1Y4W\r\na=ice-pwd:5HXYCTFMZDBsKYc5zvsC09\r\na=fingerprint:sha-256 94:DD:A8:06:B3:D6:15:E9:70:B9:54:44:4B:FB:BC:2A:89:62:0A:EA:6F:C4:8C:38:C4:9B:58:1C:6E:78:BD:44\r\na=setup:active\r\n"
+    },
+    {
+     "time": "12/16/2024, 4:21:46 AM",
+     "type": "iceconnectionstatechange",
+     "value": "checking"
+    },
+    {
+     "time": "12/16/2024, 4:21:46 AM",
+     "type": "connectionstatechange",
+     "value": "connecting"
+    },
+    {
+     "time": "12/16/2024, 4:21:46 AM",
+     "type": "iceconnectionstatechange",
+     "value": "connected"
+    },
+    {
+     "time": "12/16/2024, 4:21:46 AM",
+     "type": "setRemoteDescriptionOnSuccess",
+     "value": ""
+    },
+    {
+     "time": "12/16/2024, 4:21:46 AM",
+     "type": "signalingstatechange",
+     "value": "stable"
+    },
+    {
+     "time": "12/16/2024, 4:21:46 AM",
+     "type": "transceiverModified",
+     "value": "Caused by: setRemoteDescription\n\ngetTransceivers()[0]:{\n  mid:'0',\n  kind:'video',\n  sender:{\n    track:'fa6e814f-6327-43cd-a9cf-d1f5acf421cf',\n    streams:['40390770-4554-4380-97f9-83e90f1105ac'],\n    encodings: [\n      {active: true, },\n    ],\n  },\n  receiver:{\n    track:'81011765-5c59-4b1a-b9d8-25eb8ba6213a',\n    streams:['b43e772d-461c-4d11-b212-b25a029b8569'],\n  },\n  direction:'sendrecv',\n  currentDirection:'sendrecv',\n}"
+    },
+    {
+     "time": "12/16/2024, 4:21:46 AM",
+     "type": "connectionstatechange",
+     "value": "connected"
+    }
+   ],
+   "url": "http://192.168.56.1:8080/client"
+  }
+ },
+ "UserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+}
