@@ -38,6 +38,8 @@ incoming_timestamps=[]
 save_counter_inc=0
 with open("send_stats.txt",'w') as f:
     pass
+with open("incoming_stats.txt",'w') as f:
+    pass
 def get_ntp_time():
     response = ntp_client.request('pool.ntp.org')
     return response.offset
@@ -49,7 +51,8 @@ while True:
     except Exception as e:
         print(e)
         continue
-
+# offset=0.25
+print(offset)
 
 def write_data():
     global save_counter,server,save_counter_inc
@@ -148,6 +151,8 @@ class MinRTT:
         if len(self.pcs.keys())==0:
             return None
         for pc in self.pcs.keys():
+            if self.pcs[pc]==1e9:
+                return pc
             if self.pcs[pc]<minRTT:
                 minRTT=self.pcs[pc]
                 optimal_pc=pc
@@ -155,7 +160,24 @@ class MinRTT:
             return None
         return optimal_pc
 
-MinRTT_scheduler=MinRTT()  
+class RoundRobin:
+    def __init__(self):
+        self.current_id=0
+        self.pcs={}
+
+    def add_pc(self,gid):
+        self.pcs[gid]=1e9
+
+    def get_optimal_pc(self):
+        return self.current_id
+    
+    def update(self):
+        self.current_id+=1
+        self.current_id%=2
+
+
+# MinRTT_scheduler=MinRTT()  
+MinRTT_scheduler=RoundRobin()
 
 
 class VideoTransformTrackchild(MediaStreamTrack):
@@ -197,6 +219,8 @@ class VideoTransformTrack(MediaStreamTrack):
 
             if optimal_id!=None and optimal_id==id:
                 # return None
+                if type(MinRTT_scheduler)==RoundRobin:
+                    MinRTT_scheduler.update()
                 timestamps.append(time.time())
                 return self.process_frame(frame)   
             else:
@@ -206,6 +230,8 @@ class VideoTransformTrack(MediaStreamTrack):
                     optimal_id = MinRTT_scheduler.get_optimal_pc()
                     print("OPTIMAL ID = ",optimal_id)
                 
+                if type(MinRTT_scheduler)==RoundRobin:
+                    MinRTT_scheduler.update()
                 timestamps.append(time.time())
                 return self.process_frame(frame)
                 
@@ -404,11 +430,11 @@ async def offer(request):
         await pc.setLocalDescription(answer)
 
         # Start logging of stats
-        task1 = asyncio.create_task(MinRTT_scheduler.log_stats())
+        if type(MinRTT_scheduler)==MinRTT:
+            task1 = asyncio.create_task(MinRTT_scheduler.log_stats())
         server=True
         
        
-      
         print(get_req_response)
         response =  web.Response(
             content_type="application/json",
@@ -477,7 +503,9 @@ if __name__ == "__main__":
     )
     parser.add_argument("--record-to", help="Write received media to a file."),
     parser.add_argument("--verbose", "-v",default=False,action="count")
+    parser.add_argument("--cust_ip",default=False)
     args = parser.parse_args()
+
 
     if args.verbose:
         logging.basicConfig(level=logging.DEBUG)

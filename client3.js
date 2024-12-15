@@ -69,7 +69,7 @@ var client_pcs={};
 
 
 
-function createPeerConnection(conn_id,conn_type,puuid) {
+function createPeerConnection(conn_id,conn_type,puuid,connip=null) {
     var config = {
         sdpSemantics: 'unified-plan'
     };
@@ -91,6 +91,7 @@ function createPeerConnection(conn_id,conn_type,puuid) {
             if(event.candidate)
             {
                 console.log("Candidate : ",puuid);
+                
                 const candidateData = {
                     [puuid]:{answercandidates: firebase.firestore.FieldValue.arrayUnion(event.candidate.toJSON())}
                 };
@@ -109,10 +110,20 @@ function createPeerConnection(conn_id,conn_type,puuid) {
         pc.onicecandidate = (event) => {
             if(event.candidate)
             {
-                const candidateData = {
-                    [puuid]:{offercandidates: firebase.firestore.FieldValue.arrayUnion(event.candidate.toJSON())}
-                };
-                callDocFirst.set(candidateData,{merge:true});
+                if (connip==null){
+                    const candidateData = {
+                        [puuid]:{offercandidates: firebase.firestore.FieldValue.arrayUnion(event.candidate.toJSON())}
+                    };
+                    callDocFirst.set(candidateData,{merge:true});
+                }
+                else{
+                    if (event.candidate.candidate.includes(connip)){
+                    const candidateData = {
+                        [puuid]:{offercandidates: firebase.firestore.FieldValue.arrayUnion(event.candidate.toJSON())}
+                    };
+                    callDocFirst.set(candidateData,{merge:true});
+                    }
+                }
             }
             callDoc = callDocFirst;
             // event.candidate && callDoc.update()
@@ -145,18 +156,7 @@ function createPeerConnection(conn_id,conn_type,puuid) {
         //     console.log("Video metadata : ",stream);
         // });
         if (evt.track.kind == 'video'){
-        //     fetch(`/incoming_frame`, {
-        //         body: JSON.stringify({
-        //             timestamp:Date.now()
-        //         }),
-        //         headers: {
-        //             'Content-Type': 'application/json'
-        //         },
-        //         method: 'POST'
-        //     })
-        //     console.log("Video track : ",evt.track);
             document.getElementById(`video${conn_id}`).srcObject = evt.streams[0];
-            // console.log("Mode : ",document.getElementById["mode"].value);
             console.log(livestream)
             if(livestream.value=="livestream")
             {
@@ -303,6 +303,8 @@ function negotiate(pc,uuid=null){
             }).then(()=>{
                 callDoc.onSnapshot((snapshot) => {
                     let data = snapshot.data();
+                    console.log("Data : ",data);
+                    console.log("UUID : ",uuid);
                     if(Object.keys(data[uuid]).includes('answer') && !pc.remoteDescription)
                     {
                         console.log("Answer : ",data[uuid].answer,"UUID : ",uuid);
@@ -464,7 +466,7 @@ function start() {
                 dataChannelLog.push(document.getElementById(`data-channel${i}`));
             }
             
-            
+            ips=['192.168.76.23','192.168.0.106']
             let pcs=[]
             for(let i=0;i<num_connections;i++)
             {   
