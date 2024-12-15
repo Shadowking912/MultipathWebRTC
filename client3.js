@@ -156,6 +156,31 @@ function createPeerConnection(conn_id,conn_type,puuid) {
         //     })
         //     console.log("Video track : ",evt.track);
             document.getElementById(`video${conn_id}`).srcObject = evt.streams[0];
+            // console.log("Mode : ",document.getElementById["mode"].value);
+            console.log(livestream)
+            if(livestream.value=="livestream")
+            {
+                const video = document.getElementById(`video${conn_id}`);
+                function onVideoFrame(now,metadata)
+                {
+                    console.log(Date.now());
+                    // console.log("Metadata : ",metadata);
+                    // console.log("Timestamp : ",now);    
+                    // Send this timestamp using post request
+                    fetch(`/incoming_frame`, {
+                        body: JSON.stringify({
+                            timestamp:Date.now()
+                        }),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        method: 'POST'
+                        }
+                    )
+                    video.requestVideoFrameCallback(onVideoFrame);
+                }
+                video.requestVideoFrameCallback(onVideoFrame);
+            }
         }
         else
             document.getElementById(`audio${conn_id}`).srcObject = evt.streams[0];
@@ -361,23 +386,8 @@ function display_media_boxes()
         video.style.width = '80%';
         video.style.height = '80%';
         video.style.borderRadius = '2em';  
+
         
-        video.requestVideoFrameCallback((now,metadata)=>{
-            console.log("Metadata : ",metadata);
-            console.log("Timestamp : ",now);   
-            console.log("HERE");
-            // Send this timestamp using post request
-            fetch(`/incoming_frame`, {
-                body: JSON.stringify({
-                    timestamp:now
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                method: 'POST'
-            }
-            )
-        })
 
         media.appendChild(video);
         inner.appendChild(media);

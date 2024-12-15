@@ -457,7 +457,7 @@ async def getuuid(request):
 async def incoming_frame(request):
     params=await request.json()
     print("INCOMING FRAME")
-    incoming_timestamps.append(params['timestamp']/1000)
+    incoming_timestamps.append(params['timestamp']/1000+offset)
     return web.Response(
         content_type="application/json",
     )
