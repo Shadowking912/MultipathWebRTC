@@ -138,14 +138,30 @@ function createPeerConnection(conn_id,conn_type,puuid) {
     }, false);
     signalingLog.textContent = pc.signalingState;
 
+    
     // connect audio / video
     pc.addEventListener('track', (evt) => {
+        // document.getElementById(`video${conn_id}`).srcObject.addEventListener('addtrack', (stream) => {
+        //     console.log("Video metadata : ",stream);
+        // });
         if (evt.track.kind == 'video'){
+        //     fetch(`/incoming_frame`, {
+        //         body: JSON.stringify({
+        //             timestamp:Date.now()
+        //         }),
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         method: 'POST'
+        //     })
+        //     console.log("Video track : ",evt.track);
             document.getElementById(`video${conn_id}`).srcObject = evt.streams[0];
         }
         else
             document.getElementById(`audio${conn_id}`).srcObject = evt.streams[0];
+        
     });
+    
     return pc;
 
 }

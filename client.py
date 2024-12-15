@@ -28,31 +28,58 @@ import ntplib
 import threading
 import time
 
+
+offset=0
 timestamps=[]
 save_counter=0
+ntp_client= ntplib.NTPClient()
+server=False
+incoming_timestamps=[]
+save_counter_inc=0
+with open("send_stats.txt",'w') as f:
+    pass
 def get_ntp_time():
-    ntp_client = ntplib.NTPClient()
     response = ntp_client.request('pool.ntp.org')
-    return response.tx_time  
+    return response.offset
+
+while True:
+    try:
+        offset=get_ntp_time()
+        break
+    except Exception as e:
+        print(e)
+        continue
 
 
 def write_data():
-    # global save_counter
+    global save_counter,server,save_counter_inc
     # if len(timestamps)//20>save_counter:
-        # with open("send_stats.txt",'a') as file:
+    
     while True:
-        print("HELLO FROM WRITE DATA")
-        pass
-        # print("Opened the file")
-            # for i in range(save_counter*20,len(timestamps)):
-                # file.write(str(timestamps[i])+"\n")
-            # save_counter+=1
-            # file.flush()
+        time.sleep(10)
+        if server:
+            # print("HELLO FROM WRITE DATA")
+            print("Opened the file")
+            file=open("send_stats.txt",'a')
+            for i in range(save_counter,len(timestamps)):
+                file.write(str(timestamps[i]+offset)+"\n")
+            save_counter=len(timestamps)
+            file.flush()
+            file.close()
+        else:
+            print("writing inc file")
+            file=open("incoming_stats.txt",'a')
+            for i in range(save_counter_inc,len(incoming_timestamps)):
+                file.write(str(incoming_timestamps[i]+offset)+"\n")
+            save_counter_inc=len(incoming_timestamps)
+            file.flush()
+            file.close()
 
         # asyncio.sleep(2)
         # time.sleep(2)
     # await write_data()
-
+thread = threading.Thread(target=write_data)
+thread.daemon = True
 
 id=uuid.uuid4()
 # Use a service account.
@@ -170,7 +197,7 @@ class VideoTransformTrack(MediaStreamTrack):
 
             if optimal_id!=None and optimal_id==id:
                 # return None
-                timestamps.append(get_ntp_time())
+                timestamps.append(time.time())
                 return self.process_frame(frame)   
             else:
                 # return None
@@ -179,7 +206,7 @@ class VideoTransformTrack(MediaStreamTrack):
                     optimal_id = MinRTT_scheduler.get_optimal_pc()
                     print("OPTIMAL ID = ",optimal_id)
                 
-                timestamps.append(get_ntp_time())
+                timestamps.append(time.time())
                 return self.process_frame(frame)
                 
                 # return self.process_frame(frame,transform="empty") 
@@ -262,7 +289,7 @@ child_relays=set()
 gid=0
 
 async def offer(request):
-    global get_req_response,i,d,get_req_response2,relay_modified,gid
+    global get_req_response,i,d,get_req_response2,relay_modified,gid,server
     params = await request.json()
  
     if params["livestream"]==True:#send stream from server to client
@@ -378,7 +405,8 @@ async def offer(request):
 
         # Start logging of stats
         task1 = asyncio.create_task(MinRTT_scheduler.log_stats())
-
+        server=True
+        
        
       
         print(get_req_response)
@@ -426,6 +454,14 @@ async def getuuid(request):
         ),
     )
 
+async def incoming_frame(request):
+    params=await request.json()
+    print("INCOMING FRAME")
+    incoming_timestamps.append(params['timestamp']/1000)
+    return web.Response(
+        content_type="application/json",
+    )
+
 if __name__ == "__main__":
    
     parser = argparse.ArgumentParser(
@@ -454,6 +490,8 @@ if __name__ == "__main__":
     else:
         ssl_context = None
     portnumber = args.port
+
+    thread.start()
     app = web.Application()
     app.on_shutdown.append(on_shutdown)
     # Add arguments to the api endpoint
@@ -464,8 +502,7 @@ if __name__ == "__main__":
     app.router.add_post("/offer", offer)
     app.router.add_options("/offer",handle_options)
     app.router.add_post("/getuuid",getuuid)
-    thread = threading.Thread(target=write_data)
-    thread.start()
+    app.router.add_post("/incoming_frame",incoming_frame)
 
     web.run_app(
         app, access_log=None, host=args.host, port=args.port, ssl_context=ssl_context

@@ -1,9 +1,14 @@
 import asyncio
-
+from threading import Thread
 # Define the first async function
+def write():
+    while True:
+        pass
+
 async def say_hello():
-    await asyncio.sleep(10)
-    print("Hello")
+    while True:
+        await asyncio.sleep(3)
+        print("Hello")
 
 # Define the second async function
 async def say_goodbye():
@@ -16,9 +21,11 @@ async def main():
     task2 = asyncio.create_task(say_goodbye())
 
     # Wait for both tasks to complete
-    # await task1
+    await task1
     # await task2
     print("gg")
 
-if 
+thread=Thread(target=write)
+thread.daemon=True
+thread.start()
 asyncio.run(main())
